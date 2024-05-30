@@ -97,6 +97,7 @@
                 <li><strong>Beautiful Themes:</strong> Choose from a variety of stunning themes to personalize your task lists and enhance your experience.</li>
                 <li><strong>Reminders and Notifications:</strong> Stay on top of your schedule with timely reminders and notifications for your tasks.</li>
                 <li><strong>Attachment Support:</strong> Add relevant files and documents to your tasks to keep all your information in one place.</li>
+                <li><strong>Live List Sharing:</strong> Share your tasks with others and collaborate on them in real-time, ensuring everyone stays updated instantly.</li>
             </ul>
         </section>
         <section>
@@ -136,7 +137,9 @@
     <!-- Modal for full-size images -->
     <div id="myModal" class="modal">
         <span class="close" onclick="closeModal()">&times;</span>
-        <div class="modal-content" id="modalImage"></div>
+        <div class="modal-content">
+            <img id="modalImage" src="">
+        </div>
     </div>
 
     <script>
@@ -144,7 +147,7 @@
             var modal = document.getElementById('myModal');
             var modalImg = document.getElementById('modalImage');
             modal.style.display = "block";
-            modalImg.innerHTML = "<img src='" + image.src.replace('_resized', '') + "' alt='" + image.alt + "'>";
+            modalImg.src = image.src.replace('_resized', '');
         }
 
         function closeModal() {
