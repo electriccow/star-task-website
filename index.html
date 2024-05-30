@@ -148,6 +148,7 @@
             var modalImg = document.getElementById('modalImage');
             modal.style.display = "block";
             modalImg.src = image.src.replace('_resized', '');
+            modalImg.alt = image.alt;
         }
 
         function closeModal() {
