@@ -5,6 +5,71 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Star Task - Home</title>
     <link rel="stylesheet" href="css/styles.css">
+    <style>
+        .screenshot-gallery {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+        }
+
+        .screenshot-gallery figure {
+            margin: 10px;
+            flex: 1 1 30%;
+            cursor: pointer;
+        }
+
+        .screenshot-gallery img {
+            width: 100%;
+            border-radius: 8px;
+            transition: transform 0.2s;
+        }
+
+        .screenshot-gallery img:hover {
+            transform: scale(1.05);
+        }
+
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0,0,0,0.9);
+        }
+
+        .modal-content {
+            margin: auto;
+            display: block;
+            width: 80%;
+            max-width: 700px;
+        }
+
+        .modal-content img {
+            width: 100%;
+            border-radius: 8px;
+        }
+
+        .close {
+            position: absolute;
+            top: 20px;
+            right: 35px;
+            color: #fff;
+            font-size: 40px;
+            font-weight: bold;
+            transition: 0.3s;
+            cursor: pointer;
+        }
+
+        .close:hover,
+        .close:focus {
+            color: #bbb;
+            text-decoration: none;
+            cursor: pointer;
+        }
+    </style>
 </head>
 <body>
     <header>
@@ -39,23 +104,23 @@
             <h2>Screenshots</h2>
             <div class="screenshot-gallery">
                 <figure>
-                    <img src="images/dashboard_resized.png" alt="Dashboard Screen" class="screenshot">
+                    <img src="images/dashboard_resized.png" alt="Dashboard Screen" class="screenshot" onclick="openModal(this)">
                     <figcaption>Dashboard Screen</figcaption>
                 </figure>
                 <figure>
-                    <img src="images/listview_resized.png" alt="Listview Screen" class="screenshot">
+                    <img src="images/listview_resized.png" alt="Listview Screen" class="screenshot" onclick="openModal(this)">
                     <figcaption>Listview Screen</figcaption>
                 </figure>
                 <figure>
-                    <img src="images/task-details_resized.png" alt="Task Details Screen" class="screenshot">
+                    <img src="images/task-details_resized.png" alt="Task Details Screen" class="screenshot" onclick="openModal(this)">
                     <figcaption>Task Details Screen</figcaption>
                 </figure>
                 <figure>
-                    <img src="images/shared-list_resized.png" alt="Shared List Screen" class="screenshot">
+                    <img src="images/shared-list_resized.png" alt="Shared List Screen" class="screenshot" onclick="openModal(this)">
                     <figcaption>Shared List Screen</figcaption>
                 </figure>
                 <figure>
-                    <img src="images/upcoming-items_resized.png" alt="Upcoming Items Screen" class="screenshot">
+                    <img src="images/upcoming-items_resized.png" alt="Upcoming Items Screen" class="screenshot" onclick="openModal(this)">
                     <figcaption>Upcoming Items Screen</figcaption>
                 </figure>
             </div>
@@ -68,6 +133,25 @@
     <footer>
         <p>&copy; 2024 Star Task</p>
     </footer>
-    <script src="js/scripts.js"></script>
+
+    <!-- Modal for full-size images -->
+    <div id="myModal" class="modal">
+        <span class="close" onclick="closeModal()">&times;</span>
+        <div class="modal-content" id="modalImage"></div>
+    </div>
+
+    <script>
+        function openModal(image) {
+            var modal = document.getElementById('myModal');
+            var modalImg = document.getElementById('modalImage');
+            modal.style.display = "block";
+            modalImg.innerHTML = "<img src='" + image.src.replace('_resized', '') + "' alt='" + image.alt + "'>";
+        }
+
+        function closeModal() {
+            var modal = document.getElementById('myModal');
+            modal.style.display = "none";
+        }
+    </script>
 </body>
 </html>
