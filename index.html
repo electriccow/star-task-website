@@ -6,70 +6,23 @@
     <title>Star Task - Home</title>
     <link rel="stylesheet" href="css/styles.css">
     <style>
-        .screenshot-gallery {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: space-around;
-        }
-
-        .screenshot-gallery figure {
-            margin: 10px;
-            flex: 1 1 30%;
-            cursor: pointer;
-        }
-
-        .screenshot-gallery img {
-            width: 100%;
-            border-radius: 8px;
-            transition: transform 0.2s;
-        }
-
-        .screenshot-gallery img:hover {
-            transform: scale(1.05);
-        }
-
-        .modal {
-            display: none;
-            position: fixed;
-            z-index: 1;
-            left: 0;
-            top: 0;
-            width: 100%;
-            height: 100%;
-            overflow: auto;
-            background-color: rgba(0,0,0,0.9);
-        }
-
-        .modal-content {
-            margin: auto;
-            display: block;
-            width: 80%;
-            max-width: 700px;
-        }
-
-        .modal-content img {
-            width: 100%;
-            border-radius: 8px;
-        }
-
-        .close {
-            position: absolute;
-            top: 20px;
-            right: 35px;
-            color: #fff;
-            font-size: 40px;
-            font-weight: bold;
-            transition: 0.3s;
-            cursor: pointer;
-        }
-
-        .close:hover,
-        .close:focus {
-            color: #bbb;
-            text-decoration: none;
-            cursor: pointer;
-        }
+        /* Your existing styles */
     </style>
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Star Task - Your Ultimate Productivity Companion">
+    <meta property="og:description" content="Manage tasks, share lists, and boost productivity with Star Task!">
+    <meta property="og:image" content="https://startaskapp.com/images/app-icon.png">
+    <meta property="og:url" content="https://startaskapp.com">
+    <meta property="og:type" content="website">
+
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Star Task - Your Ultimate Productivity Companion">
+    <meta name="twitter:description" content="Manage tasks, share lists, and boost productivity with Star Task!">
+    <meta name="twitter:image" content="https://startaskapp.com/images/app-icon.png">
+    <meta name="twitter:url" content="https://startaskapp.com">
+
 </head>
 <body>
     <header>
@@ -104,23 +57,23 @@
             <h2>Screenshots</h2>
             <div class="screenshot-gallery">
                 <figure>
-                    <img src="images/dashboard_resized.png" alt="Dashboard Screen" class="screenshot" onclick="openModal(this)">
+                    <img src="images/dashboard_resized.png" alt="Dashboard Screen" class="screenshot" onclick="openModal('images/dashboard_resized.png')">
                     <figcaption>Dashboard Screen</figcaption>
                 </figure>
                 <figure>
-                    <img src="images/listview_resized.png" alt="Listview Screen" class="screenshot" onclick="openModal(this)">
+                    <img src="images/listview_resized.png" alt="Listview Screen" class="screenshot" onclick="openModal('images/listview_resized.png')">
                     <figcaption>Listview Screen</figcaption>
                 </figure>
                 <figure>
-                    <img src="images/task-details_resized.png" alt="Task Details Screen" class="screenshot" onclick="openModal(this)">
+                    <img src="images/task-details_resized.png" alt="Task Details Screen" class="screenshot" onclick="openModal('images/task-details_resized.png')">
                     <figcaption>Task Details Screen</figcaption>
                 </figure>
                 <figure>
-                    <img src="images/shared-list_resized.png" alt="Shared List Screen" class="screenshot" onclick="openModal(this)">
+                    <img src="images/shared-list_resized.png" alt="Shared List Screen" class="screenshot" onclick="openModal('images/shared-list_resized.png')">
                     <figcaption>Shared List Screen</figcaption>
                 </figure>
                 <figure>
-                    <img src="images/upcoming-items_resized.png" alt="Upcoming Items Screen" class="screenshot" onclick="openModal(this)">
+                    <img src="images/upcoming-items_resized.png" alt="Upcoming Items Screen" class="screenshot" onclick="openModal('images/upcoming-items_resized.png')">
                     <figcaption>Upcoming Items Screen</figcaption>
                 </figure>
             </div>
