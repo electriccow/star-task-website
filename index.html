@@ -3,74 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Star Task - Home</title>
+    <title>Star Task - Your Ultimate Productivity Companion</title>
     <link rel="stylesheet" href="css/styles.css">
-    <style>
-        .screenshot-gallery {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: space-around;
-        }
+    <!-- Add any other necessary meta tags here -->
 
-        .screenshot-gallery figure {
-            margin: 10px;
-            flex: 1 1 30%;
-            cursor: pointer;
-        }
-
-        .screenshot-gallery img {
-            width: 100%;
-            border-radius: 8px;
-            transition: transform 0.2s;
-        }
-
-        .screenshot-gallery img:hover {
-            transform: scale(1.05);
-        }
-
-        .modal {
-            display: none;
-            position: fixed;
-            z-index: 1;
-            left: 0;
-            top: 0;
-            width: 100%;
-            height: 100%;
-            overflow: auto;
-            background-color: rgba(0,0,0,0.9);
-        }
-
-        .modal-content {
-            margin: auto;
-            display: block;
-            width: 80%;
-            max-width: 700px;
-        }
-
-        .modal-content img {
-            width: 100%;
-            border-radius: 8px;
-        }
-
-        .close {
-            position: absolute;
-            top: 20px;
-            right: 35px;
-            color: #fff;
-            font-size: 40px;
-            font-weight: bold;
-            transition: 0.3s;
-            cursor: pointer;
-        }
-
-        .close:hover,
-        .close:focus {
-            color: #bbb;
-            text-decoration: none;
-            cursor: pointer;
-        }
-    </style>
-    
     <!-- Open Graph Meta Tags -->
     <meta property="og:title" content="Star Task - Your Ultimate Productivity Companion">
     <meta property="og:description" content="Manage tasks, share lists, and boost productivity with Star Task!">
@@ -85,9 +21,33 @@
     <meta name="twitter:image" content="https://startaskapp.com/images/app-icon.png">
     <meta name="twitter:url" content="https://startaskapp.com">
 
+    <!-- Countdown Timer Script -->
+    <script>
+        function countdown() {
+            const launchDate = new Date('July 12, 2024 00:00:00').getTime();
+            const now = new Date().getTime();
+            const distance = launchDate - now;
+
+            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+            document.getElementById('countdown').innerHTML = `${days}d ${hours}h ${minutes}m ${seconds}s`;
+
+            if (distance < 0) {
+                document.getElementById('countdown').innerHTML = 'LAUNCHED!';
+            }
+        }
+
+        setInterval(countdown, 1000);
+    </script>
 </head>
 <body>
     <header>
+        <div class="announcement-banner">
+            <p>📢 Open Beta Launch on July 12, 2024! 📢</p>
+        </div>
         <img src="images/logo.png" alt="Star Task Logo" class="logo">
         <h1>Welcome to Star Task</h1>
         <nav>
@@ -100,6 +60,10 @@
         </nav>
     </header>
     <main>
+        <section class="countdown-section">
+            <h2>Open Beta Launch Countdown</h2>
+            <div id="countdown"></div>
+        </section>
         <section>
             <h2>About Star Task</h2>
             <p>Welcome to Star Task, your ultimate productivity companion. Designed with simplicity and efficiency in mind, Star Task empowers you to manage your daily tasks with ease and precision. Whether you're organizing personal chores or professional projects, our app offers a seamless experience to keep you on track.</p>
@@ -141,8 +105,16 @@
             </div>
         </section>
         <section>
+            <h2>Stay Updated</h2>
+            <form action="https://formspree.io/f/xdoqrjpl" method="POST">
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+                <button type="submit">Sign Up for Updates</button>
+            </form>
+        </section>
+        <section>
             <h2>Download</h2>
-            <p>Ready to boost your productivity? <a href="https://play.google.com/apps/testing/com.fan.startask">Download Star Task on Google Play</a> today and start transforming the way you manage your tasks.</p>
+            <p>Ready to boost your productivity? <a href="https://play.google.com/store/apps/details?id=com.startaskapp">Download Star Task on Google Play</a> today and start transforming the way you manage your tasks.</p>
         </section>
     </main>
     <footer>
