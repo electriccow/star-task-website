@@ -5,41 +5,33 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Star Task - Your Ultimate Productivity Companion</title>
     <link rel="stylesheet" href="css/styles.css">
-    <!-- Add any other necessary meta tags here -->
-
     <!-- Open Graph Meta Tags -->
     <meta property="og:title" content="Star Task - Your Ultimate Productivity Companion">
     <meta property="og:description" content="Manage tasks, share lists, and boost productivity with Star Task!">
     <meta property="og:image" content="https://startaskapp.com/images/app-icon.png">
     <meta property="og:url" content="https://startaskapp.com">
     <meta property="og:type" content="website">
-
     <!-- Twitter Card Meta Tags -->
     <meta name="twitter:card" content="summary">
     <meta name="twitter:title" content="Star Task - Your Ultimate Productivity Companion">
     <meta name="twitter:description" content="Manage tasks, share lists, and boost productivity with Star Task!">
     <meta name="twitter:image" content="https://startaskapp.com/images/app-icon.png">
     <meta name="twitter:url" content="https://startaskapp.com">
-
     <!-- Countdown Timer Script -->
     <script>
         function countdown() {
             const launchDate = new Date('July 12, 2024 00:00:00').getTime();
             const now = new Date().getTime();
             const distance = launchDate - now;
-
             const days = Math.floor(distance / (1000 * 60 * 60 * 24));
             const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
             const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
             const seconds = Math.floor((distance % (1000 * 60)) / 1000);
-
             document.getElementById('countdown').innerHTML = `${days}d ${hours}h ${minutes}m ${seconds}s`;
-
             if (distance < 0) {
                 document.getElementById('countdown').innerHTML = 'LAUNCHED!';
             }
         }
-
         setInterval(countdown, 1000);
     </script>
 </head>
@@ -48,63 +40,65 @@
         <div class="announcement-banner">
             <p>📢 Open Beta Launch on July 12, 2024! 📢</p>
         </div>
+        <div class="scrolling-marquee">Don't miss out on our new features! Subscribe for updates.</div>
         <img src="images/logo.png" alt="Star Task Logo" class="logo">
         <h1>Welcome to Star Task</h1>
         <nav>
             <ul>
                 <li><a href="index.html">Home</a></li>
                 <li><a href="about.html">About</a></li>
+                <li><a href="features.html">Features</a></li>
+                <li><a href="blog.html">Blog</a></li>
                 <li><a href="contact.html">Contact</a></li>
                 <li><a href="privacy-policy.html">Privacy Policy</a></li>
             </ul>
         </nav>
     </header>
     <main>
+        <section class="hero-section">
+            <h2>Welcome to Star Task</h2>
+            <p>Your ultimate productivity companion. Designed with simplicity and efficiency in mind, Star Task empowers you to manage your daily tasks with ease and precision.</p>
+            <a href="https://play.google.com/store/apps/details?id=com.startaskapp" class="cta-button">Download Now</a>
+        </section>
         <section class="countdown-section">
             <h2>Open Beta Launch Countdown</h2>
             <div id="countdown"></div>
         </section>
-        <section>
-            <h2>About Star Task</h2>
-            <p>Welcome to Star Task, your ultimate productivity companion. Designed with simplicity and efficiency in mind, Star Task empowers you to manage your daily tasks with ease and precision. Whether you're organizing personal chores or professional projects, our app offers a seamless experience to keep you on track.</p>
-            <p>Our unique theme-based design and engaging user interface ensure that managing tasks is not just a necessity but a delightful experience. With Star Task, you can customize your task lists to match your style and mood, making productivity both visually appealing and enjoyable.</p>
-        </section>
-        <section>
+        <section class="features-section">
             <h2>Features</h2>
-            <ul>
-                <li><strong>Easy Task Management:</strong> Intuitively organize, prioritize, and manage your tasks with our user-friendly interface.</li>
-                <li><strong>Beautiful Themes:</strong> Choose from a variety of stunning themes to personalize your task lists and enhance your experience.</li>
-                <li><strong>Reminders and Notifications:</strong> Stay on top of your schedule with timely reminders and notifications for your tasks.</li>
-                <li><strong>Attachment Support:</strong> Add relevant files and documents to your tasks to keep all your information in one place.</li>
-                <li><strong>Live List Sharing:</strong> Share your tasks with others and collaborate on them in real-time, ensuring everyone stays updated instantly.</li>
-            </ul>
-        </section>
-        <section>
-            <h2>Screenshots</h2>
-            <div class="screenshot-gallery">
-                <figure>
-                    <img src="images/dashboard_resized.png" alt="Dashboard Screen" class="screenshot" onclick="openModal('images/dashboard_resized.png')">
-                    <figcaption>Dashboard Screen</figcaption>
-                </figure>
-                <figure>
-                    <img src="images/listview_resized.png" alt="Listview Screen" class="screenshot" onclick="openModal('images/listview_resized.png')">
-                    <figcaption>List Viewing Screen</figcaption>
-                </figure>
-                <figure>
-                    <img src="images/task-details_resized.png" alt="Task Details Screen" class="screenshot" onclick="openModal('images/task-details_resized.png')">
-                    <figcaption>Task Details Screen</figcaption>
-                </figure>
-                <figure>
-                    <img src="images/shared-list_resized.png" alt="Shared List Screen" class="screenshot" onclick="openModal('images/shared-list_resized.png')">
-                    <figcaption>Shared Lists Screen</figcaption>
-                </figure>
-                <figure>
-                    <img src="images/upcoming-items_resized.png" alt="Upcoming Items Screen" class="screenshot" onclick="openModal('images/upcoming-items_resized.png')">
-                    <figcaption>Upcoming Items Screen</figcaption>
-                </figure>
+            <div class="feature-list">
+                <div class="feature-item">
+                    <h3>Easy Task Management</h3>
+                    <p>Intuitively organize, prioritize, and manage your tasks with our user-friendly interface.</p>
+                </div>
+                <div class="feature-item">
+                    <h3>Beautiful Themes</h3>
+                    <p>Choose from a variety of stunning themes to personalize your task lists and enhance your experience.</p>
+                </div>
+                <div class="feature-item">
+                    <h3>Reminders and Notifications</h3>
+                    <p>Stay on top of your schedule with timely reminders and notifications for your tasks.</p>
+                </div>
+                <div class="feature-item">
+                    <h3>Attachment Support</h3>
+                    <p>Add relevant files and documents to your tasks to keep all your information in one place.</p>
+                </div>
+                <div class="feature-item">
+                    <h3>Live List Sharing</h3>
+                    <p>Share your tasks with others and collaborate on them in real-time, ensuring everyone stays updated instantly.</p>
+                </div>
             </div>
         </section>
-        <section>
+        <section class="testimonials-section">
+            <h2>What Our Users Say</h2>
+            <div class="testimonial-item">
+                <p>"Star Task has completely transformed the way I manage my tasks. The live list sharing feature is a game-changer!" - John Doe</p>
+            </div>
+            <div class="testimonial-item">
+                <p>"The themes are beautiful and make using the app a delight. Highly recommend!" - Jane Smith</p>
+            </div>
+        </section>
+        <section class="stay-updated-section">
             <h2>Stay Updated</h2>
             <form action="https://formspree.io/f/xdoqrjpl" method="POST">
                 <label for="email">Email:</label>
@@ -112,35 +106,28 @@
                 <button type="submit">Sign Up for Updates</button>
             </form>
         </section>
-        <section>
+        <section class="download-section">
             <h2>Download</h2>
             <p>Ready to boost your productivity? <a href="https://play.google.com/store/apps/details?id=com.startaskapp">Download Star Task on Google Play</a> today and start transforming the way you manage your tasks.</p>
         </section>
     </main>
     <footer>
         <p>&copy; 2024 Star Task</p>
-    </footer>
-
-    <!-- Modal for full-size images -->
-    <div id="myModal" class="modal">
-        <span class="close" onclick="closeModal()">&times;</span>
-        <div class="modal-content">
-            <img id="modalImage" src="">
+        <nav class="footer-nav">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="features.html">Features</a></li>
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="privacy-policy.html">Privacy Policy</a></li>
+            </ul>
+        </nav>
+        <div class="social-media-buttons">
+            <a href="https://www.facebook.com/startask" target="_blank"><img src="images/facebook-icon.png" alt="Facebook"></a>
+            <a href="https://www.twitter.com/startask" target="_blank"><img src="images/twitter-icon.png" alt="Twitter"></a>
+            <a href="https://www.instagram.com/startask" target="_blank"><img src="images/instagram-icon.png" alt="Instagram"></a>
         </div>
-    </div>
-
-    <script>
-        function openModal(imagePath) {
-            var modal = document.getElementById('myModal');
-            var modalImg = document.getElementById('modalImage');
-            modal.style.display = "block";
-            modalImg.src = imagePath;
-        }
-
-        function closeModal() {
-            var modal = document.getElementById('myModal');
-            modal.style.display = "none";
-        }
-    </script>
+    </footer>
 </body>
 </html>
