@@ -214,3 +214,35 @@ footer nav ul li a {
     width: 24px;
     height: 24px;
 }
+.blog-posts {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 20px;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.blog-posts article {
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 20px;
+    margin-bottom: 20px;
+}
+
+.blog-posts article:last-child {
+    border-bottom: none;
+}
+
+.blog-posts h3 {
+    margin-top: 0;
+}
+
+.read-more {
+    color: #007bff;
+    text-decoration: none;
+}
+
+.read-more:hover {
+    text-decoration: underline;
+}
