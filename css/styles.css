@@ -16,6 +16,13 @@ header {
     text-align: center;
 }
 
+header .logo {
+    max-width: 150px;
+    display: block;
+    margin: 0 auto 10px;
+    border-radius: 50%;
+}
+
 .scrolling-marquee {
     background: #ff9800;
     color: #fff;
@@ -41,16 +48,12 @@ header {
     }
 }
 
-.logo {
-    max-width: 150px;
-    display: block;
-    margin: 0 auto 10px;
-    border-radius: 50%;
-}
-
 nav ul {
     list-style: none;
     padding: 0;
+    display: flex;
+    justify-content: center;
+    gap: 15px;
 }
 
 nav ul li {
@@ -69,15 +72,28 @@ main {
 }
 
 section {
-    margin-bottom: 20px;
+    margin-bottom: 40px;
+    padding: 20px;
+    border-radius: 8px;
+    background-color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .hero-section {
     text-align: center;
+    background-color: #e0f7fa;
+}
+
+.feature-section {
+    background-color: #ffffff;
+}
+
+.feature-section.alternate {
+    background-color: #f4f4f4;
+}
+
+.feature-content {
     padding: 20px;
-    background-color: #fff;
-    border: 1px solid #ddd;
-    border-radius: 8px;
 }
 
 .cta-button {
@@ -194,11 +210,9 @@ footer {
 footer nav ul {
     list-style: none;
     padding: 0;
-}
-
-footer nav ul li {
-    display: inline;
-    margin-right: 10px;
+    display: flex;
+    justify-content: center;
+    gap: 15px;
 }
 
 footer nav ul li a {
@@ -214,6 +228,7 @@ footer nav ul li a {
     width: 24px;
     height: 24px;
 }
+
 .blog-posts {
     display: flex;
     flex-direction: column;
@@ -246,6 +261,7 @@ footer nav ul li a {
 .read-more:hover {
     text-decoration: underline;
 }
+
 .screenshot-gallery {
     display: flex;
     flex-wrap: wrap;
