@@ -71,8 +71,6 @@ section {
     background-color: rgba(0, 0, 0, 0.5);
     border-radius: 8px;
     z-index: 1;
-    color: #fff !important;
-    text-shadow: none !important;
 }
 
 .hero-section .overlay {
@@ -81,21 +79,13 @@ section {
     padding: 20px;
     background-color: rgba(0, 0, 0, 0.5);
     border-radius: 8px;
-    color: #fff !important;
-    text-shadow: none !important;
-}
-
-/* Ensuring text color is consistently white in the hero section */
-.hero-section h2, .hero-section p {
-    color: #fff !important;
-    text-shadow: none !important;
 }
 
 .features-section {
     background-size: cover;
     background-position: center;
     position: relative;
-
+    color: #fff;
 }
 
 .features-section::before {
@@ -115,6 +105,7 @@ section {
     position: relative;
     z-index: 2;
     padding: 20px;
+    color: #fff !important;
     text-shadow: none !important;
 }
 
