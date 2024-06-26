@@ -298,3 +298,35 @@ footer nav ul li a {
 .screenshot-gallery img:hover {
     cursor: pointer;
 }
+.features-section {
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    filter: brightness(1.2); /* Increase brightness */
+}
+
+.features-section .overlay {
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black overlay */
+    padding: 20px;
+    border-radius: 8px;
+    color: #fff; /* White text */
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.features-section .feature-content {
+    text-align: left;
+    max-width: 800px;
+    margin: 0 auto;
+}
