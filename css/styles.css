@@ -84,16 +84,33 @@ section {
     background-color: #e0f7fa;
 }
 
-.feature-section {
-    background-color: #ffffff;
+.features-section {
+    background-image: url('../images/background1new.png');
+    background-size: cover;
+    position: relative;
+    color: #fff;
 }
 
-.feature-section.alternate {
-    background-color: #f4f4f4;
-}
-
-.feature-content {
+.features-section .overlay {
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black */
     padding: 20px;
+    border-radius: 8px;
+    color: #fff;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.features-section .feature-content {
+    text-align: left;
+    max-width: 800px;
+    margin: 0 auto;
 }
 
 .cta-button {
@@ -125,13 +142,6 @@ section {
     font-size: 24px;
     font-weight: bold;
     color: #333;
-}
-
-.features-section {
-    background: #fff;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
 .feature-list {
