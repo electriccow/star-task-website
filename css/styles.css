@@ -55,9 +55,29 @@ section {
 
 .hero-section {
     text-align: center;
-    background-color: #e0f7fa;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    color: #fff;
+}
+
+.hero-section::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 8px;
+    z-index: 1;
+}
+
+.hero-section .overlay {
+    position: relative;
+    z-index: 2;
     padding: 20px;
-    margin-bottom: 40px;
+    background-color: rgba(0, 0, 0, 0.5);
     border-radius: 8px;
 }
 
@@ -75,38 +95,111 @@ section {
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black */
+    background-color: rgba(0, 0, 0, 0.5);
     border-radius: 8px;
     z-index: 1;
 }
 
-.features-section .feature-content {
+.features-section .overlay {
     position: relative;
     z-index: 2;
+    padding: 20px;
 }
 
-.feature-section.alternate {
+.feature-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.feature-item {
+    flex: 1 1 30%;
+    margin: 10px;
+    padding: 10px;
+    background-color: #fff;
+    color: #333;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.testimonials-section {
     background-size: cover;
     background-position: center;
     position: relative;
     color: #fff;
 }
 
-.feature-section.alternate::before {
+.testimonials-section::before {
     content: "";
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black */
+    background-color: rgba(0, 0, 0, 0.5);
     border-radius: 8px;
     z-index: 1;
 }
 
-.feature-section.alternate .feature-content {
+.testimonials-section .overlay {
     position: relative;
     z-index: 2;
+    padding: 20px;
+}
+
+.stay-updated-section {
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    color: #fff;
+}
+
+.stay-updated-section::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 8px;
+    z-index: 1;
+}
+
+.stay-updated-section .overlay {
+    position: relative;
+    z-index: 2;
+    padding: 20px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    margin-bottom: 5px;
+}
+
+input[type="email"] {
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #0056b3;
 }
 
 .cta-button {
@@ -144,4 +237,13 @@ footer nav ul {
 footer nav ul li a {
     color: #fff;
     text-decoration: none;
+}
+
+.social-media-buttons a {
+    margin: 0 10px;
+}
+
+.social-media-buttons img {
+    width: 24px;
+    height: 24px;
 }
