@@ -90,6 +90,13 @@ section {
     color: #fff !important;
     text-shadow: none !important;
 }
+.features-section-index {
+    color: #000; /* Make text black */
+}
+
+.features-section-index .feature-item {
+    color: #000; /* Ensure feature item text is also black */
+}
 
 .features-section {
     background-size: cover;
@@ -133,6 +140,7 @@ section {
     flex-wrap: wrap;
     justify-content: space-between;
 }
+
 
 .feature-item {
     flex: 1 1 30%;
