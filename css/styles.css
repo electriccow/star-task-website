@@ -90,13 +90,6 @@ section {
     color: #fff !important;
     text-shadow: none !important;
 }
-.features-section-index {
-    color: #000; /* Make text black */
-}
-
-.features-section-index .feature-item {
-    color: #000; /* Ensure feature item text is also black */
-}
 
 .features-section {
     background-size: cover;
@@ -119,20 +112,14 @@ section {
     border-radius: inherit; /* Ensure the pseudo-element follows the section's rounded corners */
 }
 
-.features-section .overlay {
-    position: relative;
-    z-index: 2;
-    padding: 20px;
-    background-color: rgba(0, 0, 0, 0.5); /* Ensure the overlay has a background */
-    border-radius: 8px;
-    color: #fff; /* Ensure text color is white */
-}
-
+.features-section .overlay, 
 .features-section .feature-content {
     position: relative;
     z-index: 2;
+    padding: 20px;
     color: #fff !important;
     text-shadow: none !important;
+    border-radius: 8px; /* Apply rounded corners to the overlay */
 }
 
 .feature-list {
@@ -140,7 +127,6 @@ section {
     flex-wrap: wrap;
     justify-content: space-between;
 }
-
 
 .feature-item {
     flex: 1 1 30%;
