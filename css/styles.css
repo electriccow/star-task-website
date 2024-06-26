@@ -55,55 +55,45 @@ section {
 
 .hero-section {
     text-align: center;
+    background: url('../images/background1new.png') no-repeat center center;
     background-size: cover;
-    background-position: center;
-    position: relative;
     color: #fff;
+    padding: 60px 20px;
 }
 
-.hero-section::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.5);
-    border-radius: 8px;
-    z-index: 1;
+.hero-section h2 {
+    font-size: 36px;
+    margin-bottom: 20px;
 }
 
-.hero-section .overlay {
-    position: relative;
-    z-index: 2;
-    padding: 20px;
-    background-color: rgba(0, 0, 0, 0.5);
-    border-radius: 8px;
+.hero-section p {
+    font-size: 18px;
+    max-width: 800px;
+    margin: 0 auto 20px;
+}
+
+.hero-section .cta-button {
+    font-size: 20px;
+    padding: 10px 30px;
 }
 
 .features-section {
-    background-size: cover;
-    background-position: center;
-    position: relative;
+    background: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
     color: #fff;
-}
-
-.features-section::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.5);
+    padding: 40px 20px;
     border-radius: 8px;
-    z-index: 1;
 }
 
-.features-section .overlay {
-    position: relative;
-    z-index: 2;
-    padding: 20px;
+.features-section .feature-content {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.feature-section.alternate {
+    background: rgba(255, 255, 255, 0.8);
+    color: #333;
+    padding: 40px 20px;
+    border-radius: 8px;
 }
 
 .feature-list {
@@ -115,81 +105,56 @@ section {
 .feature-item {
     flex: 1 1 30%;
     margin: 10px;
-    padding: 10px;
-    background-color: #fff;
-    color: #333;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
     border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     text-align: center;
 }
 
 .testimonials-section {
-    background-size: cover;
-    background-position: center;
-    position: relative;
+    background: rgba(0, 0, 0, 0.5);
     color: #fff;
-}
-
-.testimonials-section::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.5);
+    padding: 40px 20px;
     border-radius: 8px;
-    z-index: 1;
+    text-align: center;
 }
 
-.testimonials-section .overlay {
-    position: relative;
-    z-index: 2;
-    padding: 20px;
+.testimonial-item {
+    margin-bottom: 20px;
+    font-style: italic;
 }
 
 .stay-updated-section {
-    background-size: cover;
-    background-position: center;
-    position: relative;
+    background: rgba(0, 0, 0, 0.5);
     color: #fff;
-}
-
-.stay-updated-section::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.5);
+    padding: 40px 20px;
     border-radius: 8px;
-    z-index: 1;
+    text-align: center;
+    max-width: 600px;
+    margin: 0 auto;
 }
 
-.stay-updated-section .overlay {
-    position: relative;
-    z-index: 2;
-    padding: 20px;
-}
-
-form {
+.stay-updated-section form {
     display: flex;
     flex-direction: column;
+    align-items: center;
 }
 
-label {
+.stay-updated-section label {
     margin-bottom: 5px;
 }
 
-input[type="email"] {
+.stay-updated-section input[type="email"] {
     padding: 10px;
     margin-bottom: 10px;
     border: 1px solid #ddd;
     border-radius: 4px;
+    width: 100%;
+    max-width: 400px;
 }
 
-button {
+.stay-updated-section button {
     background-color: #007bff;
     color: white;
     border: none;
@@ -198,7 +163,7 @@ button {
     cursor: pointer;
 }
 
-button:hover {
+.stay-updated-section button:hover {
     background-color: #0056b3;
 }
 
