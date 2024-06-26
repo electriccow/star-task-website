@@ -100,10 +100,13 @@ section {
     z-index: 1;
 }
 
-.features-section .overlay {
+.features-section .overlay, 
+.features-section .feature-content {
     position: relative;
     z-index: 2;
     padding: 20px;
+    color: #fff !important;
+    text-shadow: none !important;
 }
 
 .feature-list {
@@ -171,6 +174,15 @@ section {
     position: relative;
     z-index: 2;
     padding: 20px;
+}
+
+/* Ensuring text color is consistently white in relevant sections */
+.hero-section h2, .hero-section p,
+.features-section h3, .features-section h4, .features-section p, .features-section ul li,
+.testimonials-section h2, .testimonials-section p,
+.stay-updated-section h2, .stay-updated-section p {
+    color: #fff !important;
+    text-shadow: none !important;
 }
 
 form {
