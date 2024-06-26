@@ -75,25 +75,51 @@ section {
     margin-bottom: 40px;
     padding: 20px;
     border-radius: 8px;
-    background-color: #fff;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background-size: cover;
+    background-position: center;
+    position: relative;
 }
 
-.hero-section {
-    text-align: center;
-    background-color: #e0f7fa;
-}
-
-.feature-section {
-    background-color: #ffffff;
-}
-
-.feature-section.alternate {
-    background-color: #f4f4f4;
-}
-
-.feature-content {
+.overlay {
+    background-color: rgba(255, 255, 255, 0.7); /* Semi-transparent white */
     padding: 20px;
+    border-radius: 8px;
+    color: #333; /* Darker text */
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.overlay .feature-content {
+    text-align: left;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+footer {
+    background: #333;
+    color: #fff;
+    text-align: center;
+    padding: 10px 0;
+}
+
+footer nav ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+footer nav ul li a {
+    color: #fff;
+    text-decoration: none;
 }
 
 .cta-button {
@@ -128,10 +154,29 @@ section {
 }
 
 .features-section {
-    background: #fff;
+    background: rgba(255, 255, 255, 0.7); /* Adjust this value to lighten the background overlay */
     padding: 20px;
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    position: relative;
+    background-size: cover;
+    background-position: center;
+}
+
+.features-section .overlay {
+    background-color: rgba(0, 0, 0, 0.5); /* Adjust this value for better text contrast */
+    padding: 20px;
+    border-radius: 8px;
+    color: #fff; /* White text */
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 .feature-list {
@@ -297,36 +342,4 @@ footer nav ul li a {
 
 .screenshot-gallery img:hover {
     cursor: pointer;
-}
-.features-section {
-    background: #fff;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    background-size: cover;
-    background-position: center;
-    position: relative;
-    filter: brightness(1.2); /* Increase brightness */
-}
-
-.features-section .overlay {
-    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black overlay */
-    padding: 20px;
-    border-radius: 8px;
-    color: #fff; /* White text */
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
-
-.features-section .feature-content {
-    text-align: left;
-    max-width: 800px;
-    margin: 0 auto;
 }
