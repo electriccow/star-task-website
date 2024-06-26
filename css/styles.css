@@ -126,7 +126,7 @@ section {
     flex: 1 1 30%;
     margin: 10px;
     padding: 20px;
-    background-color: rgba(0, 0, 0, 0.5);
+    background-color: rgba(0, 0, 0, 0.85);
     border: 1px solid #ddd;
     border-radius: 8px;
     text-align: center;
