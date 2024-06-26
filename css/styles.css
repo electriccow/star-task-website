@@ -20,6 +20,7 @@ header .logo {
     max-width: 150px;
     display: block;
     margin: 0 auto 10px;
+<<<<<<< HEAD
     border-radius: 50%;
 }
 
@@ -46,6 +47,8 @@ header .logo {
     100% {
         transform: translateX(-100%);
     }
+=======
+>>>>>>> 807b7a314b7e89d369dd33103d1d9b94e42143cc
 }
 
 nav ul {
@@ -56,11 +59,14 @@ nav ul {
     gap: 15px;
 }
 
+<<<<<<< HEAD
 nav ul li {
     display: inline;
     margin-right: 10px;
 }
 
+=======
+>>>>>>> 807b7a314b7e89d369dd33103d1d9b94e42143cc
 nav ul li a {
     color: #fff;
     text-decoration: none;
@@ -81,10 +87,17 @@ section {
 }
 
 .overlay {
+<<<<<<< HEAD
     background-color: rgba(255, 255, 255, 0.7); /* Semi-transparent white */
     padding: 20px;
     border-radius: 8px;
     color: #333; /* Darker text */
+=======
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black */
+    padding: 20px;
+    border-radius: 8px;
+    color: #fff; /* White text */
+>>>>>>> 807b7a314b7e89d369dd33103d1d9b94e42143cc
     position: absolute;
     top: 0;
     left: 0;
@@ -121,6 +134,7 @@ footer nav ul li a {
     color: #fff;
     text-decoration: none;
 }
+<<<<<<< HEAD
 
 .cta-button {
     display: inline-block;
@@ -343,3 +357,5 @@ footer nav ul li a {
 .screenshot-gallery img:hover {
     cursor: pointer;
 }
+=======
+>>>>>>> 807b7a314b7e89d369dd33103d1d9b94e42143cc
