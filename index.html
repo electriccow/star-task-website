@@ -55,13 +55,6 @@
         </nav>
     </header>
     <main>
-        <section class="hero-section" style="background-image: url('images/background1.png');">
-            <div class="overlay">
-                <h2>Welcome to Star Task</h2>
-                <p>Your ultimate productivity companion. Designed with simplicity and efficiency in mind, Star Task empowers you to manage your daily tasks with ease and precision.</p>
-                <a href="https://play.google.com/store/apps/details?id=com.startaskapp" class="cta-button">Download Now</a>
-            </div>
-        </section>
         <section class="content-container">
             <div class="countdown-section">
                 <h2>Open Beta Launch Countdown</h2>
@@ -112,38 +105,22 @@
                 var modal = document.getElementById("imageModal");
                 modal.style.display = "none";
             }
-        
-            function countdown() {
-                const launchDate = new Date('July 12, 2024 00:00:00').getTime();
-                const now = new Date().getTime();
-                const distance = launchDate - now;
-                const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-                const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-                const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-                const seconds = Math.floor((distance % (1000 * 60)) / 1000);
-                document.getElementById('countdown').innerHTML = `${days}d ${hours}h ${minutes}m ${seconds}s`;
-                if (distance < 0) {
-                    document.getElementById('countdown').innerHTML = 'LAUNCHED!';
-                }
-            }
-            setInterval(countdown, 1000);
         </script>
         
         <style>
             .content-container {
                 display: flex;
-                justify-content: space-between;
-                align-items: flex-start;
                 flex-wrap: wrap;
+                justify-content: center;
+                gap: 20px;
             }
-        
+
             .countdown-section {
                 text-align: center;
                 margin: 50px 0;
-                flex: 1;
-                max-width: 300px;
+                flex: 1 1 300px;
             }
-        
+
             .countdown-timer {
                 font-size: 2em;
                 color: #fff;
@@ -152,22 +129,24 @@
                 padding: 20px;
                 border-radius: 10px;
             }
-        
+
             .screenshot-gallery-section {
-                flex: 3;
+                flex: 2 1 600px;
             }
-        
+
             .screenshot-gallery {
                 display: flex;
                 flex-wrap: wrap;
                 gap: 10px;
+                justify-content: center;
             }
-        
+
             .screenshot-gallery figure {
                 margin: 5px;
                 text-align: center;
+                flex: 1 1 100px;
             }
-        
+
             .screenshot {
                 cursor: pointer;
                 max-width: 100px;
@@ -175,11 +154,11 @@
                 border-radius: 8px;
                 transition: transform 0.2s;
             }
-        
+
             .screenshot:hover {
                 transform: scale(1.05);
             }
-        
+
             .modal {
                 display: none;
                 position: fixed;
@@ -192,13 +171,13 @@
                 overflow: auto;
                 background-color: rgba(0, 0, 0, 0.9);
             }
-        
+
             .modal-content {
                 margin: auto;
                 display: block;
                 max-width: 80%;
             }
-        
+
             .close {
                 position: absolute;
                 top: 15px;
@@ -209,15 +188,26 @@
                 transition: 0.3s;
                 cursor: pointer;
             }
-        
+
             .close:hover,
             .close:focus {
                 color: #bbb;
                 text-decoration: none;
                 cursor: pointer;
             }
+
+            @media (max-width: 768px) {
+                .content-container {
+                    flex-direction: column;
+                    align-items: center;
+                }
+
+                .countdown-section, 
+                .screenshot-gallery-section {
+                    flex: 1 1 100%;
+                }
+            }
         </style>
-        
         <section class="features-section" style="background-image: url('images/background2.png');">
             <div class="overlay">
                 <h2>Features</h2>
