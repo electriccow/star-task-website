@@ -48,17 +48,25 @@
         <section class="features-section" style="background-image: url('images/background1.png');">
             <div class="overlay" style="background: rgba(0, 0, 0, 0.5); padding: 40px 20px;">
                 <div class="feature-content">
-                    <form action="https://formspree.io/f/xdoqrjpl" method="POST">
-                        <label for="name" style="color: #fff;">Name:</label>
-                        <input type="text" id="name" name="name" required>
+                    <form action="https://formspree.io/f/xdoqrjpl" method="POST" style="max-width: 600px; margin: 0 auto;">
+                        <div style="margin-bottom: 20px;">
+                            <label for="name" style="color: #fff; display: block; margin-bottom: 5px;">Name:</label>
+                            <input type="text" id="name" name="name" required style="width: 100%; padding: 10px; border-radius: 8px; border: none; box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);">
+                        </div>
                         
-                        <label for="email" style="color: #fff;">Email:</label>
-                        <input type="email" id="email" name="email" required>
+                        <div style="margin-bottom: 20px;">
+                            <label for="email" style="color: #fff; display: block; margin-bottom: 5px;">Email:</label>
+                            <input type="email" id="email" name="email" required style="width: 100%; padding: 10px; border-radius: 8px; border: none; box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);">
+                        </div>
                         
-                        <label for="message" style="color: #fff;">Message:</label>
-                        <textarea id="message" name="message" required></textarea>
+                        <div style="margin-bottom: 20px;">
+                            <label for="message" style="color: #fff; display: block; margin-bottom: 5px;">Message:</label>
+                            <textarea id="message" name="message" required style="width: 100%; padding: 10px; border-radius: 8px; border: none; box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); height: 150px;"></textarea>
+                        </div>
                         
-                        <button type="submit">Send</button>
+                        <button type="submit" style="background-color: #007bff; color: white; padding: 10px 20px; border: none; border-radius: 8px; cursor: pointer; transition: background-color 0.3s;">
+                            Send
+                        </button>
                     </form>
                 </div>
             </div>

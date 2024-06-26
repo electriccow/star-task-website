@@ -202,22 +202,28 @@ form {
 
 label {
     margin-bottom: 5px;
+    color: #fff; /* To ensure the labels are visible on the dark background */
 }
 
-input[type="email"] {
+input[type="text"], input[type="email"], textarea {
+    width: 100%;
     padding: 10px;
     margin-bottom: 10px;
-    border: 1px solid #ddd;
-    border-radius: 4px;
+    border-radius: 8px;
+    border: none;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    font-size: 16px;
 }
 
 button {
     background-color: #007bff;
     color: white;
-    border: none;
     padding: 10px 20px;
-    border-radius: 4px;
+    border: none;
+    border-radius: 8px;
     cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s;
 }
 
 button:hover {
