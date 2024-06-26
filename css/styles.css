@@ -81,6 +81,12 @@ section {
     border-radius: 8px;
 }
 
+/* Ensuring text color is consistently white in the hero section */
+.hero-section h2, .hero-section p {
+    color: #fff !important;
+    text-shadow: none !important;
+}
+
 .features-section {
     background-size: cover;
     background-position: center;
