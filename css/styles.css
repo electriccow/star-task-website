@@ -49,6 +49,34 @@ section {
     position: relative;
 }
 
+.hero-section {
+    background-image: url('images/background1.png');
+}
+
+.countdown-section {
+    background-image: url('images/background1.png');
+}
+
+.features-section {
+    background-image: url('images/background1.png');
+}
+
+.testimonials-section {
+    background-image: url('images/background1.png');
+}
+
+.stay-updated-section {
+    background-image: url('images/background1.png');
+}
+
+.download-section {
+    background-image: url('images/background1.png');
+}
+
+.screenshot-gallery-section {
+    background-image: url('images/background1.png');
+}
+
 .overlay {
     background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black */
     padding: 20px;
@@ -212,7 +240,7 @@ footer nav ul li a {
     margin: 0 10px;
 }
 
-.social-media-buttons img {
+social-media-buttons img {
     width: 24px;
     height: 24px;
 }
