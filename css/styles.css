@@ -187,27 +187,6 @@ button:hover {
     background-color: #0056b3;
 }
 
-footer {
-    background: #333;
-    color: #fff;
-    text-align: center;
-    padding: 10px 0;
-    margin-top: auto;
-}
-
-footer nav ul {
-    list-style: none;
-    padding: 0;
-    display: flex;
-    justify-content: center;
-    gap: 15px;
-}
-
-footer nav ul li a {
-    color: #fff;
-    text-decoration: none;
-}
-
 .social-media-buttons a {
     margin: 0 10px;
 }
