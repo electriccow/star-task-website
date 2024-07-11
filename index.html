@@ -20,7 +20,7 @@
     <!-- Countdown Timer Script -->
     <script>
         function countdown() {
-            const launchDate = new Date('July 12, 2024 00:00:00').getTime();
+            const launchDate = new Date('July 26, 2024 00:00:00').getTime();
             const now = new Date().getTime();
             const distance = launchDate - now;
             const days = Math.floor(distance / (1000 * 60 * 60 * 24));
@@ -294,3 +294,30 @@
     </footer>
 </body>
 </html>
+
+R.drawable.ic_logo
+
+// Benefits List
+OutlinedTextField(
+    value = """
+        - Access to seasonal premium themes, and task details
+        - Live List Sharing
+        - Cloud backup and sync across devices
+        - Recurring tasks, attachments, labels
+        - 40 lists with 80 tasks per list
+    """.trimIndent(),
+    onValueChange = {},
+    textStyle = MaterialTheme.typography.bodyMedium.copy(color = MaterialTheme.colorScheme.onSurface),
+    colors = TextFieldDefaults.outlinedTextFieldColors(
+        cursorColor = MaterialTheme.colorScheme.primary,
+        focusedBorderColor = MaterialTheme.colorScheme.primary,
+        unfocusedBorderColor = MaterialTheme.colorScheme.onSurface.copy(alpha = ContentAlpha.disabled),
+        focusedLabelColor = MaterialTheme.colorScheme.primary.copy(alpha = ContentAlpha.high),
+        unfocusedLabelColor = MaterialTheme.colorScheme.onSurface.copy(alpha = ContentAlpha.medium)
+    ),
+    shape = RoundedCornerShape(16.dp), // Rounded corners
+    modifier = Modifier
+        .fillMaxWidth()
+        .background(color = MaterialTheme.colorScheme.background)
+        .padding(horizontal = 16.dp, vertical = 8.dp) // Adjust padding to fit your design
+)
