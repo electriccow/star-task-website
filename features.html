@@ -1,322 +1,397 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Star Task - Features</title>
-    <link rel="stylesheet" href="css/styles.css">
-    <!-- Open Graph Meta Tags -->
-    <meta property="og:title" content="Star Task - Features">
-    <meta property="og:description" content="Explore the comprehensive features of Star Task, your ultimate productivity companion.">
-    <meta property="og:image" content="https://startaskapp.com/images/app-icon.png">
-    <meta property="og:url" content="https://startaskapp.com/features.html">
-    <meta property="og:type" content="website">
-    <!-- Twitter Card Meta Tags -->
-    <meta name="twitter:card" content="summary">
-    <meta name="twitter:title" content="Star Task - Features">
-    <meta name="twitter:description" content="Explore the comprehensive features of Star Task, your ultimate productivity companion.">
-    <meta name="twitter:image" content="https://startaskapp.com/images/app-icon.png">
-    <meta name="twitter:url" content="https://startaskapp.com/features.html">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Star Task – Features</title>
+  <link rel="stylesheet" href="css/styles.css" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Star Task – Features" />
+  <meta property="og:description" content="AI lists from Text/Voice/Docs/Links, smart iOS reminders (Banner + Sound / Banner Silent), live sharing, themes, stats, and more." />
+  <meta property="og:image" content="https://startaskapp.com/images/app-icon.png" />
+  <meta property="og:url" content="https://startaskapp.com/features.html" />
+  <meta property="og:type" content="website" />
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Star Task – Features" />
+  <meta name="twitter:description" content="Create lists from Text/Voice/Docs/Links. Configure repeating iOS reminders. Share live. Customize themes. Track stats." />
+  <meta name="twitter:image" content="https://startaskapp.com/images/app-icon.png" />
+  <meta name="twitter:url" content="https://startaskapp.com/features.html" />
+
+  <!-- JSON-LD (basic) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "MobileApplication",
+    "name": "Star Task",
+    "operatingSystem": "iOS",
+    "applicationCategory": "ProductivityApplication",
+    "description": "AI-powered task manager with voice/doc/link ingestion, smart reminders, live sharing, themes, and stats.",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD"
+    }
+  }
+  </script>
+  <style>
+    /* small in-page helpers so this file is portable even without css/styles.css updates */
+    .logo { max-height: 56px; }
+    header, footer { display:flex; flex-direction:column; align-items:center; gap:.5rem; padding:1rem; }
+    nav ul { display:flex; list-style:none; gap:1rem; padding:0; margin:0; flex-wrap:wrap; }
+    main { display:block; }
+    .hero-section, .features-section { background-size:cover; background-position:center; }
+    .overlay { background: linear-gradient(180deg, rgba(0,0,0,.35), rgba(0,0,0,.35)); }
+    .feature-content { max-width: 1100px; margin: 0 auto; padding: clamp(1rem, 2vw + .5rem, 2.25rem); color: #fff; }
+    .feature-content h2, .feature-content h3 { margin-top:0; }
+    .feature-content ul { line-height:1.6; }
+    .alternate .overlay { background: linear-gradient(180deg, rgba(0,0,0,.25), rgba(0,0,0,.55)); }
+    .toc { background: rgba(0,0,0,.5); border-radius: 12px; padding: 1rem; }
+    .toc a { color: #fff; text-decoration: underline; }
+    .kicker { letter-spacing: .08em; text-transform: uppercase; font-weight: 700; opacity:.9; }
+    .badge { display:inline-block; padding:.2rem .5rem; border:1px solid rgba(255,255,255,.5); border-radius:999px; font-size:.8rem; }
+    .grid { display:grid; gap:1rem; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); }
+    .muted { opacity: .9; }
+    .cardish { background: rgba(255,255,255,.08); border:1px solid rgba(255,255,255,.12); border-radius:16px; padding:1rem; }
+    .mono { font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace; }
+    .sr-only { position:absolute; width:1px; height:1px; padding:0; margin:-1px; overflow:hidden; clip:rect(0,0,0,0); white-space:nowrap; border:0; }
+  </style>
 </head>
 <body>
-    <header>
-        <img src="images/logo.png" alt="Star Task Logo" class="logo">
-        <h1>Star Task Features</h1>
-        <nav>
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="about.html">About</a></li>
-                <li><a href="features.html">Features</a></li>
-                <li><a href="blog.html">Blog</a></li>
-                <li><a href="contact.html">Contact</a></li>
-                <li><a href="privacy-policy.html">Privacy Policy</a></li>
-            </ul>
-        </nav>
-    </header>
-    <main>
-    <!-- Hero Section -->
-    <section class="hero-section" style="background-image: url('images/background3.png');">
-        <div class="overlay">
-            <div class="feature-content">
-                <h2>Experience the Power of Star Task</h2>
-                <p>Your ultimate AI-powered productivity companion, blending cutting-edge technology with effortless task management.</p>
-            </div>
+  <header>
+    <img src="images/logo.png" alt="Star Task Logo" class="logo" />
+    <h1>Star Task Features</h1>
+    <nav aria-label="Primary">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="features.html" aria-current="page">Features</a></li>
+        <li><a href="blog.html">Blog</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="privacy-policy.html">Privacy Policy</a></li>
+        <li><a href="terms.html">Terms</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <!-- Hero -->
+    <section id="top" class="hero-section" style="background-image:url('images/background3.png')">
+      <div class="overlay">
+        <div class="feature-content">
+          <p class="kicker">iOS + KMP</p>
+          <h2>AI‑Powered Productivity, Built for Momentum</h2>
+          <p class="muted">Create lists from Text, Voice, Documents, or Links. Configure intelligent, repeating iOS reminders (<strong>Banner + Sound</strong> / <strong>Banner (Silent)</strong>). Share live. Customize everything. Track your stats.</p>
+
+          <div class="toc" aria-labelledby="toc-heading">
+            <h3 id="toc-heading" class="sr-only">On this page</h3>
+            <nav aria-label="In‑page">
+              <ul>
+                <li><a href="#start">Frictionless Start</a></li>
+                <li><a href="#ai-modal">AI Modal: Inputs & List Types</a></li>
+                <li><a href="#dashboard">Lists & List View</a></li>
+                <li><a href="#task-detail">Task Detail</a></li>
+                <li><a href="#reminders">iOS Reminders</a></li>
+                <li><a href="#upcoming">Upcoming Due Dates</a></li>
+                <li><a href="#sharing">Live List Sharing</a></li>
+                <li><a href="#display">Display Settings</a></li>
+                <li><a href="#themes">Themes & Star Chaos</a></li>
+                <li><a href="#stats">Profile & Stats</a></li>
+                <li><a href="#monetization">Free vs Premium & Minutes</a></li>
+              </ul>
+            </nav>
+          </div>
         </div>
+      </div>
     </section>
 
-        <section class="features-section" style="background-image: url('images/background1.png');">
-            <div class="overlay">
-                <div class="feature-content">
-                    <h3>Easy Task Management</h3>
-                    <p>Star Task provides a user-friendly interface to help you organize, prioritize, and manage your tasks efficiently. Here are some key features:</p>
-                    <ul>
-                        <li><strong>Task Creation:</strong> Quickly create tasks with just a few taps. Add details such as due dates, priority levels, and notes to ensure everything is covered.</li>
-                        <li><strong>Task Organization:</strong> Group tasks into lists for better organization. Drag and drop tasks to reorder them based on priority or due date.</li>
-                        <li><strong>Expand/Collapse Tasks:</strong> Use the expand/collapse button to easily manage long tasks, allowing you to shrink or expand tasks as needed to focus on what's important.</li>
-                        <li><strong>Task Completion:</strong> Mark tasks as complete with a simple tap. Completed tasks are moved to a separate section for easy reference.</li>
-                        <li><strong>Thumbnail Previews:</strong> View thumbnail previews of tasks for quick identification.</li>
-                    </ul>
-                </div>
-            </div>
-        </section>
-
-        <section class="features-section alternate" style="background-image: url('images/background2.png');">
-            <div class="overlay">
-                <div class="feature-content">
-                    <h3>Beautiful Themes</h3>
-                    <p>Star Task offers a variety of stunning themes to personalize your task management experience. Each theme supports both light and dark modes, letting you customize the look and feel of the app to match your style and mood:</p>
-                    <ul>
-                        <li><strong>Daybreak:</strong> A bright and cheerful theme designed to inspire positivity and energy. Available for free users.</li>
-                        <li><strong>Alive:</strong> A vibrant and dynamic theme that energizes your workflow. Available to subscribers.</li>
-                        <li><strong>Charge:</strong> A bold and motivating theme that keeps you focused on your goals. Available to subscribers.</li>
-                        <li><strong>Elemental Green:</strong> A soothing green theme that fosters calm and balance during busy days. Available to subscribers.</li>
-                        <li><strong>Peach:</strong> A warm and elegant theme that adds a touch of softness to your tasks. Available to subscribers.</li>
-                        <li><strong>Rejuvenating Whisper:</strong> A refreshing and tranquil theme perfect for staying relaxed and productive. Available to subscribers.</li>
-                        <li><strong>Withering Whisper:</strong> A mysterious and captivating theme that brings depth and intrigue to task management. Available to subscribers.</li>
-                        <li><strong>Cosmic Dawn:</strong> A radiant and cosmic-themed experience, available for free to all users who download Star Task or purchase a subscription. Celebrate productivity in style!</li>
-                    </ul>
-                </div>
-            </div>
-        </section>
-            <!-- Star Chaos Themes -->
-    <section class="features-section alternate" style="background-image: url('images/background4.png');">
-        <div class="overlay">
-            <div class="feature-content">
-                <h3>Star Chaos Animated Themes</h3>
-                <ul>
-                    <li><strong>Engaging Animations:</strong> Stunning 60 FPS animations trigger upon app launch or refresh.</li>
-                    <li><strong>Rewarding Login Streaks:</strong> Unlock exclusive Star Chaos themes by maintaining daily logins (Cosmic Dawn, Alive, Daybreak).</li>
-                    <li><strong>Theme Collection:</strong> View your owned themes with visual previews in the dedicated Star Chaos Collection card.</li>
-                </ul>
-            </div>
+    <!-- Start / Onboarding / Dashboard -->
+    <section id="start" class="features-section" style="background-image:url('images/background1.png')">
+      <div class="overlay">
+        <div class="feature-content">
+          <h3>Frictionless Start</h3>
+          <ul>
+            <li><strong>Sign in with Apple or Google:</strong> Secure OAuth. You stay signed in until you log out from Settings.</li>
+            <li><strong>Onboarding Box:</strong> When you have 0 lists, a scrollable guide walks you through the basics.</li>
+            <li><strong>Dashboard:</strong> All lists live here—beautiful, draggable, and saved locally for a fast feel.</li>
+            <li><strong>Top App Bar:</strong> Profile avatar, <em>Edit</em> (rename / delete / merge lists), Search, and the <strong>AI</strong> button.</li>
+            <li><strong>Quick Create:</strong> The “+” adds a list with smart name suggestions. A secondary mic button (tunable in Display Settings) speeds voice workflows.</li>
+          </ul>
         </div>
+      </div>
     </section>
 
-        <section class="features-section" style="background-image: url('images/background2.png');">
-            <div class="overlay">
-                <div class="feature-content">
-                    <h3>AI-Powered Features</h3>
-                    <p>Star Task leverages cutting-edge AI technology to transform your productivity experience. Our AI features are more advanced than ever:</p>
-                    <ul>
-                        <li><strong>Natural Language Reminders:</strong> Speak naturally and let AI set persistent alarms and notifications—works flawlessly even in silent or DND modes.</li>
-                        <li><strong>AI Text List:</strong> Effortlessly create task lists by entering a prompt. The AI generates context-aware tasks with optional reminders, tailored to your needs.</li>
-                        <li><strong>AI Voice List and Note Taking:</strong> Capture thoughts or meeting notes through voice-to-text technology. Star Task intelligently organizes them into actionable task lists, complete with reminders where applicable.</li>
-                        <li><strong>Custom API Key Support:</strong> Use your own OpenAI API key for a personalized experience. Gain control over your AI interactions and optimize for performance.</li>
-                        <li><strong>AI Model Selection:</strong> Choose between GPT-3.5 and GPT-4.0 for tailored results. Enjoy flexibility and precision based on your needs and preferences.</li>
-                        <li><strong>Reminder Type Options:</strong> Customize AI-powered reminders with choices like:
-                            <ul>
-                                <li><strong>Auto:</strong> Let Star Task decide the best reminder type for you.</li>
-                                <li><strong>Alarm:</strong> Set alarms to ensure critical tasks aren't missed.</li>
-                                <li><strong>Notification:</strong> Opt for subtle notifications for non-urgent tasks.</li>
-                            </ul>
-                        </li>
-                        <li><strong>AI-Powered Reminders:</strong> Currently available for AI Quick List and AI Note Taking. These reminders integrate seamlessly into your workflow, ensuring you stay on top of your tasks and ideas.</li>
-                    </ul>
-                </div>
+    <!-- AI Modal: Text / Voice / Document / Link & List Types -->
+    <section id="ai-modal" class="features-section alternate" style="background-image:url('images/background2.png')">
+      <div class="overlay">
+        <div class="feature-content">
+          <h3>AI Modal · Four Inputs, Four List Types</h3>
+          <p>Tap the AI button to open a sleek bottom sheet with four input tabs and powerful list types.</p>
+          <div class="grid">
+            <div class="cardish">
+              <h4>Inputs</h4>
+              <ul>
+                <li><strong>AI Text</strong>: paste or type, then submit.</li>
+                <li><strong>AI Voice</strong>: <em>Quick Command</em> (instant) or <em>Record &amp; Transcribe</em> (full note‑taking). Shows remaining minutes and lets you pick audio files.</li>
+                <li><strong>AI Document</strong>: upload <span class="mono">.docx</span> or <span class="mono">.pdf</span> and auto‑generate a list.</li>
+                <li><strong>AI Link</strong>: paste a URL and turn it into tasks.</li>
+              </ul>
             </div>
-        </section>
-        <section class="features-section" style="background-image: url('images/background3.png');">
-            <div class="overlay">
-                <div class="feature-content">
-                    <h3>Reminders and Notifications</h3>
-                    <p>Stay organized with Star Task's advanced reminders and notifications:</p>
-                    <ul>
-                        <li><strong>AI-Powered Reminder Customization:</strong> Choose how AI-powered reminders behave for your tasks using Auto, Alarm, Notification, or Both.</li>
-                        <li><strong>Due Date Reminders:</strong> Receive timely alerts as deadlines approach.</li>
-                        <li><strong>Exact Alarm Integration:</strong> Enjoy precise alarms that function even in Do Not Disturb or silent mode. Customize snooze options and alarm sounds to fit your style.</li>
-                        <li><strong>Daily Repeat Alarms:</strong> Set daily alarms for recurring tasks like medication or workout reminders.</li>
-                        <li><strong>Flexible Scheduling:</strong> Use advanced options to schedule reminders in advance, repeat on custom schedules, or set reminders exactly when tasks are due.</li>
-                    </ul>
-                </div>
+            <div class="cardish">
+              <h4>List Types</h4>
+              <ul>
+                <li><strong>Bullet Point List</strong>: classic task list; toggle optional notes; choose 5 / 10 / 15 items.</li>
+                <li><strong>Reminder List</strong>: sub‑dropdown for <em>Auto</em>, <em>Banner + Sound</em>, <em>Banner (Silent)</em>.</li>
+                <li><strong>Summary List</strong>: condense content into actionable tasks.</li>
+                <li><strong>Brainstorm List</strong>: expand ideas with chip counts (10 / 14 / 20).</li>
+              </ul>
             </div>
-        </section>
-        <section class="features-section" style="background-image: url('images/background5.png');">
-            <div class="overlay">
-                <div class="feature-content">
-                    <h3>AI Note Taking</h3>
-                    <p>Turn your thoughts into actionable lists with AI-powered note-taking:</p>
-                    <ul>
-                        <li><strong>Voice-to-Text Technology:</strong> Speak naturally, and Star Task transcribes your words in real-time.</li>
-                        <li><strong>Smart Organization:</strong> Automatically structures notes into task lists, complete with deadlines and optional reminders.</li>
-                        <li><strong>Context-Aware Suggestions:</strong> Identifies key points in your notes and suggests reminders, subtasks, or deadlines.</li>
-                        <li><strong>Seamless Integration:</strong> Add AI-generated lists directly into your task manager for easy access across all devices.</li>
-                        <li><strong>Enhanced Reminders:</strong> AI Note Taking includes optional AI-powered reminders for your transcriptions.</li>
-                    </ul>
-                    <p>Whether you're brainstorming, planning, or capturing meeting notes, Star Task's AI Note Taking elevates your productivity.</p>
-                </div>
-            </div>
-        </section>
-        <section class="features-section alternate" style="background-image: url('images/background4.png');">
-            <div class="overlay">
-                <div class="feature-content">
-                    <h3>Subtasks</h3>
-                    <p>Break down larger tasks into smaller, manageable subtasks to make progress more achievable:</p>
-                    <ul>
-                        <li><strong>Task Breakdown:</strong> Create subtasks to break down complex tasks into more manageable steps.</li>
-                        <li><strong>Clickable Links:</strong> Add clickable links to your subtasks, making it easy to access important references, resources, or web pages directly from your task list.</li>
-                        <li><strong>Progress Tracking:</strong> Track your progress as you complete each subtask and move closer to achieving your main task.</li>
-                    </ul>
-                </div>
-            </div>
-        </section>
-        <section class="features-section" style="background-image: url('images/background5.png');">
-            <div class="overlay">
-                <div class="feature-content">
-                    <h3>Live List Sharing</h3>
-                    <p>Collaborate with others in real-time using Star Task's live list sharing feature:</p>
-                    <ul>
-                        <li><strong>Share Lists:</strong> Share your task lists with others by entering their email addresses.</li>
-                        <li><strong>Real-Time Collaboration:</strong> Collaborate on tasks in real-time, with changes instantly visible to all members.</li>
-                        <li><strong>Permission Management:</strong> Manage permissions to control who can view or edit your shared lists.</li>
-                        <li><strong>Invitation Management:</strong> Send and manage invitations for shared lists, track pending invites, and accept or reject incoming invites.</li>
-                    </ul>
-                </div>
-            </div>
-        </section>
-        <section class="features-section alternate" style="background-image: url('images/background4.png');">
-            <div class="overlay">
-                <div class="feature-content">
-                    <h3>Task Duplication</h3>
-                    <p>Quickly create recurring tasks with Star Task's task duplication feature:</p>
-                    <ul>
-                        <li><strong>Duplicate Tasks:</strong> Create duplicates of tasks with a single tap, setting a new due date based on the duplication frequency.</li>
-                        <li><strong>Duplication Frequency:</strong> Choose from various duplication frequencies, including daily, weekly, and monthly.</li>
-                        <li><strong>Efficient Task Management:</strong> Extend the lifespan of your task lists without manually recreating each task.</li>
-                    </ul>
-                </div>
-            </div>
-        </section>
-    <!-- Cloud Sync & Backup -->
-    <section class="features-section" style="background-image: url('images/background2.png');">
-        <div class="overlay">
-            <div class="feature-content">
-                <h3>Reliable Cloud Sync & Backup</h3>
-                <ul>
-                    <li><strong>Automatic Backup:</strong> Tasks and reminders are always safely backed up to the cloud.</li>
-                    <li><strong>Device Synchronization:</strong> Seamlessly access your data from any device, anywhere.</li>
-                    <li><strong>Flexible Restore Options:</strong> Restore tasks and reminders effortlessly after device changes.</li>
-                </ul>
-            </div>
+          </div>
         </div>
+      </div>
     </section>
 
-        <section class="features-section" style="background-image: url('images/background3.png');">
-            <div class="overlay">
-                <div class="feature-content">
-                    <h3>Account and Content Management</h3>
-                    <p>Manage your account and content with ease:</p>
-                    <ul>
-                        <li><strong>Account Deletion:</strong> Delete your account and all associated data with a single tap.</li>
-                        <li><strong>Content Deletion:</strong> Choose to delete only your content while keeping your account active.</li>
-                        <li><strong>Privacy and Security:</strong> Sign in securely using Google OAuth to protect your data.</li>
-                    </ul>
-                </div>
-            </div>
-        </section>
-        <section class="features-section alternate" style="background-image: url('images/background4.png');">
-            <div class="overlay">
-                <div class="feature-content">
-                    <h3>Advanced Task Features</h3>
-                    <p>Supercharge your productivity with Star Task's advanced task management tools:</p>
-                    <ul>
-                        <li><strong>Priority Levels:</strong> Focus on what matters most by assigning priority levels to your tasks, from low to urgent.</li>
-                        <li><strong>Labels:</strong> Categorize and organize tasks more effectively with labels, making it easy to find what you need at a glance.</li>
-                        <li><strong>Highlight Tasks:</strong> Make critical tasks stand out with a single tap, so they’re always top of mind.</li>
-                        <li><strong>Sort and Filter:</strong> Quickly sort tasks by name, due date, or priority, and filter them based on completion status for effortless organization.</li>
-                        <li><strong>Task Search:</strong> Find tasks instantly using the powerful search feature, no matter how big your list gets.</li>
-                    </ul>
-                </div>
-            </div>
-        </section>
-        <section class="features-section" style="background-image: url('images/background5.png');">
-            <div class="overlay">
-                <div class="feature-content">
-                    <h3>Upcoming Due Dates</h3>
-                    <p>Stay ahead of your schedule with Star Task's Upcoming Due Dates screen, designed to give you clarity and control over your deadlines:</p>
-                    <ul>
-                        <li><strong>Quick Overview:</strong> View all your tasks with approaching due dates in one convenient place, so you can prioritize with ease.</li>
-                        <li><strong>Filter by List:</strong> Focus on what matters most by filtering tasks by specific lists, keeping your planning targeted and efficient.</li>
-                        <li><strong>Customizable Views:</strong> Select the lists you want to track, and let Star Task remember your preferences for seamless planning.</li>
-                        <li><strong>Stay Organized:</strong> Never miss a critical deadline with this centralized hub for all your upcoming tasks and priorities.</li>
-                    </ul>
-                </div>
-            </div>
-        </section>
-        <section class="features-section alternate" style="background-image: url('images/background2.png');">
-            <div class="overlay">
-                <div class="feature-content">
-                    <h3>Save and Load Lists</h3>
-                    <p>Save and load your task lists for better data management:</p>
-                    <ul>
-                        <li><strong>Save Lists:</strong> Save your task lists to the cloud for future reference.</li>
-                        <li><strong>Load Lists:</strong> Load saved lists from the cloud to restore your tasks.</li>
-                        <li><strong>Backup Management:</strong> Manage your saved lists and backups directly from the app.</li>
-                    </ul>
-                </div>
-            </div>
-        </section>
-        <section class="features-section" style="background-image: url('images/background1.png');">
-            <div class="overlay">
-                <div class="feature-content">
-                    <h3>User Profiles</h3>
-                    <p>Manage your user profile within Star Task:</p>
-                    <ul>
-                        <li><strong>Profile Picture:</strong> Display your Google profile picture within the app.</li>
-                        <li><strong>Account Information:</strong> View and manage your account details, including email and subscription status.</li>
-                    </ul>
-                </div>
-            </div>
-        </section>
-        <section class="features-section alternate" style="background-image: url('images/background2.png');">
-            <div class="overlay">
-                <div class="feature-content">
-                    <h3>Enhanced Collaboration</h3>
-                    <p>Collaborate seamlessly with others using Star Task's advanced collaboration features:</p>
-                    <ul>
-                        <li><strong>Manage Shared Lists:</strong> Manage lists shared with you and lists you've shared with others.</li>
-                        <li><strong>Track Invitations:</strong> Track invitations you send out and receive from others, managing them efficiently.</li>
-                        <li><strong>Real-Time Updates:</strong> Enjoy real-time updates on shared lists to ensure everyone stays informed.</li>
-                    </ul>
-                </div>
-            </div>
-        </section>
-        <section class="features-section" style="background-image: url('images/background3.png');">
-            <div class="overlay">
-                <div class="feature-content">
-                    <h3>Accessibility</h3>
-                    <p>Star Task is built with accessibility at its core, ensuring everyone can manage tasks effectively and comfortably:</p>
-                    <ul>
-                        <li><strong>Accessible Design:</strong> Enjoy a clean and intuitive interface designed to accommodate users of all abilities, including those with visual, cognitive, or motor challenges.</li>
-                        <li><strong>Customizable Text Size:</strong> Adjust text sizes for list names, task details, and notes to suit your reading preferences and needs.</li>
-                        <li><strong>Customizable Themes:</strong> Choose from light, dark, or system themes, or add a personalized background image with subtle opacity for better readability and style.</li>
-                        <li><strong>Keyboard and Screen Reader Support:</strong> Navigate Star Task seamlessly using assistive technologies like screen readers and keyboard shortcuts (where supported).</li>
-                    </ul>
-                </div>
-            </div>
-        </section>
-    <!-- Conclusion -->
-    <section class="features-section" style="background-image: url('images/background4.png');">
-        <div class="overlay">
-            <div class="feature-content">
-                <h3>Your Ultimate Productivity Companion</h3>
-                <p>Star Task isn't just another productivity app—it's a beautifully crafted, AI-powered experience designed for effortless productivity and daily inspiration. Download Star Task today and transform the way you manage your tasks, time, and life.</p>
-            </div>
+    <!-- Lists & List View -->
+    <section id="dashboard" class="features-section" style="background-image:url('images/background1.png')">
+      <div class="overlay">
+        <div class="feature-content">
+          <h3>Lists & List View</h3>
+          <ul>
+            <li><strong>Cards that feel great</strong>: tap any task to open details.</li>
+            <li><strong>Edit Mode</strong>: duplicate, delete, or copy a task’s name + notes + subtasks to clipboard.</li>
+            <li><strong>AI Suggestions</strong>: get ~10+ task ideas based on the list name; tap <em>Add</em> to insert.</li>
+            <li><strong>Rapid Add</strong>: an outlined text field under the top bar for fast, continuous entry.</li>
+            <li><strong>More Options</strong>: sort (name / due / priority / number), copy the whole list as text, collapse long tasks, reorder with cloud‑saved order for shared lists, and hide/show completed.</li>
+          </ul>
         </div>
+      </div>
     </section>
-    </main>
-    <footer>
-        <p>&copy; 2024 Star Task</p>
-        <nav class="footer-nav">
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="about.html">About</a></li>
-                <li><a href="features.html">Features</a></li>
-                <li><a href="blog.html">Blog</a></li>
-                <li><a href="contact.html">Contact</a></li>
-                <li><a href="privacy-policy.html">Privacy Policy</a></li>
-                <li><a href="terms.html">Terms</a></li>
-            </ul>
-        </nav>
-    </footer>
+
+    <!-- Task Detail -->
+    <section id="task-detail" class="features-section alternate" style="background-image:url('images/background2.png')">
+      <div class="overlay">
+        <div class="feature-content">
+          <h3>Task Detail</h3>
+          <ul>
+            <li>Edit name, due date, priority, attachment thumbnail, and labels.</li>
+            <li><strong>Label Manager</strong>: create/delete global labels; add/remove task labels.</li>
+            <li><strong>Duplicate</strong>: None / Daily / Weekly / Monthly.</li>
+            <li>Highlight, mark complete/incomplete.</li>
+            <li><strong>Subtasks</strong>: unlimited; can include a pressable URL icon.</li>
+            <li>Shows date created and supports <strong>manual reminder</strong> setup.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- iOS Reminders -->
+    <section id="reminders" class="features-section" style="background-image:url('images/background3.png')">
+      <div class="overlay">
+        <div class="feature-content">
+          <h3>Smart iOS Reminders</h3>
+          <p>Star Task’s reminder banners are flexible and relentless—until you want them to stop.</p>
+          <ul>
+            <li><strong>Types</strong>: <em>Don’t remind</em> or <em>Remind when due</em>, then choose <strong>Banner + Sound</strong> or <strong>Banner (Silent)</strong>.</li>
+            <li><strong>Frequency</strong>: hourly, daily, weekly, monthly, every 10 minutes, or every 30 minutes.</li>
+            <li><strong>Repeat Duration</strong>: default <em>Forever</em> or pick 1–24 hours. Banners stop after the window even if you don’t interact.</li>
+            <li><strong>Auto‑update</strong>: dismissing updates the task’s due date + reminder in Firestore, so your Upcoming screen stays accurate.</li>
+            <li class="muted"><em>Note:</em> iOS banners respect Do Not Disturb.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Upcoming Due Dates -->
+    <section id="upcoming" class="features-section alternate" style="background-image:url('images/background5.png')">
+      <div class="overlay">
+        <div class="feature-content">
+          <h3>Upcoming Due Dates</h3>
+          <ul>
+            <li>See all tasks sorted by earliest due date, with a days‑until counter.</li>
+            <li>Filter by list with a simple dropdown.</li>
+            <li><strong>Device Controls</strong>: <em>Silence all reminders</em> on this device, <em>Restore all reminders</em> from cloud, or <em>Permanently delete all reminders</em> from cloud.</li>
+            <li>Tasks show <span class="badge">Reminder Active</span> when a local reminder is running on the device.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Sharing -->
+    <section id="sharing" class="features-section" style="background-image:url('images/background5.png')">
+      <div class="overlay">
+        <div class="feature-content">
+          <h3>Live List Sharing</h3>
+          <ul>
+            <li>Invite anyone on Star Task. See pending invites you sent or received.</li>
+            <li>View lists you’ve joined and leave when you’re done.</li>
+            <li>See who’s on lists you own and remove members if needed.</li>
+            <li>Shared lists keep the same drag‑reorder order in the cloud.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Display Settings -->
+    <section id="display" class="features-section alternate" style="background-image:url('images/background2.png')">
+      <div class="overlay">
+        <div class="feature-content">
+          <h3>Display Settings</h3>
+          <div class="grid">
+            <div class="cardish">
+              <h4>Readability</h4>
+              <ul>
+                <li>List title size, task title size, notes size.</li>
+                <li>Snooze length slider for reminders.</li>
+                <li>Choose sound: <em>Crystal Overpass</em> or default iOS.</li>
+              </ul>
+            </div>
+            <div class="cardish">
+              <h4>Power User</h4>
+              <ul>
+                <li>Save current lists/tasks to cloud; load previous sets.</li>
+                <li>Restore purchases, manage subscriptions.</li>
+                <li>Delete content or your account.</li>
+                <li>Optional: add your own OpenAI API key to unlock GPT‑4 Omni.</li>
+                <li>Configure the secondary mic button behavior.</li>
+              </ul>
+            </div>
+            <div class="cardish">
+              <h4>Custom Background</h4>
+              <p>$4.99 one‑time (or included in Premium): upload your own background and adjust opacity.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Themes & Star Chaos -->
+    <section id="themes" class="features-section" style="background-image:url('images/background4.png')">
+      <div class="overlay">
+        <div class="feature-content">
+          <h3>Themes & Star Chaos</h3>
+          <ul>
+            <li><strong>Included</strong>: Cosmic Dawn (free).</li>
+            <li><strong>Purchasable</strong> ($0.99): Daybreak, Alive, Elemental Green, Charge, Peach, Rejuvenating Whisper, Withering Whisper. Each has Light, Dark, or System.</li>
+            <li><strong>Star Chaos</strong>: animated, 60 FPS space‑warp effect that plays on app launch/refresh.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Profile / Stats -->
+    <section id="stats" class="features-section alternate" style="background-image:url('images/background1.png')">
+      <div class="overlay">
+        <div class="feature-content">
+          <h3>Profile & Stats</h3>
+          <ul>
+            <li>Editable avatar (Apple/Google), display name, unique handle, and bio. Gear icon → Settings.</li>
+            <li><strong>Account Tier Card</strong>: Free or Star Task Premium with <em>View Details</em> & <em>Subscribe</em> actions.</li>
+            <li><strong>Three Stats Cards</strong>:
+              <ul>
+                <li>Total logins (launches & relaunches).</li>
+                <li>Total lists, total tasks, AI‑powered reminders count.</li>
+                <li>Star Chaos Collection: shows owned animated themes with tiny preview icons.</li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Free vs Premium & Minutes -->
+    <section id="monetization" class="features-section" style="background-image:url('images/background3.png')">
+      <div class="overlay">
+        <div class="feature-content">
+          <h3>Free, Premium, and AI Minutes</h3>
+          <div class="grid">
+            <div class="cardish">
+              <h4>Free Tier</h4>
+              <ul>
+                <li>3 lists</li>
+                <li>20 tasks per list</li>
+                <li>Unlimited subtasks</li>
+                <li>Cosmic Dawn theme</li>
+              </ul>
+            </div>
+            <div class="cardish">
+              <h4>Star Task Premium</h4>
+              <p class="muted">$1.99 / month or $19.99 / year (15% off)</p>
+              <ul>
+                <li>Practically unlimited lists and tasks</li>
+                <li>All Star Chaos themes</li>
+                <li>100 AI Voice minutes</li>
+                <li>Custom background upload with opacity control</li>
+              </ul>
+            </div>
+            <div class="cardish">
+              <h4>AI Voice Minutes</h4>
+              <ul>
+                <li>60 min – $0.99</li>
+                <li>300 min – $4.99</li>
+                <li>1200 min – $9.99</li>
+              </ul>
+              <p>Buy from: <em>AI → Voice → Record &amp; Transcribe → Get more minutes</em>.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- UI Rework / Apps Modal -->
+    <section id="ui-rework" class="features-section alternate" style="background-image:url('images/background2.png')">
+      <div class="overlay">
+        <div class="feature-content">
+          <h3>New Navigation · Bottom Bar + Apps Modal</h3>
+          <ul>
+            <li>4 quick tabs on the bottom bar (e.g., Dashboard, Upcoming, Stats, Social) + All Apps button.</li>
+            <li><strong>More</strong> opens a modal drawer showing bottom row (mirrors bottom bar), extra apps above, and a top row with a colored icon “Reorder apps here”.</li>
+            <li><strong>Reorder Screen</strong>: drag to move tabs between pinned and unpinned; bottom bar updates live (Outlook‑style).</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Privacy / Security (short) -->
+    <section id="privacy" class="features-section" style="background-image:url('images/background5.png')">
+      <div class="overlay">
+        <div class="feature-content">
+          <h3>Privacy & Security</h3>
+          <ul>
+            <li>Sign in with Apple and Google OAuth.</li>
+            <li>Data synced securely via Firebase.</li>
+            <li>Delete your content, or your whole account, anytime.</li>
+          </ul>
+          <p class="muted">We never sell your data.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="features-section" style="background-image:url('images/background4.png')">
+      <div class="overlay">
+        <div class="feature-content">
+          <h3>Your AI‑Powered Productivity Companion</h3>
+          <p>Star Task isn’t just another to‑do app—it’s a living system for getting things done. Create, remind, share, and customize. Then watch the momentum build.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Star Task</p>
+    <nav aria-label="Footer">
+      <ul class="footer-nav">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="features.html">Features</a></li>
+        <li><a href="blog.html">Blog</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="privacy-policy.html">Privacy Policy</a></li>
+        <li><a href="terms.html">Terms</a></li>
+      </ul>
+    </nav>
+  </footer>
 </body>
 </html>
