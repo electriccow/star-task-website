@@ -336,116 +336,30 @@ footer nav ul li a {
   .hero-section .overlay{background-color:rgba(0,0,0,.45);border-radius:8px;}
 
 /* =========================
-   Sexy Glass Header Upgrade
+   Simplified Glass Header (non-sticky, no underline)
    ========================= */
    :root{
     --hdr-max: 1160px;
-    --hdr-glass-bg: rgba(15, 23, 42, 0.55);            /* slate-900 w/ alpha */
-    --hdr-glass-border: rgba(255,255,255,0.14);
+    --hdr-glass-bg: rgba(17, 24, 39, 0.65);  /* subtle slate glass */
+    --hdr-glass-border: rgba(255,255,255,0.12);
     --hdr-link: #e5e7eb;
     --hdr-link-dim: #cbd5e1;
-    --hdr-accent: linear-gradient(90deg,#22d3ee,#a78bfa); /* cyan → violet */
+    --hdr-hover-bg: rgba(255,255,255,0.08);
   }
   
+  /* Not sticky */
   .site-header {
-    position: sticky; top: 0; z-index: 999;
-    backdrop-filter: blur(10px) saturate(140%);
-    -webkit-backdrop-filter: blur(10px) saturate(140%);
+    position: static;
+    z-index: 10;
     background:
-      radial-gradient(1200px 400px at 50% -200px, rgba(255,255,255,0.12), transparent 70%),
+      radial-gradient(1200px 400px at 50% -200px, rgba(255,255,255,0.10), transparent 70%),
       var(--hdr-glass-bg);
     border-bottom: 1px solid var(--hdr-glass-border);
-    box-shadow: 0 10px 30px rgba(0,0,0,.25);
+    backdrop-filter: blur(8px) saturate(130%);
+    -webkit-backdrop-filter: blur(8px) saturate(130%);
   }
   
-  .header-inner {
-    max-width: var(--hdr-max);
-    margin: 0 auto;
-    padding: 10px 16px;
-    display: grid;
-    grid-template-columns: auto 1fr auto;
-    align-items: center;
-    gap: 12px;
-  }
-  
-  /* Brand */
-  .brand {
-    display:flex; align-items:center; gap:12px;
-  }
-  .brand .logo {
-    max-height:46px; width:auto; border-radius:14px;
-    box-shadow: 0 6px 16px rgba(0,0,0,.25);
-  }
-  .brand .title {
-    font-weight:800; letter-spacing:.3px; margin:0;
-    font-size: clamp(18px, 2vw, 20px);
-    background: var(--hdr-accent);
-    -webkit-background-clip:text; background-clip:text; color:transparent;
-  }
-  
-  /* Nav */
-  .nav-wrap {
-    display:flex; justify-content:center;
-  }
-  .nav-links {
-    display:flex; flex-wrap:wrap; gap:14px;
-    align-items:center; justify-content:center;
-  }
-  .nav-links a {
-    color: var(--hdr-link);
-    text-decoration:none; font-weight:700; opacity:.95;
-    position:relative; padding:8px 10px; border-radius:10px;
-    transition: opacity .2s ease, transform .08s ease;
-  }
-  .nav-links a:hover { opacity:1; transform:translateY(-1px); }
-  .nav-links a::after {
-    content:""; position:absolute; left:10px; right:10px; bottom:6px; height:2px;
-    background: var(--hdr-accent); border-radius:999px;
-    transform: scaleX(0); transform-origin:left; transition: transform .18s ease;
-  }
-  .nav-links a:hover::after { transform: scaleX(1); }
-  
-  /* Store CTAs */
-  .store-ctas { display:flex; gap:10px; align-items:center; }
-  .store-ctas a {
-    display:inline-flex; align-items:center; gap:8px;
-    padding:10px 12px; border-radius:12px; font-weight:800; text-decoration:none;
-    transition: transform .08s ease, opacity .2s ease;
-    white-space:nowrap;
-  }
-  .store-ios  { background:#000; color:#fff; }
-  .store-android { color:#93c5fd; border:2px solid #93c5fd; background:transparent; }
-  .store-ctas a:hover { transform:translateY(-1px); opacity:.95; }
-  
-  /* Mobile menu */
-  .menu-toggle {
-    display:none; appearance:none; background:transparent; border:0;
-    width:38px; height:38px; border-radius:10px; cursor:pointer;
-    position:relative;
-  }
-  .menu-toggle span, .menu-toggle::before, .menu-toggle::after {
-    content:""; display:block; height:2px; background:#fff; border-radius:2px;
-    position:absolute; left:8px; right:8px; transition: transform .2s ease, opacity .2s ease;
-  }
-  .menu-toggle span { top:18px; }
-  .menu-toggle::before { top:11px; }
-  .menu-toggle::after  { top:25px; }
-  
-  /* Collapsible behavior */
-  @media (max-width: 860px) {
-    .header-inner { grid-template-columns: auto auto 1fr auto; }
-    .nav-wrap { display:none; }
-    .menu-toggle { display:block; }
-    .menu-open .nav-wrap {
-      display:block; grid-column: 1 / -1; 
-    }
-    .nav-links {
-      justify-content:flex-start; padding:10px 4px 12px; gap:10px;
-    }
-    .store-ctas { display:none; } /* keeps header tidy on small screens */
-  }
-  
-  /* Announcement banner (keep yours, but ensure it “fuses” visually) */
+  /* Keep your banner exactly as-is */
   .announcement-banner{
     background: linear-gradient(90deg,#0ea5e9,#6366f1);
     color:#fff; text-align:center; padding:.6rem 1rem; font-weight:800;
@@ -453,4 +367,73 @@ footer nav ul li a {
     box-shadow: inset 0 -1px 0 rgba(255,255,255,.08);
   }
   
-  /* Footer keeps its current style */
+  /* Layout */
+  .header-inner {
+    max-width: var(--hdr-max);
+    margin: 0 auto;
+    padding: 12px 16px;
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    align-items: center;
+    gap: 14px;
+  }
+  
+  /* Brand */
+  .brand {
+    display:flex; align-items:center; gap:12px; text-decoration:none;
+  }
+  .brand .logo {
+    max-height:46px; width:auto; border-radius:14px;
+    box-shadow: 0 6px 16px rgba(0,0,0,.25);
+  }
+  .brand .title {
+    margin:0; font-weight:800; letter-spacing:.2px;
+    font-size: clamp(18px, 2vw, 20px);
+    color:#fff;                 /* ← no gradient, no underline */
+  }
+  
+  /* Nav (always visible) */
+  .nav-wrap { display:flex; justify-content:center; }
+  .nav-links {
+    display:flex; flex-wrap:wrap; gap:12px;
+    align-items:center; justify-content:center;
+    padding:0; margin:0; list-style:none;
+  }
+  .nav-links a {
+    color: var(--hdr-link);
+    text-decoration:none;
+    font-weight:700; opacity:.95;
+    padding:8px 10px; border-radius:10px;
+    transition: background-color .15s ease, opacity .15s ease, transform .06s ease;
+  }
+  .nav-links a:hover {
+    opacity:1; background: var(--hdr-hover-bg); transform: translateY(-1px);
+  }
+  /* No decorative underlines at all */
+  .nav-links a::after { content:none !important; }
+  
+  /* Store CTAs (visible on all sizes, wrap on mobile) */
+  .store-ctas { display:flex; flex-wrap:wrap; gap:10px; align-items:center; justify-content:flex-end; }
+  .store-ctas a {
+    display:inline-flex; align-items:center; gap:8px;
+    padding:10px 12px; border-radius:12px; font-weight:800; text-decoration:none;
+    transition: transform .06s ease, opacity .15s ease;
+    white-space:nowrap;
+  }
+  .store-ios  { background:#000; color:#fff; }
+  .store-android { color:#93c5fd; border:2px solid #93c5fd; background:transparent; }
+  .store-ctas a:hover { transform:translateY(-1px); opacity:.95; }
+  
+  /* Hide the hamburger entirely (keeping your HTML intact) */
+  .menu-toggle { display:none !important; }
+  
+  /* Responsive: stack pieces, keep everything visible without tapping */
+  @media (max-width: 900px) {
+    .header-inner {
+      display:flex; flex-direction:column; gap:10px;
+      align-items:center; text-align:center;
+    }
+    .nav-wrap { order:2; }
+    .store-ctas { order:3; justify-content:center; }
+    .brand { order:1; }
+  }
