@@ -20,27 +20,17 @@
           <a href="https://apps.apple.com/ua/app/star-task-app/id6749521376" target="_blank" rel="noopener" style="color:#fff;text-decoration:underline">Download</a>
         </div>
       
-        <div class="header-inner" id="headerInner">
-          <!-- Left: Brand -->
+        <div class="header-inner">
+          <!-- Brand -->
           <a href="index.html" class="brand" aria-label="Star Task Home">
             <img src="images/logo.png" alt="Star Task Logo" class="logo">
             <h1 class="title">Star Task</h1>
           </a>
       
-          <!-- Mobile Toggle -->
-          <button class="menu-toggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="primaryNav" onclick="
-            const hdr=document.getElementById('headerInner').parentElement;
-            const btn=this;
-            hdr.classList.toggle('menu-open');
-            btn.setAttribute('aria-expanded', hdr.classList.contains('menu-open'));
-          ">
-            <span></span>
-          </button>
-      
-          <!-- Center: Nav -->
-          <nav class="nav-wrap" id="primaryNav" aria-label="Primary">
+          <!-- Nav (always visible, wraps on mobile) -->
+          <nav class="nav-wrap" aria-label="Primary">
             <ul class="nav-links">
-              <li><a href="index.html" aria-current="page">Home</a></li>
+              <li><a href="index.html">Home</a></li>
               <li><a href="features.html">Features</a></li>
               <li><a href="blog.html">Blog</a></li>
               <li><a href="about.html">About</a></li>
@@ -50,7 +40,7 @@
             </ul>
           </nav>
       
-          <!-- Right: Store CTAs (auto-hide on small screens) -->
+          <!-- Store CTAs -->
           <div class="store-ctas">
             <a class="store-ios" href="https://apps.apple.com/ua/app/star-task-app/id6749521376" target="_blank" rel="noopener">🍎 App&nbsp;Store</a>
             <a class="store-android" href="https://play.google.com/store/apps/details?id=com.fan.startask" target="_blank" rel="noopener">▶️ Google&nbsp;Play</a>
