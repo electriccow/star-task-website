@@ -44,158 +44,27 @@
     gtag('js', new Date());
     gtag('config', 'AW-16826166395');
   </script>
-
-  <!-- Page-specific, non-breaking overrides -->
-  <style>
-    /* GLOBAL COSMIC BACKDROP (background7.png) */
-    body.use-global-bg {
-      background: #000; /* fallback */
-    }
-    body.use-global-bg::before {
-      content: "";
-      position: fixed;
-      inset: 0;
-      z-index: -1;
-      background-image: url('images/background7.png');
-      background-size: cover;
-      background-position: center;
-      background-attachment: fixed;
-      filter: saturate(110%) contrast(102%);
-    }
-
-    /* Turn off any per-section background images so the global art shows through */
-    .use-global-bg .hero-wrap,
-    .use-global-bg .section,
-    .use-global-bg .features-section,
-    .use-global-bg .testimonials-section,
-    .use-global-bg .stay-updated-section {
-      background: transparent !important;
-      background-image: none !important;
-    }
-
-    /* Keep your announcement banner exactly as-is, just ensure contrast pops */
-    .announcement-banner {
-      background: linear-gradient(90deg,#0ea5e9,#6366f1);
-      color:#fff; text-align:center; padding:.6rem 1rem; font-weight:700;
-    }
-
-    /* HERO */
-    .hero-wrap { /* previously used bg image; now transparent so global bg shows */
-      background: transparent !important;
-    }
-    .hero-inner { padding:64px 16px; text-align:center; }
-    .hero-title { font-size:clamp(28px,4vw,44px); margin:0 0 8px; }
-    .hero-sub { font-size:clamp(16px,2.4vw,20px); opacity:.95; max-width:900px; margin:0 auto 20px; color:#0b1220; }
-    .pill { display:inline-block; padding:6px 10px; border-radius:999px; background:#111827; color:#fff; font-size:12px; margin-bottom:10px; }
-
-    /* HERO CARD — readable on any part of the background */
-    .hero-card {
-      max-width: 960px;
-      margin: 0 auto;
-      padding: 22px 20px;
-      border-radius: 16px;
-      background:
-        linear-gradient(180deg, rgba(255,255,255,0.90), rgba(255,255,255,0.82));
-      border: 1px solid rgba(0,0,0,0.08);
-      box-shadow: 0 10px 30px rgba(0,0,0,0.18);
-      backdrop-filter: blur(8px) saturate(140%);
-    }
-    .hero-actions { display:flex; gap:12px; justify-content:center; flex-wrap:wrap; margin-top:14px; }
-    .store-badge, .ghost-btn, .solid-btn {
-      display:inline-flex; align-items:center; gap:10px; padding:12px 16px; border-radius:12px;
-      text-decoration:none; transition:transform .08s ease,opacity .2s ease; font-weight:700;
-    }
-    .store-badge { background:#000; color:#fff; }
-    .solid-btn { background:#0ea5e9; color:#fff; }
-    .ghost-btn { background:transparent; color:#0ea5e9; border:2px solid #0ea5e9; }
-    .store-badge:hover, .solid-btn:hover, .ghost-btn:hover { transform:translateY(-1px); opacity:.95; }
-
-    /* SECTION PANELS — wrap your content so it reads on the art */
-    .section > .overlay {
-      max-width: 1100px;
-      margin: 0 auto;
-      padding: 24px;
-      border-radius: 16px;
-      background: radial-gradient(1200px 600px at 50% -10%, rgba(255,255,255,0.14), rgba(255,255,255,0.06) 60%, rgba(255,255,255,0.02) 100%),
-                  rgba(9,12,23,0.28);
-      border: 1px solid rgba(255,255,255,0.12);
-      backdrop-filter: blur(6px) saturate(135%);
-      color: #fff;
-    }
-
-    /* GRID & CARDS — no image backgrounds; pure glass so there’s no “zoomed area” repeat */
-    .grid { display:grid; gap:16px; grid-template-columns:repeat(auto-fit,minmax(260px,1fr)); }
-    .card,
-    .feature-item {
-      background: linear-gradient(180deg, rgba(255,255,255,0.92), rgba(255,255,255,0.84));
-      color:#0f172a;
-      border: 1px solid rgba(0,0,0,0.06);
-      border-radius:16px;
-      padding:18px;
-      box-shadow: 0 6px 18px rgba(0,0,0,0.12);
-      backdrop-filter: blur(6px) saturate(140%);
-    }
-    .card h3 { margin:.2rem 0 .6rem; }
-    .inline-note { font-size:.9rem; opacity:.85; }
-    .screenshot { cursor:pointer; max-width:100%; border-radius:12px; display:block; }
-
-    /* Modal (kept intact) */
-    .modal { display:none; position:fixed; z-index:1000; inset:0; background:rgba(0,0,0,.92); }
-    .modal-content { margin:60px auto; display:block; max-width:90%; border-radius:12px; }
-    .close { position:absolute; top:16px; right:24px; color:#fff; font-size:36px; background:transparent; border:none; cursor:pointer; }
-
-    /* Respect your header/footer defaults */
-    header .logo { max-height:54px; }
-    nav ul { display:flex; flex-wrap:wrap; gap:12px; justify-content:center; }
-
-    /* Dark mode polish */
-    @media (prefers-color-scheme: dark) {
-      .hero-card {
-        background: rgba(17,24,39,0.74);
-        color: #f8fafc;
-        border-color: rgba(255,255,255,0.10);
-      }
-      .hero-sub { color:#dbeafe; }
-      .section > .overlay {
-        background: radial-gradient(1200px 600px at 50% -10%, rgba(255,255,255,0.08), rgba(255,255,255,0.03) 60%, rgba(255,255,255,0.02) 100%),
-                    rgba(9,12,23,0.38);
-        border-color: rgba(255,255,255,0.14);
-      }
-      .card, .feature-item {
-        background: linear-gradient(180deg, rgba(22,28,45,0.88), rgba(22,28,45,0.82));
-        color:#e5e7eb;
-        border-color: rgba(255,255,255,0.06);
-      }
-      .ghost-btn { color:#93c5fd; border-color:#93c5fd; }
-    }
-  </style>
 </head>
 
 <body class="use-global-bg">
+  <!-- Header -->
   <header class="site-header">
     <div class="announcement-banner" role="status" aria-live="polite">
       🚀 Star Task for <strong>iOS</strong> is LIVE — <strong>Released Nov 6, 2025</strong> •
       <a href="https://apps.apple.com/ua/app/star-task-app/id6749521376" target="_blank" rel="noopener" style="color:#fff;text-decoration:underline">Download</a>
     </div>
-  
+
     <div class="header-inner" id="headerInner">
-      <!-- Left: Brand -->
+      <!-- Brand -->
       <a href="index.html" class="brand" aria-label="Star Task Home">
         <img src="images/logo.png" alt="Star Task Logo" class="logo">
         <h1 class="title">Star Task</h1>
       </a>
-  
-      <!-- Mobile Toggle -->
-      <button class="menu-toggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="primaryNav" onclick="
-        const hdr=document.getElementById('headerInner').parentElement;
-        const btn=this;
-        hdr.classList.toggle('menu-open');
-        btn.setAttribute('aria-expanded', hdr.classList.contains('menu-open'));
-      ">
-        <span></span>
-      </button>
-  
-      <!-- Center: Nav -->
+
+      <!-- Hamburger kept for a11y but hidden via CSS -->
+      <button class="menu-toggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="primaryNav"><span></span></button>
+
+      <!-- Nav -->
       <nav class="nav-wrap" id="primaryNav" aria-label="Primary">
         <ul class="nav-links">
           <li><a href="index.html" aria-current="page">Home</a></li>
@@ -207,8 +76,8 @@
           <li><a href="terms.html">Terms</a></li>
         </ul>
       </nav>
-  
-      <!-- Right: Store CTAs (auto-hide on small screens) -->
+
+      <!-- Store CTAs -->
       <div class="store-ctas">
         <a class="store-ios" href="https://apps.apple.com/ua/app/star-task-app/id6749521376" target="_blank" rel="noopener">🍎 App&nbsp;Store</a>
         <a class="store-android" href="https://play.google.com/store/apps/details?id=com.fan.startask" target="_blank" rel="noopener">▶️ Google&nbsp;Play</a>
@@ -216,214 +85,208 @@
     </div>
   </header>
 
-<!-- HERO -->
-<section class="hero-wrap">
-  <div class="overlay">
-    <div class="hero-inner">
-      <div class="hero-card">
-        <span class="pill">NEW on iPhone</span>
-        <h2 class="hero-title">AI-Powered Productivity that actually helps</h2>
-        <p class="hero-sub">
-          Speak or paste anything — Star Task turns it into lists. Set intelligent iOS reminders
-          (<em>Banner + Sound</em> or <em>Banner (Silent)</em>) that repeat on your schedule.
-          Share live, customize themes, and stay in flow.
-        </p>
-        <div class="hero-actions">
-          <a class="store-badge" href="https://apps.apple.com/ua/app/star-task-app/id6749521376"
-             rel="noopener" target="_blank" aria-label="Download on the App Store">
-            🍎 <span>Download on the App&nbsp;Store</span>
-          </a>
-          <a class="ghost-btn" href="https://play.google.com/store/apps/details?id=com.fan.startask"
-             rel="noopener" target="_blank">▶️ Get it on Google Play</a>
-          <a class="solid-btn" href="features.html">See What’s New</a>
+  <!-- HERO -->
+  <section class="hero-wrap">
+    <div class="overlay">
+      <div class="hero-inner">
+        <div class="hero-card">
+          <span class="pill">NEW on iPhone</span>
+          <h2 class="hero-title">AI-Powered Productivity that actually helps</h2>
+          <p class="hero-sub">
+            Speak or paste anything — Star Task turns it into lists. Set intelligent iOS reminders
+            (<em>Banner + Sound</em> or <em>Banner (Silent)</em>) that repeat on your schedule.
+            Share live, customize themes, and stay in flow.
+          </p>
+          <div class="hero-actions">
+            <a class="store-badge" href="https://apps.apple.com/ua/app/star-task-app/id6749521376"
+               rel="noopener" target="_blank" aria-label="Download on the App Store">
+              🍎 <span>Download on the App&nbsp;Store</span>
+            </a>
+            <a class="ghost-btn" href="https://play.google.com/store/apps/details?id=com.fan.startask"
+               rel="noopener" target="_blank">▶️ Get it on Google Play</a>
+            <a class="solid-btn" href="features.html">See What’s New</a>
+          </div>
+          <p class="inline-note" style="text-align:center;margin-top:10px;">
+            iOS release date: <strong>November 6, 2025</strong>
+          </p>
         </div>
-        <p class="inline-note" style="text-align:center;margin-top:10px;">
-          iOS release date: <strong>November 6, 2025</strong>
-        </p>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<!-- VIDEO -->
-<section class="section">
-  <div class="overlay" style="text-align:center">
-    <h2>Quick Demo</h2>
-    <video width="80%" controls playsinline preload="metadata" poster="images/video-poster.png" style="max-width:980px">
-      <source src="videos/demo4.mp4" type="video/mp4"/>
-      <p>Your browser doesn’t support video. <a href="videos/demo4.mp4">Download the demo</a>.</p>
-    </video>
-    <p>Watch Star Task turn voice and text into clean, actionable lists.</p>
-  </div>
-</section>
-
-<!-- KEY iOS / KMP FEATURES -->
-<section class="section">
-  <div class="overlay">
-    <h2 style="text-align:center">What’s inside</h2>
-    <div class="grid" aria-label="Feature highlights">
-      <article class="card">
-        <h3>AI Modal (4 Inputs)</h3>
-        <p>Tap the AI button → choose <strong>Text</strong>, <strong>Voice</strong> (Quick Command or Record &amp; Transcribe), <strong>Document</strong> (.docx/.pdf), or <strong>Link</strong>.</p>
-        <p>Pick a List Type: <em>Bullet</em>, <em>Reminder</em> (Auto / Banner + Sound / Banner Silent), <em>Summary</em>, or <em>Brainstorm</em>.</p>
-      </article>
-      <article class="card">
-        <h3>Smart iOS Reminders</h3>
-        <p>Banner + Sound or Banner (Silent). Repeat hourly, daily, weekly, monthly, every 10m, or every 30m — for 1–24 hours or forever. Dismiss updates the task’s next time in the cloud.</p>
-      </article>
-      <article class="card">
-        <h3>Lists &amp; Tasks that Flow</h3>
-        <p>Draggable lists, fast local feel, edit/merge lists, rapid-fire task entry, reorder tasks, sort by name/due/priority/number, hide/show completed.</p>
-      </article>
-      <article class="card">
-        <h3>Upcoming + Device Controls</h3>
-        <p>Global view of deadlines with filters. Device-level buttons to <em>Silence</em>, <em>Restore</em>, or <em>Permanently Delete</em> reminders from cloud.</p>
-      </article>
-      <article class="card">
-        <h3>Live Sharing</h3>
-        <p>Invite, accept, leave, manage members, and keep shared orders in sync. Collaboration that’s actually simple.</p>
-      </article>
-      <article class="card">
-        <h3>Themes &amp; Star Chaos</h3>
-        <p>Cosmic Dawn free + 7 paid themes (Daybreak, Alive, Elemental Green, Charge, Peach, Rejuvenating Whisper, Withering Whisper). Light/Dark/System. Star Chaos animations.</p>
-      </article>
-      <article class="card">
-        <h3>Display Settings</h3>
-        <p>Text sizing, snooze length, reminder sound (Crystal Overpass / iOS default), mic FAB options, custom background ($4.99 or Premium), OpenAI API key support for GPT-4 Omni.</p>
-      </article>
-      <article class="card">
-        <h3>Profile &amp; Stats</h3>
-        <p>Avatar, handle, bio + tier card (Free vs Premium). Stats: logins, totals, AI reminder count, and a Star Chaos Collection preview.</p>
-      </article>
+  <!-- VIDEO -->
+  <section class="section">
+    <div class="overlay" style="text-align:center">
+      <h2>Quick Demo</h2>
+      <video width="80%" controls playsinline preload="metadata" poster="images/video-poster.png" style="max-width:980px">
+        <source src="videos/demo4.mp4" type="video/mp4"/>
+        <p>Your browser doesn’t support video. <a href="videos/demo4.mp4">Download the demo</a>.</p>
+      </video>
+      <p>Watch Star Task turn voice and text into clean, actionable lists.</p>
     </div>
-  </div>
-</section>
+  </section>
 
-<!-- MONETIZATION -->
-<section class="section">
-  <div class="overlay">
-    <h2 style="text-align:center">Free vs Premium</h2>
-    <div class="grid">
-      <article class="card">
-        <h3>Free</h3>
-        <ul>
-          <li>3 lists, 20 tasks per list</li>
-          <li>Unlimited subtasks</li>
-          <li>Cosmic Dawn theme</li>
-        </ul>
-      </article>
-      <article class="card">
-        <h3>Star Task Premium</h3>
-        <ul>
-          <li>Practically unlimited lists &amp; tasks</li>
-          <li>All Star Chaos themes</li>
-          <li>100 AI Voice minutes</li>
-          <li>Custom background uploads</li>
-        </ul>
-        <p class="inline-note">$1.99/mo or $19.99/yr (15% off)</p>
-      </article>
-      <article class="card">
-        <h3>AI Voice Minutes</h3>
-        <p>Buy inside the AI → Voice tab:</p>
-        <ul>
-          <li>60 min — $0.99</li>
-          <li>300 min — $4.99</li>
-          <li>1200 min — $9.99</li>
-        </ul>
-      </article>
+  <!-- FEATURES -->
+  <section class="section">
+    <div class="overlay">
+      <h2 style="text-align:center">What’s inside</h2>
+      <div class="grid" aria-label="Feature highlights">
+        <article class="card">
+          <h3>AI Modal (4 Inputs)</h3>
+          <p>Tap the AI button → choose <strong>Text</strong>, <strong>Voice</strong> (Quick Command or Record &amp; Transcribe), <strong>Document</strong> (.docx/.pdf), or <strong>Link</strong>.</p>
+          <p>Pick a List Type: <em>Bullet</em>, <em>Reminder</em> (Auto / Banner + Sound / Banner Silent), <em>Summary</em>, or <em>Brainstorm</em>.</p>
+        </article>
+        <article class="card">
+          <h3>Smart iOS Reminders</h3>
+          <p>Banner + Sound or Banner (Silent). Repeat hourly, daily, weekly, monthly, every 10m, or every 30m — for 1–24 hours or forever. Dismiss updates the task’s next time in the cloud.</p>
+        </article>
+        <article class="card">
+          <h3>Lists &amp; Tasks that Flow</h3>
+          <p>Draggable lists, fast local feel, edit/merge lists, rapid-fire task entry, reorder tasks, sort by name/due/priority/number, hide/show completed.</p>
+        </article>
+        <article class="card">
+          <h3>Upcoming + Device Controls</h3>
+          <p>Global view of deadlines with filters. Device-level buttons to <em>Silence</em>, <em>Restore</em>, or <em>Permanently Delete</em> reminders from cloud.</p>
+        </article>
+        <article class="card">
+          <h3>Live Sharing</h3>
+          <p>Invite, accept, leave, manage members, and keep shared orders in sync. Collaboration that’s actually simple.</p>
+        </article>
+        <article class="card">
+          <h3>Themes &amp; Star Chaos</h3>
+          <p>Cosmic Dawn free + 7 paid themes (Daybreak, Alive, Elemental Green, Charge, Peach, Rejuvenating Whisper, Withering Whisper). Light/Dark/System. Star Chaos animations.</p>
+        </article>
+        <article class="card">
+          <h3>Display Settings</h3>
+          <p>Text sizing, snooze length, reminder sound (Crystal Overpass / iOS default), mic FAB options, custom background ($4.99 or Premium), OpenAI API key support for GPT-4 Omni.</p>
+        </article>
+        <article class="card">
+          <h3>Profile &amp; Stats</h3>
+          <p>Avatar, handle, bio + tier card (Free vs Premium). Stats: logins, totals, AI reminder count, and a Star Chaos Collection preview.</p>
+        </article>
+      </div>
     </div>
-    <div class="cta-row" style="margin-top:18px; display:flex; gap:12px; justify-content:center; flex-wrap:wrap;">
-      <a class="store-badge" href="https://apps.apple.com/ua/app/star-task-app/id6749521376" rel="noopener" target="_blank">🍎 Get Star Task on iOS</a>
-      <a class="ghost-btn" href="https://play.google.com/store/apps/details?id=com.fan.startask" rel="noopener" target="_blank">▶️ Get it on Google Play</a>
-      <a class="solid-btn" href="features.html">Full Feature List</a>
+  </section>
+
+  <!-- MONETIZATION -->
+  <section class="section">
+    <div class="overlay">
+      <h2 style="text-align:center">Free vs Premium</h2>
+      <div class="grid">
+        <article class="card">
+          <h3>Free</h3>
+          <ul>
+            <li>3 lists, 20 tasks per list</li>
+            <li>Unlimited subtasks</li>
+            <li>Cosmic Dawn theme</li>
+          </ul>
+        </article>
+        <article class="card">
+          <h3>Star Task Premium</h3>
+          <ul>
+            <li>Practically unlimited lists &amp; tasks</li>
+            <li>All Star Chaos themes</li>
+            <li>100 AI Voice minutes</li>
+            <li>Custom background uploads</li>
+          </ul>
+          <p class="inline-note">$1.99/mo or $19.99/yr (15% off)</p>
+        </article>
+        <article class="card">
+          <h3>AI Voice Minutes</h3>
+          <p>Buy inside the AI → Voice tab:</p>
+          <ul>
+            <li>60 min — $0.99</li>
+            <li>300 min — $4.99</li>
+            <li>1200 min — $9.99</li>
+          </ul>
+        </article>
+      </div>
+      <div class="cta-row" style="margin-top:18px; display:flex; gap:12px; justify-content:center; flex-wrap:wrap;">
+        <a class="store-badge" href="https://apps.apple.com/ua/app/star-task-app/id6749521376" rel="noopener" target="_blank">🍎 Get Star Task on iOS</a>
+        <a class="ghost-btn" href="https://play.google.com/store/apps/details?id=com.fan.startask" rel="noopener" target="_blank">▶️ Get it on Google Play</a>
+        <a class="solid-btn" href="features.html">Full Feature List</a>
+      </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<!-- GALLERY -->
-<section class="section">
-  <div class="overlay">
-    <h2 style="text-align:center">Screenshots</h2>
-    <div class="grid">
-      <figure class="card">
-        <img src="images/dashboard_resized.png" alt="Screenshot" class="screenshot" onclick="openModal('images/dashboard_resized.png')" loading="lazy">
-        <figcaption>Screenshot</figcaption>
-      </figure>
-      <figure class="card">
-        <img src="images/listview_resized.png" alt="Screenshot" class="screenshot" onclick="openModal('images/listview_resized.png')" loading="lazy">
-        <figcaption>Screenshot</figcaption>
-      </figure>
-      <figure class="card">
-        <img src="images/task-details_resized.png" alt="Screenshot" class="screenshot" onclick="openModal('images/task-details_resized.png')" loading="lazy">
-        <figcaption>Screenshot</figcaption>
-      </figure>
-      <figure class="card">
-        <img src="images/upcoming-items_resized.png" alt="Screenshot" class="screenshot" onclick="openModal('images/upcoming-items_resized.png')" loading="lazy">
-        <figcaption>Screenshot</figcaption>
-      </figure>
+  <!-- GALLERY -->
+  <section class="section">
+    <div class="overlay">
+      <h2 style="text-align:center">Screenshots</h2>
+      <div class="grid">
+        <figure class="card">
+          <img src="images/dashboard_resized.png" alt="Dashboard screenshot" class="screenshot" onclick="openModal('images/dashboard_resized.png')" loading="lazy">
+          <figcaption>Dashboard</figcaption>
+        </figure>
+        <figure class="card">
+          <img src="images/listview_resized.png" alt="List view screenshot" class="screenshot" onclick="openModal('images/listview_resized.png')" loading="lazy">
+          <figcaption>List View</figcaption>
+        </figure>
+        <figure class="card">
+          <img src="images/task-details_resized.png" alt="Task details screenshot" class="screenshot" onclick="openModal('images/task-details_resized.png')" loading="lazy">
+          <figcaption>Task Details</figcaption>
+        </figure>
+        <figure class="card">
+          <img src="images/upcoming-items_resized.png" alt="Upcoming items screenshot" class="screenshot" onclick="openModal('images/upcoming-items_resized.png')" loading="lazy">
+          <figcaption>Upcoming</figcaption>
+        </figure>
+      </div>
     </div>
+  </section>
+
+  <!-- Email capture -->
+  <section class="section">
+    <div class="overlay">
+      <h2 style="text-align:center">Stay Updated</h2>
+      <form action="https://formspree.io/f/xdoqrjpl" method="POST" style="max-width:520px;margin:0 auto;display:flex;gap:8px;flex-wrap:wrap;justify-content:center;">
+        <label for="email" class="visually-hidden">Email</label>
+        <input type="email" id="email" name="email" required placeholder="you@email.com" />
+        <button type="submit" class="solid-btn" style="border:none">Subscribe</button>
+      </form>
+      <p class="inline-note" style="text-align:center;margin-top:8px;">We’ll only send important updates. Unsubscribe anytime.</p>
+    </div>
+  </section>
+
+  <!-- Modal -->
+  <div id="imageModal" class="modal" role="dialog" aria-modal="true" aria-labelledby="modalImageLabel" onclick="closeModal()">
+    <button class="close" aria-label="Close">&times;</button>
+    <img class="modal-content" id="modalImage" alt="Full-size screenshot preview">
   </div>
-</section>
 
-<!-- Email capture -->
-<section class="section">
-  <div class="overlay">
-    <h2 style="text-align:center">Stay Updated</h2>
-    <form action="https://formspree.io/f/xdoqrjpl" method="POST" style="max-width:520px;margin:0 auto;display:flex;gap:8px;flex-wrap:wrap;justify-content:center;">
-      <label for="email" class="visually-hidden">Email</label>
-      <input type="email" id="email" name="email" required placeholder="you@email.com" style="flex:1;min-width:220px;padding:12px;border-radius:10px;border:1px solid #e5e7eb;">
-      <button type="submit" class="solid-btn" style="border:none">Subscribe</button>
-    </form>
-    <p class="inline-note" style="text-align:center;margin-top:8px;">We’ll only send important updates. Unsubscribe anytime.</p>
-  </div>
-</section>
+  <footer>
+    <p>&copy; 2025 Star Task</p>
+    <nav class="footer-nav" aria-label="Footer">
+      <ul>
+        <li><a href="index.html" aria-current="page">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="features.html">Features</a></li>
+        <li><a href="blog.html">Blog</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="privacy-policy.html">Privacy Policy</a></li>
+        <li><a href="terms.html">Terms</a></li>
+      </ul>
+    </nav>
+    <div class="social-media-buttons">
+      <a href="https://www.twitter.com/startaskapp" target="_blank" rel="noopener">
+        <img src="images/twitter-icon.png" alt="Follow Star Task on Twitter" loading="lazy">
+      </a>
+      <a href="https://discord.gg/6mvf5CNFmF" target="_blank" rel="noopener">
+        <img src="images/discord-icon.png" alt="Join Star Task on Discord" loading="lazy">
+      </a>
+    </div>
+  </footer>
 
-<!-- Modal -->
-<div id="imageModal" class="modal" role="dialog" aria-modal="true" aria-labelledby="modalImageLabel" onclick="closeModal()">
-  <button class="close" aria-label="Close">&times;</button>
-  <img class="modal-content" id="modalImage" alt="Full-size screenshot preview">
-</div>
-
-<script>
-  function openModal(src) {
-    var modal = document.getElementById("imageModal");
-    var modalImg = document.getElementById("modalImage");
-    modal.style.display = "block";
-    modalImg.src = src;
-  }
-  function closeModal() {
-    var modal = document.getElementById("imageModal");
-    modal.style.display = "none";
-  }
-</script>
-
-<footer>
-  <p>&copy; 2025 Star Task</p>
-  <nav class="footer-nav" aria-label="Footer">
-    <ul>
-      <li><a href="index.html" aria-current="page">Home</a></li>
-      <li><a href="about.html">About</a></li>
-      <li><a href="features.html">Features</a></li>
-      <li><a href="blog.html">Blog</a></li>
-      <li><a href="contact.html">Contact</a></li>
-      <li><a href="privacy-policy.html">Privacy Policy</a></li>
-      <li><a href="terms.html">Terms</a></li>
-    </ul>
-  </nav>
-
-  <p style="margin-top:8px; opacity:.85;">
-    By using this site or the Star Task app, you agree to our
-    <a href="terms.html">Terms</a> and <a href="privacy-policy.html">Privacy Policy</a>.
-  </p>
-
-  <div class="social-media-buttons">
-    <a href="https://www.twitter.com/startaskapp" target="_blank" rel="noopener">
-      <img src="images/twitter-icon.png" alt="Follow Star Task on Twitter" loading="lazy">
-    </a>
-    <a href="https://discord.gg/6mvf5CNFmF" target="_blank" rel="noopener">
-      <img src="images/discord-icon.png" alt="Join Star Task on Discord" loading="lazy">
-    </a>
-  </div>
-</footer>
+  <script>
+    function openModal(src) {
+      var modal = document.getElementById("imageModal");
+      var modalImg = document.getElementById("modalImage");
+      modal.style.display = "block";
+      modalImg.src = src;
+    }
+    function closeModal() {
+      var modal = document.getElementById("imageModal");
+      modal.style.display = "none";
+    }
+  </script>
 </body>
 </html>

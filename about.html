@@ -20,268 +20,160 @@
   <meta name="twitter:image" content="https://startaskapp.com/images/app-icon.png" />
   <meta name="twitter:url" content="https://startaskapp.com/about.html" />
   <meta name="keywords" content="Star Task, productivity, AI reminders, task app, iOS, Android, KMP" />
-
-  <style>
-    /* Page backdrop */
-    body::before {
-      content:"";
-      position: fixed;
-      inset: 0;
-      background:
-        radial-gradient(1200px 800px at 70% 10%, rgba(14,165,233,.15), transparent 60%),
-        radial-gradient(1000px 700px at 20% 80%, rgba(99,102,241,.15), transparent 60%),
-        linear-gradient(to bottom, rgba(0,0,0,.50), rgba(0,0,0,.65)),
-        url('images/background7.png') center/cover no-repeat fixed;
-      z-index: -2;
-    }
-    /* Subtle star overlay for readability */
-    body::after {
-      content:"";
-      position: fixed; inset:0; z-index:-1;
-      background: radial-gradient(2px 2px at 20% 30%, rgba(255,255,255,.16), transparent 60%),
-                  radial-gradient(2px 2px at 70% 60%, rgba(255,255,255,.10), transparent 60%),
-                  radial-gradient(1px 1px at 40% 80%, rgba(255,255,255,.08), transparent 60%);
-      pointer-events:none;
-    }
-
-    header { text-align:center; padding:20px 12px; }
-    header .logo { max-height:56px; }
-    header h1 { margin:.5rem 0 0; }
-
-    nav ul { display:flex; flex-wrap:wrap; gap:12px; justify-content:center; padding:0; list-style:none; }
-    nav a[aria-current="page"] { text-decoration: underline; }
-
-    /* Card system */
-    .wrap { max-width:1100px; margin:0 auto; padding:24px 16px 56px; }
-    .stack { display:grid; gap:18px; }
-    .card {
-      background: rgba(255,255,255,.82);
-      backdrop-filter: blur(8px) saturate(140%);
-      border: 1px solid rgba(255,255,255,.25);
-      border-radius: 18px;
-      padding: 22px;
-      color: #0b1020;
-      box-shadow: 0 10px 30px rgba(0,0,0,.25);
-    }
-    .card h2, .card h3 { margin: 0 0 .6rem; }
-    .card p { margin: .4rem 0 .8rem; line-height: 1.6; }
-
-    /* Hero card */
-    .hero-card {
-      text-align: center;
-      padding: 28px 22px;
-    }
-    .pill {
-      display:inline-block; font-weight:700; font-size:.8rem; letter-spacing:.04em;
-      color:#fff; background:linear-gradient(90deg,#0ea5e9,#6366f1);
-      padding:6px 10px; border-radius:999px; margin-bottom:8px;
-    }
-    .hero-title { font-size:clamp(28px,4vw,44px); margin:.25rem 0 .35rem; color:#0b1020; }
-    .hero-sub { opacity:.9; max-width:800px; margin:0 auto .6rem; }
-
-    /* Timeline */
-    .timeline { display:grid; gap:14px; }
-    .timeline-item {
-      display:grid; gap:6px;
-      border-left:3px solid rgba(14,165,233,.55);
-      padding-left:14px;
-    }
-    .timeline-item time { font-weight:800; color:#0ea5e9; }
-    .timeline-item p { margin:0; }
-
-    /* Two-column grids that collapse nicely */
-    .grid-2 { display:grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap:16px; }
-    @media (max-width: 860px) { .grid-2 { grid-template-columns: 1fr; } }
-
-    /* CTA buttons */
-    .cta-row { display:flex; flex-wrap:wrap; gap:10px; justify-content:center; margin-top:8px; }
-    .btn {
-      display:inline-flex; align-items:center; gap:8px; padding:12px 16px; border-radius:12px;
-      text-decoration:none; font-weight:800; transition: transform .08s ease, opacity .2s ease;
-    }
-    .btn-solid { background:#0ea5e9; color:#fff; }
-    .btn-ghost { background:transparent; border:2px solid #0ea5e9; color:#0ea5e9; }
-    .btn-dark  { background:#000; color:#fff; }
-    .btn:hover { transform: translateY(-1px); opacity:.95; }
-
-    .quote { font-style:italic; opacity:.95; }
-    .sign { font-weight:700; opacity:.9; }
-
-    footer { text-align:center; padding:28px 16px; color:#e6e6e6; }
-    .footer-nav ul { display:flex; flex-wrap:wrap; gap:12px; justify-content:center; list-style:none; padding:0; }
-    .social-media-buttons img { height:24px; }
-  </style>
 </head>
-<body>
-    <body class="use-global-bg">
-      <header class="site-header">
-        <div class="announcement-banner" role="status" aria-live="polite">
-          🚀 Star Task for <strong>iOS</strong> is LIVE — <strong>Released Nov 6, 2025</strong> •
-          <a href="https://apps.apple.com/ua/app/star-task-app/id6749521376" target="_blank" rel="noopener" style="color:#fff;text-decoration:underline">Download</a>
+<body class="use-global-bg">
+  <header class="site-header">
+    <div class="announcement-banner" role="status" aria-live="polite">
+      🚀 Star Task for <strong>iOS</strong> is LIVE — <strong>Released Nov 6, 2025</strong> •
+      <a href="https://apps.apple.com/ua/app/star-task-app/id6749521376" target="_blank" rel="noopener" style="color:#fff;text-decoration:underline">Download</a>
+    </div>
+
+    <div class="header-inner" id="headerInner">
+      <!-- Brand -->
+      <a href="index.html" class="brand" aria-label="Star Task Home">
+        <img src="images/logo.png" alt="Star Task Logo" class="logo">
+        <h1 class="title">Star Task</h1>
+      </a>
+
+      <button class="menu-toggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="primaryNav"><span></span></button>
+
+      <!-- Nav -->
+      <nav class="nav-wrap" id="primaryNav" aria-label="Primary">
+        <ul class="nav-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html" aria-current="page">About</a></li>
+          <li><a href="features.html">Features</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="blog.html">Blog</a></li>
+          <li><a href="privacy-policy.html">Privacy</a></li>
+          <li><a href="terms.html">Terms</a></li>
+        </ul>
+      </nav>
+
+      <div class="store-ctas">
+        <a class="store-ios" href="https://apps.apple.com/ua/app/star-task-app/id6749521376" target="_blank" rel="noopener">🍎 App&nbsp;Store</a>
+        <a class="store-android" href="https://play.google.com/store/apps/details?id=com.fan.startask" target="_blank" rel="noopener">▶️ Google&nbsp;Play</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="section">
+    <div class="overlay">
+      <!-- HERO -->
+      <section class="hero-card" style="text-align:center">
+        <span class="pill">Star Task · Story &amp; Vision</span>
+        <h2 class="hero-title">Built for clarity. Forged for focus.</h2>
+        <p class="hero-sub" style="max-width:800px;margin:0 auto;">
+          Star Task is a handcrafted, AI-powered productivity companion. It turns voice, text, links, and docs
+          into clean, actionable lists, keeping you on track with intelligent iOS reminders, beautiful themes,
+          and collaboration that actually feels simple.
+        </p>
+        <div style="display:flex;flex-wrap:wrap;gap:10px;justify-content:center;margin-top:10px;">
+          <a class="btn btn-dark" href="https://apps.apple.com/ua/app/star-task-app/id6749521376" target="_blank" rel="noopener">🍎 Get Star Task on iOS</a>
+          <a class="btn btn-ghost" href="https://play.google.com/store/apps/details?id=com.fan.startask" target="_blank" rel="noopener">▶️ Get it on Google Play</a>
+          <a class="btn btn-solid" href="features.html">Explore Features</a>
         </div>
-      
-        <div class="header-inner" id="headerInner">
-          <!-- Left: Brand -->
-          <a href="index.html" class="brand" aria-label="Star Task Home">
-            <img src="images/logo.png" alt="Star Task Logo" class="logo">
-            <h1 class="title">Star Task</h1>
-          </a>
-      
-          <!-- Mobile Toggle -->
-          <button class="menu-toggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="primaryNav" onclick="
-            const hdr=document.getElementById('headerInner').parentElement;
-            const btn=this;
-            hdr.classList.toggle('menu-open');
-            btn.setAttribute('aria-expanded', hdr.classList.contains('menu-open'));
-          ">
-            <span></span>
-          </button>
-      
-          <!-- Center: Nav -->
-          <nav class="nav-wrap" id="primaryNav" aria-label="Primary">
-            <ul class="nav-links">
-              <li><a href="index.html" aria-current="page">Home</a></li>
-              <li><a href="about.html">About</a></li>
-              <li><a href="features.html">Features</a></li>
-              <li><a href="contact.html">Contact</a></li>
-              <li><a href="blog.html">Blog</a></li>
-              <li><a href="privacy-policy.html">Privacy</a></li>
-              <li><a href="terms.html">Terms</a></li>
-            </ul>
-          </nav>
-      
-          <!-- Right: Store CTAs (auto-hide on small screens) -->
-          <div class="store-ctas">
-            <a class="store-ios" href="https://apps.apple.com/ua/app/star-task-app/id6749521376" target="_blank" rel="noopener">🍎 App&nbsp;Store</a>
-            <a class="store-android" href="https://play.google.com/store/apps/details?id=com.fan.startask" target="_blank" rel="noopener">▶️ Google&nbsp;Play</a>
+      </section>
+
+      <!-- VISION + VALUES -->
+      <section class="grid" style="margin-top:18px;">
+        <article class="card">
+          <h2>Our Vision</h2>
+          <p>
+            Productivity should feel <em>beautiful</em> and <em>alive</em>, not heavy. Star Task focuses on signal over noise:
+            fast list creation, respectful reminders, and a UI that sparks momentum. It’s your space to plan, think, and execute.
+          </p>
+          <p>
+            We care about thoughtful details: drag-to-reorder lists, rapid-fire task entry, label management, sharing that just works,
+            and themes that make everyday planning feel like a ritual instead of a chore.
+          </p>
+        </article>
+
+        <article class="card">
+          <h2>How We Think</h2>
+          <p>
+            Star Task is an indie, heart-forward product. We build for real people with real days, meetings, family, goals, and chaos.
+            AI should reduce friction, never add it. Every feature asks: does this make life easier <em>right now</em>?
+          </p>
+          <p>
+            Privacy matters. You can delete content, delete your account, and even bring your own OpenAI API key for advanced models.
+          </p>
+        </article>
+      </section>
+
+      <!-- JOURNEY TIMELINE -->
+      <section class="card" style="margin-top:18px;">
+        <h2>Our Journey</h2>
+        <div style="display:grid;gap:14px;">
+          <div style="border-left:3px solid rgba(14,165,233,.55);padding-left:14px;">
+            <strong>January 2024</strong> — Conceptualized Star Task: a cleaner, kinder way to get things done.
+          </div>
+          <div style="border-left:3px solid rgba(14,165,233,.55);padding-left:14px;">
+            <strong>March 2024</strong> — First Prototype in Jetpack Compose.
+          </div>
+          <div style="border-left:3px solid rgba(14,165,233,.55);padding-left:14px;">
+            <strong>August 2024</strong> — Google Play Launch.
+          </div>
+          <div style="border-left:3px solid rgba(14,165,233,.55);padding-left:14px;">
+            <strong>November 2024</strong> — Advanced AI lists & reminders.
+          </div>
+          <div style="border-left:3px solid rgba(14,165,233,.55);padding-left:14px;">
+            <strong>Jan–Aug 2025</strong> — International growth: 50,000+ users.
+          </div>
+          <div style="border-left:3px solid rgba(14,165,233,.55);padding-left:14px;">
+            <strong>June 2025</strong> — Core refactor for speed & stability.
+          </div>
+          <div style="border-left:3px solid rgba(14,165,233,.55);padding-left:14px;">
+            <strong>Nov 6, 2025</strong> — iOS Launch with the AI Modal overhaul.
           </div>
         </div>
-      </header>
+      </section>
 
-  <main class="wrap">
-    <!-- HERO -->
-    <section class="card hero-card">
-      <span class="pill">Star Task · Story & Vision</span>
-      <h2 class="hero-title">Built for clarity. Forged for focus.</h2>
-      <p class="hero-sub">
-        Star Task is a handcrafted, AI-powered productivity companion. It turns voice, text, links, and docs
-        into clean, actionable lists, keeping you on track with intelligent iOS reminders, beautiful themes,
-        and collaboration that actually feels simple.
-      </p>
-      <div class="cta-row">
-        <a class="btn btn-dark" href="https://apps.apple.com/ua/app/star-task-app/id6749521376" target="_blank" rel="noopener">🍎 Get Star Task on iOS</a>
-        <a class="btn btn-ghost" href="https://play.google.com/store/apps/details?id=com.fan.startask" target="_blank" rel="noopener">▶️ Get it on Google Play</a>
-        <a class="btn btn-solid" href="features.html">Explore Features</a>
-      </div>
-    </section>
+      <!-- AI FOCUS -->
+      <section class="grid" style="margin-top:18px;">
+        <article class="card">
+          <h2>AI that Listens</h2>
+          <p>
+            Four ways in: Text, Voice (Quick Command or Record &amp; Transcribe), Document (.docx/.pdf), and Link.
+            Pick your List Type (Bullet, Reminder, Summary, Brainstorm) and let Star Task do the heavy lifting.
+          </p>
+          <p>
+            iOS reminders can be <em>Banner + Sound</em> or <em>Banner (Silent)</em>, repeating on your schedule and updating next-due times from the cloud.
+          </p>
+        </article>
 
-    <!-- VISION + VALUES -->
-    <section class="grid-2">
-      <article class="card">
-        <h2>Our Vision</h2>
-        <p>
-          Productivity should feel <em>beautiful</em> and <em>alive</em>, not heavy. Star Task focuses on signal over noise:
-          fast list creation, respectful reminders, and a UI that sparks momentum. It’s your space to plan, think, and execute.
-        </p>
-        <p>
-          We care about thoughtful details: drag-to-reorder lists, rapid-fire task entry, label management, sharing that just works,
-          and themes that make everyday planning feel like a ritual instead of a chore.
-        </p>
-      </article>
+        <article class="card">
+          <h2>Themes &amp; Feel</h2>
+          <p>
+            Start with Cosmic Dawn, then level up with Daybreak, Alive, Elemental Green, Charge, Peach, Rejuvenating Whisper,
+            and Withering Whisper. Light/Dark/System modes, plus custom background uploads.
+          </p>
+          <p>Star Chaos animations bring a little starlight every time you open the app.</p>
+        </article>
+      </section>
 
-      <article class="card">
-        <h2>How We Think</h2>
+      <!-- Founder Note -->
+      <section class="card" style="margin-top:18px;">
+        <h2>A Note from the Maker</h2>
         <p>
-          Star Task is an indie, heart-forward product. We build for real people with real days, meetings, family, goals, and chaos.
-          AI should reduce friction, never add it. Every feature asks: does this make life easier <em>right now</em>?
+          Star Task was built by a relentless, one-person team, with family, late nights, and a stubborn belief that tools should serve
+          people, not the other way around. If Star Task helps you move through your day with more courage and less friction,
+          then it’s doing its job.
         </p>
-        <p>
-          Privacy matters. You can delete content, delete your account, and even bring your own OpenAI API key for advanced models.
-        </p>
-      </article>
-    </section>
+        <p style="font-style:italic;opacity:.95;">“We don’t wait for permission. We create our path and keep moving.” — inspired by the spirit of shōnen grit</p>
+      </section>
 
-    <!-- JOURNEY TIMELINE (now includes 2024 + 2025) -->
-    <section class="card">
-      <h2>Our Journey</h2>
-      <div class="timeline">
-        <div class="timeline-item">
-          <time>January 2024</time>
-          <p><strong>Conceptualized Star Task:</strong> The spark, a cleaner, kinder way to get things done.</p>
+      <!-- CTA -->
+      <section class="card" style="text-align:center; margin-top:18px;">
+        <h2>Try Star Task</h2>
+        <p>Turn noise into momentum — and let your next idea become your next done.</p>
+        <div style="display:flex;flex-wrap:wrap;gap:10px;justify-content:center;margin-top:8px;">
+          <a class="btn btn-dark" href="https://apps.apple.com/ua/app/star-task-app/id6749521376" target="_blank" rel="noopener">🍎 Download on the App&nbsp;Store</a>
+          <a class="btn btn-ghost" href="https://play.google.com/store/apps/details?id=com.fan.startask" target="_blank" rel="noopener">▶️ Get it on Google Play</a>
+          <a class="btn btn-solid" href="features.html">See Full Feature List</a>
         </div>
-        <div class="timeline-item">
-          <time>March 2024</time>
-          <p><strong>First Prototype:</strong> Early Jetpack Compose builds, finding the feel.</p>
-        </div>
-        <div class="timeline-item">
-          <time>August 2024</time>
-          <p><strong>Google Play Launch:</strong> Star Task goes live on Android.</p>
-        </div>
-        <div class="timeline-item">
-          <time>November 2024</time>
-          <p><strong>Advanced AI Features:</strong> AI lists and reminders begin to take shape.</p>
-        </div>
-        <div class="timeline-item">
-          <time>Jan–Aug 2025</time>
-          <p><strong>International Drip Campaign:</strong> 50,000 users worldwide, especially across South Asia, powered by Android’s 76-language localization.</p>
-        </div>
-        <div class="timeline-item">
-          <time>June 2025</time>
-          <p><strong>Core Reforged:</strong> Deep Android refactor that made everything faster, steadier, and cleaner for the road ahead.</p>
-        </div>
-        <div class="timeline-item">
-          <time>Nov 6, 2025</time>
-          <p><strong>iOS Launch:</strong> Star Task arrives on iPhone in English, our first full KMP, feature-rich release on iOS with the AI Modal overhaul. Cross-platform parity, near-perfect polish.</p>
-        </div>
-      </div>
-    </section>
-
-    <!-- AI FOCUS -->
-    <section class="grid-2">
-      <article class="card">
-        <h2>AI that Listens</h2>
-        <p>
-          The AI Modal offers four ways in: Text, Voice (Quick Command or Record &amp; Transcribe), Document (.docx/.pdf), and Link.
-          Pick your List Type from Bullet, Reminder, Summary, or Brainstorm, and let Star Task do the heavy lifting.
-        </p>
-        <p>
-          Reminders on iOS can be <em>Banner + Sound</em> or <em>Banner (Silent)</em>, repeating on your schedule and updating next-due times seamlessly in the cloud.
-        </p>
-      </article>
-
-      <article class="card">
-        <h2>Themes &amp; Feel</h2>
-        <p>
-          Start with Cosmic Dawn, then level up with Daybreak, Alive, Elemental Green, Charge, Peach, Rejuvenating Whisper,
-          and Withering Whisper. Light/Dark/System modes, and a custom background option for your personal vibe.
-        </p>
-        <p>
-          Star Chaos animations bring a little starlight every time you open the app.
-        </p>
-      </article>
-    </section>
-
-    <!-- FOUNDER NOTE -->
-    <section class="card">
-      <h2>A Note from the Maker</h2>
-      <p>
-        Star Task was built by a relentless, one-person team, with family, late nights, and a stubborn belief that tools should serve
-        people, not the other way around. If Star Task helps you move through your day with more courage and less friction,
-        then it’s doing its job.
-      </p>
-      <p class="quote">“We don’t wait for permission. We create our path and keep moving.” <span class="sign">— inspired by the spirit of shōnen grit</span></p>
-    </section>
-
-    <!-- CTA -->
-    <section class="card" style="text-align:center">
-      <h2>Try Star Task</h2>
-      <p>Turn noise into momentum — and let your next idea become your next done.</p>
-      <div class="cta-row">
-        <a class="btn btn-dark" href="https://apps.apple.com/ua/app/star-task-app/id6749521376" target="_blank" rel="noopener">🍎 Download on the App&nbsp;Store</a>
-        <a class="btn btn-ghost" href="https://play.google.com/store/apps/details?id=com.fan.startask" target="_blank" rel="noopener">▶️ Get it on Google Play</a>
-        <a class="btn btn-solid" href="features.html">See Full Feature List</a>
-      </div>
-    </section>
+      </section>
+    </div>
   </main>
 
   <footer>
