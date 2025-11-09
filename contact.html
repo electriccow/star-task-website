@@ -1,120 +1,268 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact Us - Star Task</title>
-    <link rel="stylesheet" href="css/styles.css">
-    <!-- Open Graph Meta Tags -->
-    <meta property="og:title" content="Contact Us - Star Task">
-    <meta property="og:description" content="Get in touch with the Star Task team for any inquiries or support.">
-    <meta property="og:image" content="https://startaskapp.com/images/app-icon.png">
-    <meta property="og:url" content="https://startaskapp.com/contact.html">
-    <meta property="og:type" content="website">
-    <!-- Twitter Card Meta Tags -->
-    <meta name="twitter:card" content="summary">
-    <meta name="twitter:title" content="Contact Us - Star Task">
-    <meta name="twitter:description" content="Get in touch with the Star Task team for any inquiries or support.">
-    <meta name="twitter:image" content="https://startaskapp.com/images/app-icon.png">
-    <meta name="twitter:url" content="https://startaskapp.com/contact.html">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Contact Us - Star Task</title>
+  <link rel="stylesheet" href="css/styles.css" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Contact Us - Star Task" />
+  <meta property="og:description" content="Get in touch with the Star Task team for any inquiries or support." />
+  <meta property="og:image" content="https://startaskapp.com/images/app-icon.png" />
+  <meta property="og:url" content="https://startaskapp.com/contact.html" />
+  <meta property="og:type" content="website" />
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Contact Us - Star Task" />
+  <meta name="twitter:description" content="Get in touch with the Star Task team for any inquiries or support." />
+  <meta name="twitter:image" content="https://startaskapp.com/images/app-icon.png" />
+  <meta name="twitter:url" content="https://startaskapp.com/contact.html" />
+
+  <!-- Page polish (safe, minimal, no text changes) -->
+  <style>
+    /* Use same “glass” look as the other pages, but keep global bg */
+    .contact-hero,
+    .contact-card{
+      max-width: 960px;
+      margin: 24px auto;
+      padding: clamp(18px, 2.6vw, 28px);
+      border-radius: 18px;
+      background: linear-gradient(180deg, rgba(255,255,255,.92), rgba(255,255,255,.86));
+      border: 1px solid rgba(0,0,0,.08);
+      box-shadow: 0 10px 30px rgba(0,0,0,.18);
+      backdrop-filter: blur(8px) saturate(140%);
+      -webkit-backdrop-filter: blur(8px) saturate(140%);
+      color: #0f172a;
+    }
+    .contact-hero { text-align:center; margin-top: 28px; }
+    .contact-hero h2 { margin: 0 0 8px; font-size: clamp(28px, 4vw, 40px); }
+    .contact-hero p { margin: 0; opacity: .95; }
+
+    .contact-card { max-width: 760px; }
+
+    .contact-field { margin-bottom: 16px; }
+    .contact-label { display:block; margin-bottom: 6px; font-weight: 800; letter-spacing: .1px; }
+
+    .contact-input, .contact-textarea {
+      width: 100%;
+      padding: 12px 14px;
+      border-radius: 12px;
+      border: 1px solid rgba(15,23,42,.12);
+      background: rgba(255,255,255,.97);
+      color: #0f172a;
+      outline: none;
+      box-shadow: 0 2px 8px rgba(0,0,0,.06) inset;
+      transition: box-shadow .15s ease, border-color .15s ease;
+    }
+    .contact-input:focus, .contact-textarea:focus {
+      border-color: #93c5fd; box-shadow: 0 0 0 3px rgba(147,197,253,.35);
+    }
+    .contact-textarea { min-height: 160px; resize: vertical; }
+
+    /* Keep native controls light even if extensions/auto-dark try to invert */
+    .contact-card { color-scheme: light; }
+    input[type="email"].contact-input {
+      background: rgba(255,255,255,.97) !important;
+      color:#0f172a !important;
+      -webkit-text-fill-color:#0f172a !important;
+      border-color: rgba(15,23,42,.12) !important;
+    }
+    /* Autofill */
+    input:-webkit-autofill,
+    input:-webkit-autofill:hover,
+    input:-webkit-autofill:focus,
+    textarea:-webkit-autofill {
+      -webkit-text-fill-color:#0f172a !important;
+      box-shadow: 0 0 0 1000px rgba(255,255,255,.97) inset !important;
+      border-color: rgba(15,23,42,.12) !important;
+      transition: background-color 9999s ease-in-out 0s;
+    }
+
+    .contact-submit{
+      display:inline-flex; align-items:center; justify-content:center;
+      padding: 12px 18px; border-radius: 12px; border: none; cursor: pointer;
+      font-weight: 800; background: #0ea5e9; color: #fff;
+      box-shadow: 0 6px 18px rgba(14,165,233,.35);
+      transition: transform .08s ease, opacity .2s ease;
+    }
+    .contact-submit:hover{ transform: translateY(-1px); opacity: .95; }
+
+    /* Respect dark mode while staying readable on your cosmic bg */
+    @media (prefers-color-scheme: dark){
+      .contact-hero,
+      .contact-card{
+        background: linear-gradient(180deg, rgba(17,24,39,.80), rgba(17,24,39,.72));
+        color: #e5e7eb;
+        border-color: rgba(255,255,255,.08);
+      }
+      .contact-input, .contact-textarea{
+        background: rgba(15,23,42,.82);
+        color: #e5e7eb;
+        border-color: rgba(255,255,255,.12);
+      }
+      input[type="email"].contact-input{ -webkit-text-fill-color:#e5e7eb !important; }
+      input:-webkit-autofill,
+      input:-webkit-autofill:hover,
+      input:-webkit-autofill:focus,
+      textarea:-webkit-autofill {
+        -webkit-text-fill-color:#e5e7eb !important;
+        box-shadow: 0 0 0 1000px rgba(15,23,42,.82) inset !important;
+      }
+    }
+  </style>
+  <style>
+    /* --- Contact form card: match the site's dark glass overlay --- */
+    .contact-card{
+      background: linear-gradient(180deg, rgba(0,0,0,.55), rgba(0,0,0,.48)) !important;
+      border: 1px solid rgba(255,255,255,.12) !important;
+      box-shadow: 0 10px 30px rgba(0,0,0,.45) !important;
+      color: #fff !important;
+      backdrop-filter: blur(6px) saturate(140%);
+      -webkit-backdrop-filter: blur(6px) saturate(140%);
+    }
+  
+    /* Make labels readable on the darker card */
+    .contact-label { color:#fff !important; opacity:.95; }
+  
+    /* Keep inputs light for contrast against dark card */
+    .contact-input, .contact-textarea{
+      background: rgba(255,255,255,.97) !important;
+      color: #0f172a !important;
+      border: 1px solid rgba(15,23,42,.12) !important;
+    }
+    .contact-input:focus, .contact-textarea:focus{
+      border-color:#93c5fd !important;
+      box-shadow:0 0 0 3px rgba(147,197,253,.35) !important;
+    }
+  
+    /* Button pop on dark */
+    .contact-submit{
+      background:#0ea5e9 !important;
+      box-shadow:0 6px 18px rgba(14,165,233,.35) !important;
+    }
+  
+    /* Prefer dark scheme for the card while leaving inputs light */
+    @media (prefers-color-scheme: dark){
+      .contact-card{ background: linear-gradient(180deg, rgba(17,24,39,.80), rgba(17,24,39,.72)) !important; }
+    }
+  </style>
+  <style>
+    /* Make the top intro panel match the dark glass card */
+    .contact-hero{
+      background: linear-gradient(180deg, rgba(0,0,0,.55), rgba(0,0,0,.48)) !important;
+      border: 1px solid rgba(255,255,255,.12) !important;
+      box-shadow: 0 10px 30px rgba(0,0,0,.45) !important;
+      color: #fff !important;
+      backdrop-filter: blur(6px) saturate(140%);
+      -webkit-backdrop-filter: blur(6px) saturate(140%);
+    }
+    .contact-hero h2,
+    .contact-hero p{ color:#fff !important; }
+  </style>
 </head>
-<body>
-    <body class="use-global-bg">
-        <header class="site-header">
-            <div class="announcement-banner" role="status" aria-live="polite">
-              🚀 Star Task for <strong>iOS</strong> is LIVE — <strong>Released Nov 6, 2025</strong> •
-              <a href="https://apps.apple.com/ua/app/star-task-app/id6749521376" target="_blank" rel="noopener" style="color:#fff;text-decoration:underline">Download</a>
-            </div>
-          
-            <div class="header-inner" id="headerInner">
-              <!-- Left: Brand -->
-              <a href="index.html" class="brand" aria-label="Star Task Home">
-                <img src="images/logo.png" alt="Star Task Logo" class="logo">
-                <h1 class="title">Star Task</h1>
-              </a>
-          
-              <!-- Mobile Toggle -->
-              <button class="menu-toggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="primaryNav" onclick="
-                const hdr=document.getElementById('headerInner').parentElement;
-                const btn=this;
-                hdr.classList.toggle('menu-open');
-                btn.setAttribute('aria-expanded', hdr.classList.contains('menu-open'));
-              ">
-                <span></span>
-              </button>
-          
-              <!-- Center: Nav -->
-              <nav class="nav-wrap" id="primaryNav" aria-label="Primary">
-                <ul class="nav-links">
-                  <li><a href="index.html" aria-current="page">Home</a></li>
-                  <li><a href="about.html">About</a></li>
-                  <li><a href="features.html">Features</a></li>
-                  <li><a href="contact.html">Contact</a></li>
-                  <li><a href="blog.html">Blog</a></li>
-                  <li><a href="privacy-policy.html">Privacy</a></li>
-                  <li><a href="terms.html">Terms</a></li>
-                </ul>
-              </nav>
-          
-              <!-- Right: Store CTAs (auto-hide on small screens) -->
-              <div class="store-ctas">
-                <a class="store-ios" href="https://apps.apple.com/ua/app/star-task-app/id6749521376" target="_blank" rel="noopener">🍎 App&nbsp;Store</a>
-                <a class="store-android" href="https://play.google.com/store/apps/details?id=com.fan.startask" target="_blank" rel="noopener">▶️ Google&nbsp;Play</a>
-              </div>
-            </div>
-          </header>
-    <main>
-        <section class="hero-section" style="background-image: url('images/background1.png');">
-            <div class="overlay">
-                <div class="feature-content">
-                    <h2>We'd Love to Hear From You</h2>
-                    <p>If you have any questions, feedback, or need support, feel free to reach out to us using the form below. Our team is here to assist you and ensure you have the best experience with Star Task.</p>
-                </div>
-            </div>
-        </section>
-        <section class="features-section" style="background-image: url('images/background1.png');">
-            <div class="overlay" style="background: rgba(0, 0, 0, 0.5); padding: 40px 20px;">
-                <div class="feature-content">
-                    <form action="https://formspree.io/f/xdoqrjpl" method="POST" style="max-width: 600px; margin: 0 auto;">
-                        <div style="margin-bottom: 20px;">
-                            <label for="name" style="color: #fff; display: block; margin-bottom: 5px;">Name:</label>
-                            <input type="text" id="name" name="name" required style="width: 100%; padding: 10px; border-radius: 8px; border: none; box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);">
-                        </div>
-                        
-                        <div style="margin-bottom: 20px;">
-                            <label for="email" style="color: #fff; display: block; margin-bottom: 5px;">Email:</label>
-                            <input type="email" id="email" name="email" required style="width: 100%; padding: 10px; border-radius: 8px; border: none; box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);">
-                        </div>
-                        
-                        <div style="margin-bottom: 20px;">
-                            <label for="message" style="color: #fff; display: block; margin-bottom: 5px;">Message:</label>
-                            <textarea id="message" name="message" required style="width: 100%; padding: 10px; border-radius: 8px; border: none; box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); height: 150px;"></textarea>
-                        </div>
-                        
-                        <button type="submit" style="background-color: #007bff; color: white; padding: 10px 20px; border: none; border-radius: 8px; cursor: pointer; transition: background-color 0.3s;">
-                            Send
-                        </button>
-                    </form>
-                </div>
-            </div>
-        </section>
-    </main>
-    <footer>
-        <p>&copy; 2024 Star Task</p>
-        <nav class="footer-nav">
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="about.html">About</a></li>
-                <li><a href="features.html">Features</a></li>
-                <li><a href="blog.html">Blog</a></li>
-                <li><a href="contact.html">Contact</a></li>
-                <li><a href="privacy-policy.html">Privacy Policy</a></li>
-            </ul>
-        </nav>
-        <div class="social-media-buttons">
-            <a href="https://www.twitter.com/startaskapp" target="_blank"><img src="images/twitter-icon.png" alt="Twitter"></a>
-            <a href="https://discord.gg/6mvf5CNFmF" target="_blank"><img src="images/discord-icon.png" alt="Discord"></a>
-        </div>
-    </footer>
+
+<body class="use-global-bg">
+  <header class="site-header">
+    <div class="announcement-banner" role="status" aria-live="polite">
+      🚀 Star Task for <strong>iOS</strong> is LIVE — <strong>Released Nov 6, 2025</strong> •
+      <a href="https://apps.apple.com/ua/app/star-task-app/id6749521376" target="_blank" rel="noopener" style="color:#fff;text-decoration:underline">Download</a>
+    </div>
+
+    <div class="header-inner" id="headerInner">
+      <!-- Brand -->
+      <a href="index.html" class="brand" aria-label="Star Task Home">
+        <img src="images/logo.png" alt="Star Task Logo" class="logo">
+        <h1 class="title">Star Task</h1>
+      </a>
+
+      <!-- Mobile Menu -->
+      <button class="menu-toggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="primaryNav" onclick="
+        const hdr=document.getElementById('headerInner').parentElement;
+        const btn=this;
+        hdr.classList.toggle('menu-open');
+        btn.setAttribute('aria-expanded', hdr.classList.contains('menu-open'));
+      ">
+        <span></span>
+      </button>
+
+      <!-- Nav -->
+      <nav class="nav-wrap" id="primaryNav" aria-label="Primary">
+        <ul class="nav-links">
+          <li><a href="index.html" aria-current="page">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="features.html">Features</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="blog.html">Blog</a></li>
+          <li><a href="privacy-policy.html">Privacy</a></li>
+          <li><a href="terms.html">Terms</a></li>
+        </ul>
+      </nav>
+
+      <!-- Store CTAs -->
+      <div class="store-ctas">
+        <a class="store-ios" href="https://apps.apple.com/ua/app/star-task-app/id6749521376" target="_blank" rel="noopener">🍎 App&nbsp;Store</a>
+        <a class="store-android" href="https://play.google.com/store/apps/details?id=com.fan.startask" target="_blank" rel="noopener">▶️ Google&nbsp;Play</a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- HERO -->
+    <section class="hero-section">
+      <div class="contact-hero">
+        <h2>We'd Love to Hear From You</h2>
+        <p>If you have any questions, feedback, or need support, feel free to reach out to us using the form below. Our team is here to assist you and ensure you have the best experience with Star Task.</p>
+      </div>
+    </section>
+
+    <!-- FORM -->
+    <section class="features-section">
+      <div class="contact-card" role="form" aria-labelledby="contact-heading">
+        <h3 id="contact-heading" class="sr-only">Contact form</h3>
+        <form action="https://formspree.io/f/xdoqrjpl" method="POST" style="margin:0;">
+          <div class="contact-field">
+            <label for="name" class="contact-label">Name:</label>
+            <input type="text" id="name" name="name" required class="contact-input" />
+          </div>
+
+          <div class="contact-field">
+            <label for="email" class="contact-label">Email:</label>
+            <input type="email" id="email" name="email" required class="contact-input" />
+          </div>
+
+          <div class="contact-field">
+            <label for="message" class="contact-label">Message:</label>
+            <textarea id="message" name="message" required class="contact-textarea"></textarea>
+          </div>
+
+          <button type="submit" class="contact-submit">Send</button>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2024 Star Task</p>
+    <nav class="footer-nav" aria-label="Footer">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="features.html">Features</a></li>
+        <li><a href="blog.html">Blog</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="privacy-policy.html">Privacy Policy</a></li>
+      </ul>
+    </nav>
+    <div class="social-media-buttons">
+      <a href="https://www.twitter.com/startaskapp" target="_blank" rel="noopener">
+        <img src="images/twitter-icon.png" alt="Twitter">
+      </a>
+      <a href="https://discord.gg/6mvf5CNFmF" target="_blank" rel="noopener">
+        <img src="images/discord-icon.png" alt="Discord">
+      </a>
+    </div>
+  </footer>
 </body>
 </html>

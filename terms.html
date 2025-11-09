@@ -10,8 +10,35 @@
   <meta property="og:image" content="https://startaskapp.com/images/app-icon.png"/>
   <meta property="og:url" content="https://startaskapp.com/terms.html"/>
   <meta property="og:type" content="website"/>
+
+  <!-- Page-specific dark glass so cards never turn white -->
+  <style>
+    .terms-hero,
+    .terms-card{
+      max-width: 1100px;
+      margin: 24px auto;
+      padding: clamp(18px, 2.6vw, 28px);
+      border-radius: 18px;
+      background: linear-gradient(180deg, rgba(0,0,0,.55), rgba(0,0,0,.48)) !important;
+      border: 1px solid rgba(255,255,255,.12) !important;
+      box-shadow: 0 10px 30px rgba(0,0,0,.45) !important;
+      color: #fff !important;
+      backdrop-filter: blur(6px) saturate(140%);
+      -webkit-backdrop-filter: blur(6px) saturate(140%);
+    }
+    .terms-hero { text-align:center; margin-top: 28px; }
+    .terms-hero h2 { margin: 0 0 8px; font-size: clamp(28px, 4vw, 40px); }
+    .terms-hero p  { margin: 0; opacity:.95; }
+
+    /* Links readable on dark */
+    .terms-card a { color:#60a5fa; }
+    .terms-card a:hover { text-decoration: underline; }
+
+    /* Ensure extensions/light-mode flips don't invert these */
+    .terms-hero, .terms-card { color-scheme: dark; }
+  </style>
 </head>
-<body>
+<body class="use-global-bg">
   <header class="site-header">
     <div class="announcement-banner" role="status" aria-live="polite">
       🚀 Star Task for <strong>iOS</strong> is LIVE — <strong>Released Nov 6, 2025</strong> •
@@ -59,7 +86,7 @@
 <main>
   <section class="hero-section" style="background-image:url('images/background7.png')">
     <div class="overlay">
-      <div class="feature-content">
+      <div class="feature-content terms-hero">
         <h2>Welcome</h2>
         <p>These Terms of Use (“Terms”) govern your access to and use of Star Task (the “Service”). By using Star Task, you agree to these Terms.</p>
         <p><strong>Last updated:</strong> October 30, 2025</p>
@@ -69,7 +96,7 @@
 
   <!-- Accounts -->
   <section class="features-section" style="background: linear-gradient(rgba(0,0,0,.5), rgba(0,0,0,.5)), url('images/background2.png');">
-    <div class="feature-content">
+    <div class="feature-content terms-card">
       <h3>Accounts & Eligibility</h3>
       <ul>
         <li>You must be legally able to form a binding contract, and at least 13 years old (or the minimum age in your country).</li>
@@ -80,7 +107,7 @@
 
   <!-- Subscriptions -->
   <section class="features-section" style="background: linear-gradient(rgba(0,0,0,.5), rgba(0,0,0,.5)), url('images/background3.png');">
-    <div class="feature-content">
+    <div class="feature-content terms-card">
       <h3>Purchases, Subscriptions & Renewal</h3>
       <ul>
         <li><strong>iOS:</strong> Purchases are processed by Apple. Subscriptions auto-renew until canceled. Manage in <em>Settings &gt; Apple ID &gt; Subscriptions</em> or open the Subscriptions page from within the app.</li>
@@ -94,7 +121,7 @@
 
   <!-- Acceptable Use -->
   <section class="features-section" style="background: linear-gradient(rgba(0,0,0,.5), rgba(0,0,0,.5)), url('images/background4.png');">
-    <div class="feature-content">
+    <div class="feature-content terms-card">
       <h3>Acceptable Use</h3>
       <ul>
         <li>Don’t misuse the Service, attempt to disrupt it, or access it using unauthorized methods.</li>
@@ -106,7 +133,7 @@
 
   <!-- User Content -->
   <section class="features-section" style="background: linear-gradient(rgba(0,0,0,.5), rgba(0,0,0,.5)), url('images/background5.png');">
-    <div class="feature-content">
+    <div class="feature-content terms-card">
       <h3>Your Content</h3>
       <p>You own your lists, tasks, attachments, and other content. You grant us a limited license to host and process that content solely to provide the Service (e.g., storage, syncing, sharing lists you choose to share).</p>
     </div>
@@ -114,7 +141,7 @@
 
   <!-- Third parties -->
   <section class="features-section" style="background: linear-gradient(rgba(0,0,0,.5), rgba(0,0,0,.5)), url('images/background1.png');">
-    <div class="feature-content">
+    <div class="feature-content terms-card">
       <h3>Third-Party Services</h3>
       <ul>
         <li><strong>Firebase:</strong> storage, hosting, authentication helpers, analytics/crash reporting.</li>
@@ -126,7 +153,7 @@
 
   <!-- Termination -->
   <section class="features-section" style="background: linear-gradient(rgba(0,0,0,.5), rgba(0,0,0,.5)), url('images/background2.png');">
-    <div class="feature-content">
+    <div class="feature-content terms-card">
       <h3>Termination</h3>
       <p>You may stop using the Service at any time. We may suspend or terminate your access if you materially breach these Terms or misuse the Service. Certain sections (e.g., disclaimers, limitations of liability) survive termination.</p>
     </div>
@@ -134,7 +161,7 @@
 
   <!-- Disclaimers -->
   <section class="features-section" style="background: linear-gradient(rgba(0,0,0,.5), rgba(0,0,0,.5)), url('images/background3.png');">
-    <div class="feature-content">
+    <div class="feature-content terms-card">
       <h3>Disclaimers</h3>
       <p>The Service is provided “AS IS” and “AS AVAILABLE.” To the maximum extent permitted by law, we disclaim all warranties, express or implied, including merchantability, fitness for a particular purpose, and non-infringement. We do not guarantee uninterrupted or error-free operation.</p>
     </div>
@@ -142,7 +169,7 @@
 
   <!-- Liability -->
   <section class="features-section" style="background: linear-gradient(rgba(0,0,0,.5), rgba(0,0,0,.5)), url('images/background4.png');">
-    <div class="feature-content">
+    <div class="feature-content terms-card">
       <h3>Limitation of Liability</h3>
       <p>To the maximum extent permitted by law, we are not liable for any indirect, incidental, special, consequential, exemplary, or punitive damages, or any loss of data, profits, or revenues, arising from your use of the Service. Our total liability for any claim is limited to the amount you paid (if any) for the Service during the twelve (12) months prior to the event giving rise to the claim.</p>
     </div>
@@ -150,7 +177,7 @@
 
   <!-- Governing law & changes -->
   <section class="features-section" style="background: linear-gradient(rgba(0,0,0,.5), rgba(0,0,0,.5)), url('images/background5.png');">
-    <div class="feature-content">
+    <div class="feature-content terms-card">
       <h3>Governing Law; Changes</h3>
       <p>These Terms are governed by the laws of the State of Texas, USA, without regard to its conflict of law rules. We may update these Terms to reflect changes in our Service; we’ll revise the date above and, where appropriate, provide in-app notice. Your continued use indicates acceptance.</p>
       <p>Questions? <a href="mailto:ashnke@gmail.com">ashnke@gmail.com</a></p>

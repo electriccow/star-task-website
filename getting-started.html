@@ -12,8 +12,35 @@
   <meta property="og:image" content="https://startaskapp.com/images/app-icon.png"/>
   <meta property="og:url" content="https://startaskapp.com/getting-started.html"/>
   <meta property="og:type" content="article"/>
+
+  <!-- Page-specific dark glass so cards never turn white -->
+  <style>
+    .post-hero,
+    .post-card{
+      max-width: 1100px;
+      margin: 24px auto;
+      padding: clamp(18px, 2.6vw, 28px);
+      border-radius: 18px;
+      background: linear-gradient(180deg, rgba(0,0,0,.55), rgba(0,0,0,.48)) !important;
+      border: 1px solid rgba(255,255,255,.12) !important;
+      box-shadow: 0 10px 30px rgba(0,0,0,.45) !important;
+      color: #fff !important;
+      backdrop-filter: blur(6px) saturate(140%);
+      -webkit-backdrop-filter: blur(6px) saturate(140%);
+    }
+    .post-hero { text-align:center; margin-top: 28px; }
+    .post-hero h2 { margin: 0 0 8px; font-size: clamp(28px, 4vw, 40px); }
+    .post-hero p  { margin: 0; opacity:.95; }
+
+    /* Links readable on dark */
+    .post-card a { color:#60a5fa; }
+    .post-card a:hover { text-decoration: underline; }
+
+    /* Keep dark even if extensions try to invert */
+    .post-hero, .post-card { color-scheme: dark; }
+  </style>
 </head>
-<body>
+<body class="use-global-bg">
   <header class="site-header">
     <div class="announcement-banner" role="status" aria-live="polite">
       🚀 Star Task for <strong>iOS</strong> is LIVE — <strong>Released Nov 6, 2025</strong> •
@@ -62,7 +89,7 @@
   <!-- Hero -->
   <section class="hero-section" style="background-image:url('images/background7.png')">
     <div class="overlay">
-      <div class="feature-content" style="text-align:center">
+      <div class="feature-content post-hero" style="text-align:center">
         <h2>Welcome to Star Task ✨</h2>
         <p>Your AI-powered productivity companion 🚀</p>
       </div>
@@ -71,7 +98,7 @@
 
   <!-- Core flow -->
   <section class="features-section" style="background-image:url('images/background1.png')">
-    <div class="feature-content">
+    <div class="feature-content post-card">
       <h3>How it works 🧭</h3>
       <ul>
         <li>➕ Tap <strong>+</strong> to create your first <strong>List</strong>.</li>
@@ -83,7 +110,7 @@
 
   <!-- AI quick start -->
   <section class="features-section alternate" style="background-image:url('images/background2.png')">
-    <div class="feature-content">
+    <div class="feature-content post-card">
       <h3>AI quick start ⚡</h3>
       <ul>
         <li>⌨️ <strong>AI Text</strong> — type what you need (e.g., “Plan a kid’s party checklist”).</li>
@@ -97,7 +124,7 @@
 
   <!-- Reminders -->
   <section class="features-section" style="background-image:url('images/background3.png')">
-    <div class="feature-content">
+    <div class="feature-content post-card">
       <h3>Reminders ⏰</h3>
       <ul>
         <li>🤖 AI can auto-set <strong>Auto</strong> / <strong>Banner + Sound</strong> / <strong>Banner (Silent)</strong> based on your prompt.</li>
@@ -111,7 +138,7 @@
 
   <!-- Power features -->
   <section class="features-section alternate" style="background-image:url('images/background4.png')">
-    <div class="feature-content">
+    <div class="feature-content post-card">
       <h3>Pro tips 💡</h3>
       <ul>
         <li>🔗 <strong>Subtasks</strong> support clickable links — great for references.</li>
@@ -124,7 +151,7 @@
 
   <!-- Themes & engagement -->
   <section class="features-section" style="background-image:url('images/background5.png')">
-    <div class="feature-content">
+    <div class="feature-content post-card">
       <h3>Themes &amp; Star Chaos 🌌</h3>
       <ul>
         <li>🎨 Tap the <strong>Themes</strong> icon in the bottom bar. Most are Premium; <strong>Cosmic Dawn</strong> is free.</li>
@@ -136,7 +163,7 @@
 
   <!-- Sharing -->
   <section class="features-section alternate" style="background-image:url('images/background1.png')">
-    <div class="feature-content">
+    <div class="feature-content post-card">
       <h3>Sharing 🤝</h3>
       <ul>
         <li>📤 Invite others to a <strong>Shared List</strong> and manage members/permissions.</li>
@@ -146,7 +173,7 @@
 
   <!-- Good to know -->
   <section class="features-section" style="background-image:url('images/background2.png')">
-    <div class="feature-content">
+    <div class="feature-content post-card">
       <h3>Good to know 🧩</h3>
       <ul>
         <li>📴 Reminders persist &amp; restore after reboots.</li>

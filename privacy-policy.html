@@ -10,8 +10,35 @@
   <meta property="og:image" content="https://startaskapp.com/images/app-icon.png"/>
   <meta property="og:url" content="https://startaskapp.com/privacy-policy.html"/>
   <meta property="og:type" content="website"/>
+
+  <!-- Page-specific dark glass so cards never turn white -->
+  <style>
+    .policy-hero,
+    .policy-card{
+      max-width: 1100px;
+      margin: 24px auto;
+      padding: clamp(18px, 2.6vw, 28px);
+      border-radius: 18px;
+      background: linear-gradient(180deg, rgba(0,0,0,.55), rgba(0,0,0,.48)) !important;
+      border: 1px solid rgba(255,255,255,.12) !important;
+      box-shadow: 0 10px 30px rgba(0,0,0,.45) !important;
+      color: #fff !important;
+      backdrop-filter: blur(6px) saturate(140%);
+      -webkit-backdrop-filter: blur(6px) saturate(140%);
+    }
+    .policy-hero { text-align:center; margin-top: 28px; }
+    .policy-hero h2 { margin: 0 0 8px; font-size: clamp(28px, 4vw, 40px); }
+    .policy-hero p  { margin: 0; opacity:.95; }
+
+    /* Keep links readable on dark glass */
+    .policy-card a { color:#60a5fa; }
+    .policy-card a:hover { text-decoration: underline; }
+
+    /* Make sure any extensions/light-mode flips don't invert these */
+    .policy-hero, .policy-card { color-scheme: dark; }
+  </style>
 </head>
-<body>
+<body class="use-global-bg">
   <header class="site-header">
     <div class="announcement-banner" role="status" aria-live="polite">
       🚀 Star Task for <strong>iOS</strong> is LIVE — <strong>Released Nov 6, 2025</strong> •
@@ -59,7 +86,7 @@
 <main>
   <section class="hero-section" style="background-image:url('images/background7.png')">
     <div class="overlay">
-      <div class="feature-content">
+      <div class="feature-content policy-hero">
         <h2>Introduction</h2>
         <p>Welcome to Star Task (“we”, “our”, “us”). Your privacy matters. This Policy explains what we collect, why we collect it, and how you can control your data.</p>
         <p><strong>Last updated:</strong> October 30, 2025</p>
@@ -69,7 +96,7 @@
 
   <!-- What we collect -->
   <section class="features-section" style="background: linear-gradient(rgba(0,0,0,.5), rgba(0,0,0,.5)), url('images/background2.png');">
-    <div class="feature-content">
+    <div class="feature-content policy-card">
       <h3>Information We Collect</h3>
       <ul>
         <li><strong>Account Data (Google OAuth):</strong> When you sign in with Google, we receive your name, email, and a user ID from Google. We do <em>not</em> receive your Google password.</li>
@@ -82,7 +109,7 @@
 
   <!-- Where it goes -->
   <section class="features-section alternate" style="background: linear-gradient(rgba(0,0,0,.5), rgba(0,0,0,.5)), url('images/background3.png');">
-    <div class="feature-content">
+    <div class="feature-content policy-card">
       <h3>How We Use Your Information</h3>
       <ul>
         <li><strong>Provide Core Features:</strong> Create/manage tasks and lists, reminders/alarms, shared lists, and syncing.</li>
@@ -96,7 +123,7 @@
 
   <!-- Storage & security -->
   <section class="features-section" style="background: linear-gradient(rgba(0,0,0,.5), rgba(0,0,0,.5)), url('images/background4.png');">
-    <div class="feature-content">
+    <div class="feature-content policy-card">
       <h3>Storage, Security, and Third Parties</h3>
       <ul>
         <li><strong>Firebase (Google):</strong> We store account data, lists/tasks, and attachments in Firebase. Data is encrypted in transit and at rest.</li>
@@ -109,7 +136,7 @@
 
   <!-- iOS / payments -->
   <section class="features-section alternate" style="background: linear-gradient(rgba(0,0,0,.5), rgba(0,0,0,.5)), url('images/background5.png');">
-    <div class="feature-content">
+    <div class="feature-content policy-card">
       <h3>In-App Purchases & Subscriptions</h3>
       <ul>
         <li><strong>iOS:</strong> Purchases are processed by Apple. Manage or cancel in <em>Settings &gt; Apple ID &gt; Subscriptions</em>. We don’t receive your card details.</li>
@@ -122,7 +149,7 @@
 
   <!-- Your choices -->
   <section class="features-section" style="background: linear-gradient(rgba(0,0,0,.5), rgba(0,0,0,.5)), url('images/background1.png');">
-    <div class="feature-content">
+    <div class="feature-content policy-card">
       <h3>Your Choices & Rights</h3>
       <ul>
         <li><strong>Delete Account (in-app):</strong> You can permanently delete your account and associated data. This cannot be undone.</li>
@@ -135,7 +162,7 @@
 
   <!-- Data retention & children -->
   <section class="features-section alternate" style="background: linear-gradient(rgba(0,0,0,.5), rgba(0,0,0,.5)), url('images/background2.png');">
-    <div class="feature-content">
+    <div class="feature-content policy-card">
       <h3>Data Retention & Children</h3>
       <ul>
         <li><strong>Retention:</strong> We keep data only as long as needed for the app to function or as required by law. When you delete data, we remove it and schedule backups for purge.</li>
@@ -146,7 +173,7 @@
 
   <!-- Changes & contact -->
   <section class="features-section" style="background: linear-gradient(rgba(0,0,0,.5), rgba(0,0,0,.5)), url('images/background3.png');">
-    <div class="feature-content">
+    <div class="feature-content policy-card">
       <h3>Changes & Contact</h3>
       <p>We may update this Policy as our services evolve. We’ll adjust the “Last updated” date and, where appropriate, provide in-app notice.</p>
       <p><strong>Contact:</strong> <a href="mailto:ashnke@gmail.com">ashnke@gmail.com</a> or our <a href="contact.html">Contact</a> page.</p>

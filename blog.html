@@ -5,27 +5,80 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Star Task – Blog</title>
   <link rel="stylesheet" href="css/styles.css"/>
+
+  <!-- Open Graph -->
   <meta property="og:title" content="Star Task Blog"/>
   <meta property="og:description" content="News, release notes, and behind-the-scenes from Star Task."/>
   <meta property="og:image" content="https://startaskapp.com/images/app-icon.png"/>
   <meta property="og:url" content="https://startaskapp.com/blog.html"/>
   <meta property="og:type" content="website"/>
+
+  <!-- Page-specific polish (dark glass forced) -->
+  <style>
+    .blog-hero {
+      max-width: 1100px;
+      margin: 28px auto 18px;
+      padding: clamp(18px, 2.6vw, 28px);
+      border-radius: 18px;
+      background: linear-gradient(180deg, rgba(0,0,0,.55), rgba(0,0,0,.48)) !important;
+      border: 1px solid rgba(255,255,255,.12) !important;
+      box-shadow: 0 10px 30px rgba(0,0,0,.45) !important;
+      color: #fff !important;
+      text-align: center;
+      backdrop-filter: blur(6px) saturate(140%);
+      -webkit-backdrop-filter: blur(6px) saturate(140%);
+    }
+    .blog-hero h2 { margin: 0 0 8px; font-size: clamp(28px, 4vw, 40px); }
+    .blog-hero p  { margin: 0; opacity: .95; }
+
+    .blog-wrap {
+      padding: 20px;
+      max-width: 1100px;
+      margin: 0 auto 40px;
+      display: grid;
+      gap: 20px;
+    }
+
+    .blog-post {
+      border-radius: 16px;
+      background: linear-gradient(180deg, rgba(0,0,0,.55), rgba(0,0,0,.48)) !important;
+      border: 1px solid rgba(255,255,255,.12) !important;
+      box-shadow: 0 10px 24px rgba(0,0,0,.45) !important;
+      padding: 20px;
+      color: #fff !important;
+      backdrop-filter: blur(6px) saturate(140%);
+      -webkit-backdrop-filter: blur(6px) saturate(140%);
+    }
+    .blog-post h3 { margin-top: 0; }
+    .blog-meta { opacity: .85; }
+
+    .blog-post .read-more {
+      display: inline-block;
+      margin-top: 6px;
+      color: #60a5fa;
+      text-decoration: none;
+      font-weight: 700;
+    }
+    .blog-post .read-more:hover { text-decoration: underline; }
+
+    /* Nuke any “light mode” flips from extensions/system */
+    .blog-hero, .blog-post, .blog-post .read-more { color-scheme: dark; }
+  </style>
 </head>
-<body>
+
+<body class="use-global-bg">
   <header class="site-header">
     <div class="announcement-banner" role="status" aria-live="polite">
       🚀 Star Task for <strong>iOS</strong> is LIVE — <strong>Released Nov 6, 2025</strong> •
       <a href="https://apps.apple.com/ua/app/star-task-app/id6749521376" target="_blank" rel="noopener" style="color:#fff;text-decoration:underline">Download</a>
     </div>
-  
+
     <div class="header-inner" id="headerInner">
-      <!-- Left: Brand -->
       <a href="index.html" class="brand" aria-label="Star Task Home">
         <img src="images/logo.png" alt="Star Task Logo" class="logo">
         <h1 class="title">Star Task</h1>
       </a>
-  
-      <!-- Mobile Toggle -->
+
       <button class="menu-toggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="primaryNav" onclick="
         const hdr=document.getElementById('headerInner').parentElement;
         const btn=this;
@@ -34,8 +87,7 @@
       ">
         <span></span>
       </button>
-  
-      <!-- Center: Nav -->
+
       <nav class="nav-wrap" id="primaryNav" aria-label="Primary">
         <ul class="nav-links">
           <li><a href="index.html" aria-current="page">Home</a></li>
@@ -47,8 +99,7 @@
           <li><a href="terms.html">Terms</a></li>
         </ul>
       </nav>
-  
-      <!-- Right: Store CTAs (auto-hide on small screens) -->
+
       <div class="store-ctas">
         <a class="store-ios" href="https://apps.apple.com/ua/app/star-task-app/id6749521376" target="_blank" rel="noopener">🍎 App&nbsp;Store</a>
         <a class="store-android" href="https://play.google.com/store/apps/details?id=com.fan.startask" target="_blank" rel="noopener">▶️ Google&nbsp;Play</a>
@@ -56,66 +107,66 @@
     </div>
   </header>
 
-<main>
-  <!-- Hero uses background7 -->
-  <section class="hero-section" style="background-image:url('images/background7.png')">
-    <div class="overlay">
-      <div class="feature-content" style="text-align:center">
-        <h2>News, Releases, and the Journey</h2>
-        <p>Everything happening across Android + iOS + KMP — features, fixes, and philosophy.</p>
+  <main>
+    <!-- Hero uses background7 -->
+    <section class="hero-section" style="background-image:url('images/background7.png')">
+      <div class="overlay">
+        <div class="blog-hero">
+          <h2>News, Releases, and the Journey</h2>
+          <p>Everything happening across Android + iOS + KMP — features, fixes, and philosophy.</p>
+        </div>
       </div>
+    </section>
+
+    <!-- Posts -->
+    <section class="blog-wrap">
+      <article class="blog-post">
+        <h3>iOS Launch: What’s New & What’s Next</h3>
+        <p class="blog-meta"><em>November 6, 2025</em> · Version 1.0 (iOS)</p>
+        <p>Star Task is now on iPhone with full AI Modal (Text · Voice · Docs · Link) and iOS reminders (<em>Banner + Sound</em> / <em>Banner (Silent)</em>) that repeat on your schedule. Here’s how we got here and what we’re building next.</p>
+        <a class="read-more" href="getting-started.html">Read the post</a>
+      </article>
+
+      <article class="blog-post">
+        <h3>Inside the AI Modal: Four Inputs, Infinite Flow</h3>
+        <p class="blog-meta"><em>May 2025</em></p>
+        <p>One button, four inputs: Text, Voice, Document (.docx/.pdf), and Link. Choose list type — Bulleted, Reminder, Summary, or Brainstorm — and watch chaos become clarity.</p>
+        <a class="read-more" href="task-management-tips.html">Deep dive</a>
+      </article>
+
+      <article class="blog-post">
+        <h3>Live Sharing That Actually Feels Simple</h3>
+        <p class="blog-meta"><em>April 2025</em></p>
+        <p>Invite → accept → collaborate. Orders stay in sync, and it all feels instant. Here’s how we made sharing truly live without turning it into a mess.</p>
+        <a class="read-more" href="live-list-sharing.html">See how it works</a>
+      </article>
+
+      <article class="blog-post">
+        <h3>Star Chaos: Themes With a Pulse</h3>
+        <p class="blog-meta"><em>March 2025</em></p>
+        <p>Cosmic Dawn free + seven paid themes (Daybreak, Alive, Elemental Green, Charge, Peach, Rejuvenating Whisper, Withering Whisper). Light/Dark/System, with warp-speed animations.</p>
+        <a class="read-more" href="simple_and_beautiful.html">Why aesthetics matter</a>
+      </article>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Star Task</p>
+    <nav class="footer-nav">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="features.html">Features</a></li>
+        <li><a href="blog.html" aria-current="page">Blog</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="privacy-policy.html">Privacy Policy</a></li>
+        <li><a href="terms.html">Terms</a></li>
+      </ul>
+    </nav>
+    <div class="social-media-buttons">
+      <a href="https://www.twitter.com/startaskapp" target="_blank" rel="noopener"><img src="images/twitter-icon.png" alt="Twitter"></a>
+      <a href="https://discord.gg/6mvf5CNFmF" target="_blank" rel="noopener"><img src="images/discord-icon.png" alt="Discord"></a>
     </div>
-  </section>
-
-  <section class="blog-section" style="padding:20px; max-width:1100px; margin:0 auto">
-    <!-- Fresh, relevant posts -->
-    <article class="blog-post" style="background:rgba(255,255,255,.9);padding:20px;margin-bottom:20px;border-radius:12px;border:1px solid rgba(0,0,0,.06);box-shadow:0 10px 24px rgba(0,0,0,.12);">
-      <h3>iOS Launch: What’s New & What’s Next</h3>
-      <p class="blog-meta"><em>November 6, 2025</em> · Version 1.0 (iOS)</p>
-      <p>Star Task is now on iPhone with full AI Modal (Text · Voice · Docs · Link) and iOS reminders (<em>Banner + Sound</em> / <em>Banner (Silent)</em>) that repeat on your schedule. Here’s how we got here and what we’re building next.</p>
-      <a class="read-more" href="getting-started.html" style="color:#0ea5e9;text-decoration:none">Read the post</a>
-    </article>
-
-    <article class="blog-post" style="background:rgba(255,255,255,.9);padding:20px;margin-bottom:20px;border-radius:12px;border:1px solid rgba(0,0,0,.06);box-shadow:0 10px 24px rgba(0,0,0,.12);">
-      <h3>Inside the AI Modal: Four Inputs, Infinite Flow</h3>
-      <p class="blog-meta"><em>May 2025</em></p>
-      <p>One button, four inputs: Text, Voice, Document (.docx/.pdf), and Link. Choose list type — Bulleted, Reminder, Summary, or Brainstorm — and watch chaos become clarity.</p>
-      <a class="read-more" href="task-management-tips.html" style="color:#0ea5e9;text-decoration:none">Deep dive</a>
-    </article>
-
-    <article class="blog-post" style="background:rgba(255,255,255,.9);padding:20px;margin-bottom:20px;border-radius:12px;border:1px solid rgba(0,0,0,.06);box-shadow:0 10px 24px rgba(0,0,0,.12);">
-      <h3>Live Sharing That Actually Feels Simple</h3>
-      <p class="blog-meta"><em>April 2025</em></p>
-      <p>Invite → accept → collaborate. Orders stay in sync, and it all feels instant. Here’s how we made sharing truly live without turning it into a mess.</p>
-      <a class="read-more" href="live-list-sharing.html" style="color:#0ea5e9;text-decoration:none">See how it works</a>
-    </article>
-
-    <article class="blog-post" style="background:rgba(255,255,255,.9);padding:20px;margin-bottom:20px;border-radius:12px;border:1px solid rgba(0,0,0,.06);box-shadow:0 10px 24px rgba(0,0,0,.12);">
-      <h3>Star Chaos: Themes With a Pulse</h3>
-      <p class="blog-meta"><em>March 2025</em></p>
-      <p>Cosmic Dawn free + seven paid themes (Daybreak, Alive, Elemental Green, Charge, Peach, Rejuvenating Whisper, Withering Whisper). Light/Dark/System, with warp-speed animations.</p>
-      <a class="read-more" href="simple_and_beautiful.html" style="color:#0ea5e9;text-decoration:none">Why aesthetics matter</a>
-    </article>
-  </section>
-</main>
-
-<footer>
-  <p>&copy; 2025 Star Task</p>
-  <nav class="footer-nav">
-    <ul>
-      <li><a href="index.html">Home</a></li>
-      <li><a href="about.html">About</a></li>
-      <li><a href="features.html">Features</a></li>
-      <li><a href="blog.html" aria-current="page">Blog</a></li>
-      <li><a href="contact.html">Contact</a></li>
-      <li><a href="privacy-policy.html">Privacy Policy</a></li>
-      <li><a href="terms.html">Terms</a></li>
-    </ul>
-  </nav>
-  <div class="social-media-buttons">
-    <a href="https://www.twitter.com/startaskapp" target="_blank" rel="noopener"><img src="images/twitter-icon.png" alt="Twitter"></a>
-    <a href="https://discord.gg/6mvf5CNFmF" target="_blank" rel="noopener"><img src="images/discord-icon.png" alt="Discord"></a>
-  </div>
-</footer>
+  </footer>
 </body>
 </html>

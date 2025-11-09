@@ -29,94 +29,103 @@
     "operatingSystem": "iOS",
     "applicationCategory": "ProductivityApplication",
     "description": "AI-powered task manager with voice/doc/link ingestion, smart reminders, live sharing, themes, and stats.",
-    "offers": {
-      "@type": "Offer",
-      "price": "0",
-      "priceCurrency": "USD"
-    }
+    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
   }
   </script>
+
+  <!-- Page-scoped helpers (non-textual only) -->
   <style>
-    /* small in-page helpers so this file is portable even without css/styles.css updates */
-    .logo { max-height: 56px; }
-    header, footer { display:flex; flex-direction:column; align-items:center; gap:.5rem; padding:1rem; }
-    nav ul { display:flex; list-style:none; gap:1rem; padding:0; margin:0; flex-wrap:wrap; }
-    main { display:block; }
-    .hero-section, .features-section { background-size:cover; background-position:center; }
-    .overlay { background: linear-gradient(180deg, rgba(0,0,0,.35), rgba(0,0,0,.35)); }
+    /* Page shell refinements (no text changes) */
+    .hero-section, .features-section { background-size: cover; background-position: center; }
+    .overlay { background: linear-gradient(180deg, rgba(0,0,0,.35), rgba(0,0,0,.45)); }
     .feature-content { max-width: 1100px; margin: 0 auto; padding: clamp(1rem, 2vw + .5rem, 2.25rem); color: #fff; }
-    .feature-content h2, .feature-content h3 { margin-top:0; }
-    .feature-content ul { line-height:1.6; }
-    .alternate .overlay { background: linear-gradient(180deg, rgba(0,0,0,.25), rgba(0,0,0,.55)); }
-    .toc { background: rgba(0,0,0,.5); border-radius: 12px; padding: 1rem; }
-    .toc a { color: #fff; text-decoration: underline; }
-    .kicker { letter-spacing: .08em; text-transform: uppercase; font-weight: 700; opacity:.9; }
-    .badge { display:inline-block; padding:.2rem .5rem; border:1px solid rgba(255,255,255,.5); border-radius:999px; font-size:.8rem; }
-    .grid { display:grid; gap:1rem; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); }
+    .feature-content h2, .feature-content h3, .feature-content h4 { margin-top: 0; }
     .muted { opacity: .9; }
-    .cardish { background: rgba(255,255,255,.08); border:1px solid rgba(255,255,255,.12); border-radius:16px; padding:1rem; }
+    .toc { background: rgba(0,0,0,.5); border: 1px solid rgba(255,255,255,.12); border-radius: 14px; padding: 1rem; }
+    .toc ul { margin: 0; padding-left: 1.1rem; }
+    .grid { display: grid; gap: 1rem; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); }
+    .cardish { background: rgba(255,255,255,.08); border: 1px solid rgba(255,255,255,.12); border-radius: 16px; padding: 1rem; }
+    .badge { display:inline-block; padding:.2rem .5rem; border:1px solid rgba(255,255,255,.5); border-radius:999px; font-size:.8rem; }
     .mono { font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace; }
-    .sr-only { position:absolute; width:1px; height:1px; padding:0; margin:-1px; overflow:hidden; clip:rect(0,0,0,0); white-space:nowrap; border:0; }
+    .kicker { letter-spacing:.08em; text-transform:uppercase; font-weight:700; opacity:.9; margin:0 0 .25rem; }
+
+    /* Make each section read like a glass panel */
+    .features-section > .overlay,
+    #top > .overlay {
+      max-width: 1200px;
+      margin: 0 auto;
+      border-radius: 18px;
+      border: 1px solid rgba(255,255,255,.14);
+      backdrop-filter: blur(6px) saturate(135%);
+      -webkit-backdrop-filter: blur(6px) saturate(135%);
+      background:
+        radial-gradient(1000px 400px at 50% -160px, rgba(255,255,255,.09), rgba(255,255,255,.03) 60%, rgba(255,255,255,.02) 100%),
+        rgba(12,16,28,.45);
+    }
+
+    /* Lists spacing polish */
+    .feature-content ul { margin: .5rem 0 0; padding-left: 1.25rem; line-height: 1.6; }
+    .feature-content li + li { margin-top: .35rem; }
+
+    /* Header logo sizing parity */
+    .logo { max-height: 46px; }
+
+    /* Fix accidental nested UL spacing in Themes */
+    #themes .feature-content ul ul { margin-top: .35rem; }
   </style>
 </head>
-<body>
-    <body class="use-global-bg">
-      <header class="site-header">
-        <div class="announcement-banner" role="status" aria-live="polite">
-          🚀 Star Task for <strong>iOS</strong> is LIVE — <strong>Released Nov 6, 2025</strong> •
-          <a href="https://apps.apple.com/ua/app/star-task-app/id6749521376" target="_blank" rel="noopener" style="color:#fff;text-decoration:underline">Download</a>
-        </div>
-      
-        <div class="header-inner" id="headerInner">
-          <!-- Left: Brand -->
-          <a href="index.html" class="brand" aria-label="Star Task Home">
-            <img src="images/logo.png" alt="Star Task Logo" class="logo">
-            <h1 class="title">Star Task</h1>
-          </a>
-      
-          <!-- Mobile Toggle -->
-          <button class="menu-toggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="primaryNav" onclick="
-            const hdr=document.getElementById('headerInner').parentElement;
-            const btn=this;
-            hdr.classList.toggle('menu-open');
-            btn.setAttribute('aria-expanded', hdr.classList.contains('menu-open'));
-          ">
-            <span></span>
-          </button>
-      
-          <!-- Center: Nav -->
-          <nav class="nav-wrap" id="primaryNav" aria-label="Primary">
-            <ul class="nav-links">
-              <li><a href="index.html" aria-current="page">Home</a></li>
-              <li><a href="about.html">About</a></li>
-              <li><a href="features.html">Features</a></li>
-              <li><a href="contact.html">Contact</a></li>
-              <li><a href="blog.html">Blog</a></li>
-              <li><a href="privacy-policy.html">Privacy</a></li>
-              <li><a href="terms.html">Terms</a></li>
-            </ul>
-          </nav>
-      
-          <!-- Right: Store CTAs (auto-hide on small screens) -->
-          <div class="store-ctas">
-            <a class="store-ios" href="https://apps.apple.com/ua/app/star-task-app/id6749521376" target="_blank" rel="noopener">🍎 App&nbsp;Store</a>
-            <a class="store-android" href="https://play.google.com/store/apps/details?id=com.fan.startask" target="_blank" rel="noopener">▶️ Google&nbsp;Play</a>
-          </div>
-        </div>
-      </header>
+
+<body class="use-global-bg">
+  <!-- Header -->
+  <header class="site-header">
+    <div class="announcement-banner" role="status" aria-live="polite">
+      🚀 Star Task for <strong>iOS</strong> is LIVE — <strong>Released Nov 6, 2025</strong> •
+      <a href="https://apps.apple.com/ua/app/star-task-app/id6749521376" target="_blank" rel="noopener" style="color:#fff;text-decoration:underline">Download</a>
+    </div>
+
+    <div class="header-inner" id="headerInner">
+      <!-- Brand -->
+      <a href="index.html" class="brand" aria-label="Star Task Home">
+        <img src="images/logo.png" alt="Star Task Logo" class="logo">
+        <h1 class="title">Star Task</h1>
+      </a>
+
+      <!-- Hidden hamburger (kept for a11y parity) -->
+      <button class="menu-toggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="primaryNav"><span></span></button>
+
+      <!-- Nav -->
+      <nav class="nav-wrap" id="primaryNav" aria-label="Primary">
+        <ul class="nav-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="features.html" aria-current="page">Features</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="blog.html">Blog</a></li>
+          <li><a href="privacy-policy.html">Privacy</a></li>
+          <li><a href="terms.html">Terms</a></li>
+        </ul>
+      </nav>
+
+      <!-- Store CTAs -->
+      <div class="store-ctas">
+        <a class="store-ios" href="https://apps.apple.com/ua/app/star-task-app/id6749521376" target="_blank" rel="noopener">🍎 App&nbsp;Store</a>
+        <a class="store-android" href="https://play.google.com/store/apps/details?id=com.fan.startask" target="_blank" rel="noopener">▶️ Google&nbsp;Play</a>
+      </div>
+    </div>
+  </header>
 
   <main>
     <!-- Hero -->
-    <section id="top" class="hero-section" style="background-image:url('images/background3.png')">
+    <section id="top" class="hero-section" style="background:transparent">
       <div class="overlay">
         <div class="feature-content">
           <p class="kicker">iOS + KMP</p>
-          <h2>AI‑Powered Productivity, Built for Momentum</h2>
+          <h2>AI-Powered Productivity, Built for Momentum</h2>
           <p class="muted">Create lists from Text, Voice, Documents, or Links. Configure intelligent, repeating iOS reminders (<strong>Banner + Sound</strong> / <strong>Banner (Silent)</strong>). Share live. Customize everything. Track your stats.</p>
 
           <div class="toc" aria-labelledby="toc-heading">
-            <h3 id="toc-heading" class="sr-only">On this page</h3>
-            <nav aria-label="In‑page">
+            <h3 id="toc-heading" class="visually-hidden">On this page</h3>
+            <nav aria-label="In-page">
               <ul>
                 <li><a href="#start">Frictionless Start</a></li>
                 <li><a href="#ai-modal">AI Modal: Inputs & List Types</a></li>
@@ -163,8 +172,8 @@
               <h4>Inputs</h4>
               <ul>
                 <li><strong>AI Text</strong>: paste or type, then submit.</li>
-                <li><strong>AI Voice</strong>: <em>Quick Command</em> (instant) or <em>Record &amp; Transcribe</em> (full note‑taking). Shows remaining minutes and lets you pick audio files.</li>
-                <li><strong>AI Document</strong>: upload <span class="mono">.docx</span> or <span class="mono">.pdf</span> and auto‑generate a list.</li>
+                <li><strong>AI Voice</strong>: <em>Quick Command</em> (instant) or <em>Record &amp; Transcribe</em> (full note-taking). Shows remaining minutes and lets you pick audio files.</li>
+                <li><strong>AI Document</strong>: upload <span class="mono">.docx</span> or <span class="mono">.pdf</span> and auto-generate a list.</li>
                 <li><strong>AI Link</strong>: paste a URL and turn it into tasks.</li>
               </ul>
             </div>
@@ -172,7 +181,7 @@
               <h4>List Types</h4>
               <ul>
                 <li><strong>Bullet Point List</strong>: classic task list; toggle optional notes; choose 5 / 10 / 15 items.</li>
-                <li><strong>Reminder List</strong>: sub‑dropdown for <em>Auto</em>, <em>Banner + Sound</em>, <em>Banner (Silent)</em>.</li>
+                <li><strong>Reminder List</strong>: sub-dropdown for <em>Auto</em>, <em>Banner + Sound</em>, <em>Banner (Silent)</em>.</li>
                 <li><strong>Summary List</strong>: condense content into actionable tasks.</li>
                 <li><strong>Brainstorm List</strong>: expand ideas with chip counts (10 / 14 / 20).</li>
               </ul>
@@ -192,7 +201,7 @@
             <li><strong>Edit Mode</strong>: duplicate, delete, or copy a task’s name + notes + subtasks to clipboard.</li>
             <li><strong>AI Suggestions</strong>: get ~10+ task ideas based on the list name; tap <em>Add</em> to insert.</li>
             <li><strong>Rapid Add</strong>: an outlined text field under the top bar for fast, continuous entry.</li>
-            <li><strong>More Options</strong>: sort (name / due / priority / number), copy the whole list as text, collapse long tasks, reorder with cloud‑saved order for shared lists, and hide/show completed.</li>
+            <li><strong>More Options</strong>: sort (name / due / priority / number), copy the whole list as text, collapse long tasks, reorder with cloud-saved order for shared lists, and hide/show completed.</li>
           </ul>
         </div>
       </div>
@@ -225,7 +234,7 @@
             <li><strong>Types</strong>: <em>Don’t remind</em> or <em>Remind when due</em>, then choose <strong>Banner + Sound</strong> or <strong>Banner (Silent)</strong>.</li>
             <li><strong>Frequency</strong>: hourly, daily, weekly, monthly, every 10 minutes, or every 30 minutes.</li>
             <li><strong>Repeat Duration</strong>: default <em>Forever</em> or pick 1–24 hours. Banners stop after the window even if you don’t interact.</li>
-            <li><strong>Auto‑update</strong>: dismissing updates the task’s due date + reminder in Firestore, so your Upcoming screen stays accurate.</li>
+            <li><strong>Auto-update</strong>: dismissing updates the task’s due date + reminder in Firestore, so your Upcoming screen stays accurate.</li>
             <li class="muted"><em>Note:</em> iOS banners respect Do Not Disturb.</li>
           </ul>
         </div>
@@ -238,7 +247,7 @@
         <div class="feature-content">
           <h3>Upcoming Due Dates</h3>
           <ul>
-            <li>See all tasks sorted by earliest due date, with a days‑until counter.</li>
+            <li>See all tasks sorted by earliest due date, with a days-until counter.</li>
             <li>Filter by list with a simple dropdown.</li>
             <li><strong>Device Controls</strong>: <em>Silence all reminders</em> on this device, <em>Restore all reminders</em> from cloud, or <em>Permanently delete all reminders</em> from cloud.</li>
             <li>Tasks show <span class="badge">Reminder Active</span> when a local reminder is running on the device.</li>
@@ -256,7 +265,7 @@
             <li>Invite anyone on Star Task. See pending invites you sent or received.</li>
             <li>View lists you’ve joined and leave when you’re done.</li>
             <li>See who’s on lists you own and remove members if needed.</li>
-            <li>Shared lists keep the same drag‑reorder order in the cloud.</li>
+            <li>Shared lists keep the same drag-reorder order in the cloud.</li>
           </ul>
         </div>
       </div>
@@ -282,13 +291,13 @@
                 <li>Save current lists/tasks to cloud; load previous sets.</li>
                 <li>Restore purchases, manage subscriptions.</li>
                 <li>Delete content or your account.</li>
-                <li>Optional: add your own OpenAI API key to unlock GPT‑4 Omni.</li>
+                <li>Optional: add your own OpenAI API key to unlock GPT-4 Omni.</li>
                 <li>Configure the secondary mic button behavior.</li>
               </ul>
             </div>
             <div class="cardish">
               <h4>Custom Background</h4>
-              <p>$4.99 one‑time (or included in Premium): upload your own background and adjust opacity.</p>
+              <p>$4.99 one-time (or included in Premium): upload your own background and adjust opacity.</p>
             </div>
           </div>
         </div>
@@ -304,22 +313,20 @@
           <ul>
             <li><strong>Included</strong>: Cosmic Dawn (free).</li>
             <li><strong>Purchasable</strong> ($0.99): Daybreak, Alive, Elemental Green, Charge, Peach, Rejuvenating Whisper, Withering Whisper. Each has Light, Dark, or System.</li>
-                <ul>
-                <li><strong>Daybreak:</strong> A bright and cheerful theme designed to inspire positivity and energy.</li>
-                <li><strong>Alive:</strong> A vibrant and dynamic theme that energizes your workflow.</li>
-                <li><strong>Charge:</strong> A bold and motivating theme that keeps you focused on your goals.</li>
-                <li><strong>Elemental Green:</strong> A soothing green theme that fosters calm and balance during busy days.</li>
-                <li><strong>Peach:</strong> A warm and elegant theme that adds a touch of softness to your tasks.</li>
-                <li><strong>Rejuvenating Whisper:</strong> A refreshing and tranquil theme perfect for staying relaxed and productive.</li>
-                <li><strong>Withering Whisper:</strong> A mysterious and captivating theme that brings depth and intrigue to task management.</li>
-                <li><strong>Cosmic Dawn:</strong> A radiant and cosmic-themed experience, available for free to all users who download Star Task or purchase a subscription. Celebrate productivity in style!</li>
+            <ul>
+              <li><strong>Daybreak:</strong> A bright and cheerful theme designed to inspire positivity and energy.</li>
+              <li><strong>Alive:</strong> A vibrant and dynamic theme that energizes your workflow.</li>
+              <li><strong>Charge:</strong> A bold and motivating theme that keeps you focused on your goals.</li>
+              <li><strong>Elemental Green:</strong> A soothing green theme that fosters calm and balance during busy days.</li>
+              <li><strong>Peach:</strong> A warm and elegant theme that adds a touch of softness to your tasks.</li>
+              <li><strong>Rejuvenating Whisper:</strong> A refreshing and tranquil theme perfect for staying relaxed and productive.</li>
+              <li><strong>Withering Whisper:</strong> A mysterious and captivating theme that brings depth and intrigue to task management.</li>
+              <li><strong>Cosmic Dawn:</strong> A radiant and cosmic-themed experience, available for free to all users who download Star Task or purchase a subscription. Celebrate productivity in style!</li>
             </ul>
           </ul>
         </div>
       </div>
     </section>
-
-
 
     <!-- Profile / Stats -->
     <section id="stats" class="features-section alternate" style="background-image:url('images/background1.png')">
@@ -332,7 +339,7 @@
             <li><strong>Three Stats Cards</strong>:
               <ul>
                 <li>Total logins (launches & relaunches).</li>
-                <li>Total lists, total tasks, AI‑powered reminders count.</li>
+                <li>Total lists, total tasks, AI-powered reminders count.</li>
                 <li>Star Chaos Collection: shows owned animated themes with tiny preview icons.</li>
               </ul>
             </li>
@@ -388,13 +395,13 @@
           <ul>
             <li>4 quick tabs on the bottom bar (e.g., Dashboard, Upcoming, Stats, Social) + All Apps button.</li>
             <li><strong>More</strong> opens a modal drawer showing bottom row (mirrors bottom bar), extra apps above, and a top row with a colored icon “Reorder apps here”.</li>
-            <li><strong>Reorder Screen</strong>: drag to move tabs between pinned and unpinned; bottom bar updates live (Outlook‑style).</li>
+            <li><strong>Reorder Screen</strong>: drag to move tabs between pinned and unpinned; bottom bar updates live (Outlook-style).</li>
           </ul>
         </div>
       </div>
     </section>
 
-    <!-- Privacy / Security (short) -->
+    <!-- Privacy / Security -->
     <section id="privacy" class="features-section" style="background-image:url('images/background5.png')">
       <div class="overlay">
         <div class="feature-content">
@@ -413,8 +420,8 @@
     <section class="features-section" style="background-image:url('images/background4.png')">
       <div class="overlay">
         <div class="feature-content">
-          <h3>Your AI‑Powered Productivity Companion</h3>
-          <p>Star Task isn’t just another to‑do app, it’s a living system for getting things done. Create, remind, share, and customize. Then watch the momentum build.</p>
+          <h3>Your AI-Powered Productivity Companion</h3>
+          <p>Star Task isn’t just another to-do app, it’s a living system for getting things done. Create, remind, share, and customize. Then watch the momentum build.</p>
         </div>
       </div>
     </section>
@@ -422,11 +429,11 @@
 
   <footer>
     <p>&copy; 2025 Star Task</p>
-    <nav aria-label="Footer">
-      <ul class="footer-nav">
+    <nav class="footer-nav" aria-label="Footer">
+      <ul>
         <li><a href="index.html">Home</a></li>
         <li><a href="about.html">About</a></li>
-        <li><a href="features.html">Features</a></li>
+        <li><a href="features.html" aria-current="page">Features</a></li>
         <li><a href="blog.html">Blog</a></li>
         <li><a href="contact.html">Contact</a></li>
         <li><a href="privacy-policy.html">Privacy Policy</a></li>
