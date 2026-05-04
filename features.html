@@ -8,7 +8,7 @@
 
   <!-- Open Graph -->
   <meta property="og:title" content="Star Task – Features" />
-  <meta property="og:description" content="AI lists from Text/Voice/Docs/Links, smart iOS reminders (Banner + Sound / Banner Silent), live sharing, themes, stats, and more." />
+  <meta property="og:description" content="Calendar view, Scan Calendar, smart repeating reminders, AI task creation, live sharing, themes, stats, and more." />
   <meta property="og:image" content="https://startaskapp.com/images/app-icon.png" />
   <meta property="og:url" content="https://startaskapp.com/features.html" />
   <meta property="og:type" content="website" />
@@ -16,7 +16,7 @@
   <!-- Twitter -->
   <meta name="twitter:card" content="summary" />
   <meta name="twitter:title" content="Star Task – Features" />
-  <meta name="twitter:description" content="Create lists from Text/Voice/Docs/Links. Configure repeating iOS reminders. Share live. Customize themes. Track stats." />
+  <meta name="twitter:description" content="Scan calendars, track due dates, color-code lists, create reminders with AI, and share live plans." />
   <meta name="twitter:image" content="https://startaskapp.com/images/app-icon.png" />
   <meta name="twitter:url" content="https://startaskapp.com/features.html" />
 
@@ -26,9 +26,9 @@
     "@context": "https://schema.org",
     "@type": "MobileApplication",
     "name": "Star Task",
-    "operatingSystem": "iOS",
+    "operatingSystem": "iOS, Android",
     "applicationCategory": "ProductivityApplication",
-    "description": "AI-powered task manager with voice/doc/link ingestion, smart reminders, live sharing, themes, and stats.",
+    "description": "AI calendar and reminder app with Scan Calendar, color-coded calendar views, voice/doc/link ingestion, smart reminders, live sharing, themes, and stats.",
     "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
   }
   </script>
@@ -79,7 +79,7 @@
   <!-- Header -->
   <header class="site-header">
     <div class="announcement-banner" role="status" aria-live="polite">
-      🚀 Star Task for <strong>iOS</strong> is LIVE — <strong>Released Nov 6, 2025</strong> •
+      🗓️ Star Task is now calendar-first — scan schedules, map reminders, and plan by list •
       <a href="https://apps.apple.com/ua/app/star-task-app/id6749521376" target="_blank" rel="noopener" style="color:#fff;text-decoration:underline">Download</a>
     </div>
 
@@ -119,20 +119,22 @@
     <section id="top" class="hero-section" style="background:transparent">
       <div class="overlay">
         <div class="feature-content">
-          <p class="kicker">iOS + KMP</p>
-          <h2>AI-Powered Productivity, Built for Momentum</h2>
-          <p class="muted">Create lists from Text, Voice, Documents, or Links. Configure intelligent, repeating iOS reminders (<strong>Banner + Sound</strong> / <strong>Banner (Silent)</strong>). Share live. Customize everything. Track your stats.</p>
+          <p class="kicker">Calendar app + AI planning</p>
+          <h2>Everything Star Task Does Around Your Calendar</h2>
+          <p class="muted">Scan schedules, track past and future events, color-code lists, and turn Text, Voice, Documents, or Links into calendar-ready reminders. Star Task still feels like a fast task app, but the calendar is now the center of the system.</p>
 
           <div class="toc" aria-labelledby="toc-heading">
             <h3 id="toc-heading" class="visually-hidden">On this page</h3>
             <nav aria-label="In-page">
               <ul>
+                <li><a href="#calendar">Calendar View</a></li>
+                <li><a href="#scan-calendar">Scan Calendar</a></li>
                 <li><a href="#start">Frictionless Start</a></li>
                 <li><a href="#ai-modal">AI Modal: Inputs & List Types</a></li>
                 <li><a href="#dashboard">Lists & List View</a></li>
                 <li><a href="#task-detail">Task Detail</a></li>
-                <li><a href="#reminders">iOS Reminders</a></li>
-                <li><a href="#upcoming">Upcoming Due Dates</a></li>
+                <li><a href="#reminders">Calendar Reminders</a></li>
+                <li><a href="#upcoming">Upcoming & Device Controls</a></li>
                 <li><a href="#sharing">Live List Sharing</a></li>
                 <li><a href="#display">Display Settings</a></li>
                 <li><a href="#themes">Beautiful Themes</a></li>
@@ -145,6 +147,49 @@
       </div>
     </section>
 
+    <!-- Calendar View -->
+    <section id="calendar" class="features-section" style="background-image:url('images/background7.png')">
+      <div class="overlay">
+        <div class="feature-content">
+          <h3>Calendar View</h3>
+          <p>Star Task now gives your work a calendar surface, not just a list stack. View past and future items by month, filter the calendar by list, and keep visually distinct plans with list colors.</p>
+          <div class="calendar-media">
+            <img src="images/calendar1ss.png" alt="Star Task calendar view with color-coded events" class="calendar-screenshot" loading="lazy">
+          </div>
+          <div class="calendar-points">
+            <div class="cardish">
+              <h4>Past + Future</h4>
+              <p>Jump beyond today so old commitments and upcoming work stay in one timeline.</p>
+            </div>
+            <div class="cardish">
+              <h4>Color-Coded Lists</h4>
+              <p>Each calendar list can carry its own color so packed days are easier to scan.</p>
+            </div>
+            <div class="cardish">
+              <h4>Calendar Filters</h4>
+              <p>Select all lists or narrow the view to the calendars that matter right now.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Scan Calendar -->
+    <section id="scan-calendar" class="features-section alternate" style="background-image:url('images/background4.png')">
+      <div class="overlay">
+        <div class="feature-content">
+          <h3>Scan Calendar</h3>
+          <p>When a schedule already exists on paper, in a screenshot, or in a calendar photo, Star Task helps you turn that visual chaos into usable reminders. Capture, crop, scan, and let AI convert visible events into tasks you can review and keep.</p>
+          <ul>
+            <li>Use the camera or an existing calendar image as the source.</li>
+            <li>Crop the calendar before scanning so the AI focuses on the right schedule.</li>
+            <li>See progress while Star Task reads events, creates reminders, and saves them into your plan.</li>
+            <li>Keep a backup of captured calendar photos where supported, so one-time calendars are not lost after scanning.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
     <!-- Start / Onboarding / Dashboard -->
     <section id="start" class="features-section" style="background-image:url('images/background1.png')">
       <div class="overlay">
@@ -152,9 +197,9 @@
           <h3>Frictionless Start</h3>
           <ul>
             <li><strong>Sign in with Apple or Google:</strong> Secure OAuth. You stay signed in until you log out from Settings.</li>
-            <li><strong>Onboarding Box:</strong> When you have 0 lists, a scrollable guide walks you through the basics.</li>
-            <li><strong>Dashboard:</strong> All lists live here—beautiful, draggable, and saved locally for a fast feel.</li>
-            <li><strong>Top App Bar:</strong> Profile avatar, <em>Edit</em> (rename / delete / merge lists), Search, and the <strong>AI</strong> button.</li>
+            <li><strong>Calendar Welcome Guide:</strong> When you are new, Star Task points you toward scanning a calendar, adding items manually, and understanding what lands in Upcoming.</li>
+            <li><strong>Dashboard:</strong> Lists still live here—beautiful, draggable, and saved locally for a fast feel.</li>
+            <li><strong>Top App Bar:</strong> Profile avatar, <em>Edit</em> (rename / delete / merge lists), Search, <strong>Scan Calendar</strong>, and the <strong>AI</strong> button.</li>
             <li><strong>Quick Create:</strong> The “+” adds a list with smart name suggestions. A secondary mic button (tunable in Display Settings) speeds voice workflows.</li>
           </ul>
         </div>
@@ -165,15 +210,15 @@
     <section id="ai-modal" class="features-section alternate" style="background-image:url('images/background4.png')">
       <div class="overlay">
         <div class="feature-content">
-          <h3>AI Modal · Four Inputs, Four List Types</h3>
-          <p>Tap the AI button to open a sleek bottom sheet with four input tabs and powerful list types.</p>
+          <h3>AI Modal · Four Inputs, Calendar-Ready Output</h3>
+          <p>Tap the AI button to open a sleek bottom sheet with four input tabs and list types that can become tasks, summaries, brainstorms, or reminders.</p>
           <div class="grid">
             <div class="cardish">
               <h4>Inputs</h4>
               <ul>
                 <li><strong>AI Text</strong>: paste or type, then submit.</li>
                 <li><strong>AI Voice</strong>: <em>Quick Command</em> (instant) or <em>Record &amp; Transcribe</em> (full note-taking). Shows remaining minutes and lets you pick audio files.</li>
-                <li><strong>AI Document</strong>: upload <span class="mono">.docx</span> or <span class="mono">.pdf</span> and auto-generate a list.</li>
+                <li><strong>AI Document</strong>: upload common document formats and auto-generate a list.</li>
                 <li><strong>AI Link</strong>: paste a URL and turn it into tasks.</li>
               </ul>
             </div>
@@ -181,7 +226,7 @@
               <h4>List Types</h4>
               <ul>
                 <li><strong>Bullet Point List</strong>: classic task list; toggle optional notes; choose 5 / 10 / 15 items.</li>
-                <li><strong>Reminder List</strong>: sub-dropdown for <em>Auto</em>, <em>Banner + Sound</em>, <em>Banner (Silent)</em>.</li>
+                <li><strong>Reminder List</strong>: sub-dropdown for <em>Auto</em>, <em>Banner + Sound</em>, <em>Banner (Silent)</em>, ready for Upcoming and Calendar.</li>
                 <li><strong>Summary List</strong>: condense content into actionable tasks.</li>
                 <li><strong>Brainstorm List</strong>: expand ideas with chip counts (10 / 14 / 20).</li>
               </ul>
@@ -224,17 +269,17 @@
       </div>
     </section>
 
-    <!-- iOS Reminders -->
+    <!-- Calendar Reminders -->
     <section id="reminders" class="features-section" style="background-image:url('images/background5.png')">
       <div class="overlay">
         <div class="feature-content">
-          <h3>Smart iOS Reminders</h3>
-          <p>Star Task’s reminder banners are flexible and relentless—until you want them to stop.</p>
+          <h3>Calendar Reminders</h3>
+          <p>Star Task’s reminders connect the calendar, task details, and Upcoming screen so a due date is never just hidden in one view.</p>
           <ul>
             <li><strong>Types</strong>: <em>Don’t remind</em> or <em>Remind when due</em>, then choose <strong>Banner + Sound</strong> or <strong>Banner (Silent)</strong>.</li>
             <li><strong>Frequency</strong>: hourly, daily, weekly, monthly, every 10 minutes, or every 30 minutes.</li>
             <li><strong>Repeat Duration</strong>: default <em>Forever</em> or pick 1–24 hours. Banners stop after the window even if you don’t interact.</li>
-            <li><strong>Auto-update</strong>: dismissing updates the task’s due date + reminder in Firestore, so your Upcoming screen stays accurate.</li>
+            <li><strong>Auto-update</strong>: dismissing updates the task’s due date + reminder in Firestore, so Upcoming and Calendar stay accurate.</li>
             <li class="muted"><em>Note:</em> iOS banners respect Do Not Disturb.</li>
           </ul>
         </div>
@@ -245,10 +290,11 @@
     <section id="upcoming" class="features-section alternate" style="background-image:url('images/background4.png')">
       <div class="overlay">
         <div class="feature-content">
-          <h3>Upcoming Due Dates</h3>
+          <h3>Upcoming & Device Controls</h3>
           <ul>
             <li>See all tasks sorted by earliest due date, with a days-until counter.</li>
             <li>Filter by list with a simple dropdown.</li>
+            <li>Use color-coded calendar legend dots to understand where each event came from at a glance.</li>
             <li><strong>Device Controls</strong>: <em>Silence all reminders</em> on this device, <em>Restore all reminders</em> from cloud, or <em>Permanently delete all reminders</em> from cloud.</li>
             <li>Tasks show <span class="badge">Reminder Active</span> when a local reminder is running on the device.</li>
           </ul>
@@ -360,6 +406,7 @@
                 <li>3 lists</li>
                 <li>20 tasks per list</li>
                 <li>Unlimited subtasks</li>
+                <li>Calendar view for your due dates</li>
                 <li>Cosmic Dawn theme</li>
               </ul>
             </div>
@@ -368,6 +415,7 @@
               <p class="muted">$1.99 / month or $19.99 / year (15% off)</p>
               <ul>
                 <li>Practically unlimited lists and tasks</li>
+                <li>Expanded calendar and scan-calendar planning</li>
                 <li>All Star Chaos themes</li>
                 <li>100 AI Voice minutes</li>
                 <li>Custom background upload with opacity control</li>
@@ -393,7 +441,7 @@
         <div class="feature-content">
           <h3>New Navigation · Bottom Bar + Apps Modal</h3>
           <ul>
-            <li>4 quick tabs on the bottom bar (e.g., Dashboard, Upcoming, Stats, Social) + All Apps button.</li>
+            <li>4 quick tabs on the bottom bar (e.g., Dashboard, Upcoming/Calendar, Stats, Social) + All Apps button.</li>
             <li><strong>More</strong> opens a modal drawer showing bottom row (mirrors bottom bar), extra apps above, and a top row with a colored icon “Reorder apps here”.</li>
             <li><strong>Reorder Screen</strong>: drag to move tabs between pinned and unpinned; bottom bar updates live (Outlook-style).</li>
           </ul>
@@ -420,15 +468,15 @@
     <section class="features-section" style="background-image:url('images/background4.png')">
       <div class="overlay">
         <div class="feature-content">
-          <h3>Your AI-Powered Productivity Companion</h3>
-          <p>Star Task isn’t just another to-do app, it’s a living system for getting things done. Create, remind, share, and customize. Then watch the momentum build.</p>
+          <h3>Your Calendar, Reminders, and AI Lists in One Place</h3>
+          <p>Star Task isn’t just another to-do app. It is a calendar-first system for turning schedules, notes, links, and conversations into reminders you can trust.</p>
         </div>
       </div>
     </section>
   </main>
 
   <footer>
-    <p>&copy; 2025 Star Task</p>
+    <p>&copy; 2026 Star Task</p>
     <nav class="footer-nav" aria-label="Footer">
       <ul>
         <li><a href="index.html">Home</a></li>
