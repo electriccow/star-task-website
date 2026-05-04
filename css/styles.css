@@ -186,8 +186,22 @@
      object-fit: contain;
    }
 
+   .calendar-video {
+     width: min(100%, 520px);
+     max-height: min(72vh, 760px);
+     margin: 0 auto;
+     object-fit: contain;
+   }
+
    .hero-card .calendar-screenshot {
      max-height: 430px;
+   }
+
+   @media (max-width: 640px) {
+     .calendar-video {
+       width: 100%;
+       max-height: none;
+     }
    }
 
    .calendar-points {
